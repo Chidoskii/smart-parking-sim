@@ -2,12 +2,14 @@ const express = require("express");
 const cors = require("cors");
 const http = require("http");
 const { Server } = require("socket.io");
+const spacesRoutes = require("./routes/spaces.routes");
 require("dotenv").config();
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use("/api/spaces", spacesRoutes);
 
 app.get("/api/health", (req, res) => {
   res.json({
@@ -24,6 +26,8 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
+
+app.set("io", io);
 
 io.on("connection", (socket) => {
   console.log(`Client connected: ${socket.id}`);
