@@ -4,6 +4,7 @@ const http = require("http");
 const { Server } = require("socket.io");
 const spacesRoutes = require("./routes/spaces.routes");
 const parkingAreasRoutes = require("./routes/parkingAreas.routes");
+const parkingLotsRoutes = require("./routes/parkingLots.routes");
 
 require("dotenv").config();
 
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/spaces", spacesRoutes);
 app.use("/api/parking-areas", parkingAreasRoutes);
+app.use("/api/parking-lots", parkingLotsRoutes);
 
 app.get("/api/health", (req, res) => {
   res.json({

@@ -1,0 +1,757 @@
+{
+  "totalCapacity": 5975,
+  "areas": {
+    "far_pa_0": {
+      "roadsideCapacity": 0,
+      "explicitSpaces": 39,
+      "capacity": 39
+    },
+    "far_pa_1": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_10": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_109": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_109a": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_11": {
+      "roadsideCapacity": 20,
+      "explicitSpaces": 0,
+      "capacity": 20
+    },
+    "far_pa_110": {
+      "roadsideCapacity": 70,
+      "explicitSpaces": 0,
+      "capacity": 70
+    },
+    "far_pa_110a": {
+      "roadsideCapacity": 70,
+      "explicitSpaces": 0,
+      "capacity": 70
+    },
+    "far_pa_111": {
+      "roadsideCapacity": 80,
+      "explicitSpaces": 0,
+      "capacity": 80
+    },
+    "far_pa_111a": {
+      "roadsideCapacity": 80,
+      "explicitSpaces": 0,
+      "capacity": 80
+    },
+    "far_pa_112": {
+      "roadsideCapacity": 80,
+      "explicitSpaces": 0,
+      "capacity": 80
+    },
+    "far_pa_112a": {
+      "roadsideCapacity": 80,
+      "explicitSpaces": 0,
+      "capacity": 80
+    },
+    "far_pa_113": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_113a": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_114": {
+      "roadsideCapacity": 40,
+      "explicitSpaces": 0,
+      "capacity": 40
+    },
+    "far_pa_114a": {
+      "roadsideCapacity": 40,
+      "explicitSpaces": 0,
+      "capacity": 40
+    },
+    "far_pa_115": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_115a": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_116": {
+      "roadsideCapacity": 25,
+      "explicitSpaces": 0,
+      "capacity": 25
+    },
+    "far_pa_116a": {
+      "roadsideCapacity": 25,
+      "explicitSpaces": 0,
+      "capacity": 25
+    },
+    "far_pa_12": {
+      "roadsideCapacity": 20,
+      "explicitSpaces": 0,
+      "capacity": 20
+    },
+    "far_pa_13": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_14": {
+      "roadsideCapacity": 20,
+      "explicitSpaces": 46,
+      "capacity": 66
+    },
+    "far_pa_15": {
+      "roadsideCapacity": 0,
+      "explicitSpaces": 49,
+      "capacity": 49
+    },
+    "far_pa_16": {
+      "roadsideCapacity": 40,
+      "explicitSpaces": 0,
+      "capacity": 40
+    },
+    "far_pa_17": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_18": {
+      "roadsideCapacity": 40,
+      "explicitSpaces": 0,
+      "capacity": 40
+    },
+    "far_pa_19": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_2": {
+      "roadsideCapacity": 20,
+      "explicitSpaces": 43,
+      "capacity": 63
+    },
+    "far_pa_20": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_21": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_22": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_23": {
+      "roadsideCapacity": 20,
+      "explicitSpaces": 0,
+      "capacity": 20
+    },
+    "far_pa_24": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_26": {
+      "roadsideCapacity": 20,
+      "explicitSpaces": 0,
+      "capacity": 20
+    },
+    "far_pa_27": {
+      "roadsideCapacity": 20,
+      "explicitSpaces": 0,
+      "capacity": 20
+    },
+    "far_pa_28": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_3": {
+      "roadsideCapacity": 20,
+      "explicitSpaces": 0,
+      "capacity": 20
+    },
+    "far_pa_35": {
+      "roadsideCapacity": 25,
+      "explicitSpaces": 0,
+      "capacity": 25
+    },
+    "far_pa_36": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_37": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_38": {
+      "roadsideCapacity": 25,
+      "explicitSpaces": 0,
+      "capacity": 25
+    },
+    "far_pa_39": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_4": {
+      "roadsideCapacity": 20,
+      "explicitSpaces": 0,
+      "capacity": 20
+    },
+    "far_pa_40": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_43": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_44": {
+      "roadsideCapacity": 0,
+      "explicitSpaces": 0,
+      "capacity": 0
+    },
+    "far_pa_5": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_55": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_56": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_57": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_6": {
+      "roadsideCapacity": 70,
+      "explicitSpaces": 0,
+      "capacity": 70
+    },
+    "far_pa_66": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "far_pa_67": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "far_pa_68": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "far_pa_7": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_71": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "far_pa_74": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "far_pa_75": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "far_pa_76": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_77": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_78": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_79": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_8": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_80": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_81": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_83": {
+      "roadsideCapacity": 28,
+      "explicitSpaces": 0,
+      "capacity": 28
+    },
+    "far_pa_84": {
+      "roadsideCapacity": 20,
+      "explicitSpaces": 0,
+      "capacity": 20
+    },
+    "far_pa_85": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_86": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_87": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_88": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_89": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "far_pa_9": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "far_pa_90": {
+      "roadsideCapacity": 30,
+      "explicitSpaces": 0,
+      "capacity": 30
+    },
+    "hill_PARK_LANE1_SPACES_LEFT": {
+      "roadsideCapacity": 100,
+      "explicitSpaces": 0,
+      "capacity": 100
+    },
+    "hill_PARK_LANE1_SPACES_RIGHT": {
+      "roadsideCapacity": 100,
+      "explicitSpaces": 0,
+      "capacity": 100
+    },
+    "hill_pa181138919#0": {
+      "roadsideCapacity": 10,
+      "explicitSpaces": 0,
+      "capacity": 10
+    },
+    "hill_pa181138919#1": {
+      "roadsideCapacity": 10,
+      "explicitSpaces": 0,
+      "capacity": 10
+    },
+    "hill_pa181138919#2": {
+      "roadsideCapacity": 10,
+      "explicitSpaces": 0,
+      "capacity": 10
+    },
+    "hill_pa181138926#1": {
+      "roadsideCapacity": 175,
+      "explicitSpaces": 0,
+      "capacity": 175
+    },
+    "hill_pa181138926#1b": {
+      "roadsideCapacity": 180,
+      "explicitSpaces": 0,
+      "capacity": 180
+    },
+    "hill_pa181138926#3": {
+      "roadsideCapacity": 40,
+      "explicitSpaces": 0,
+      "capacity": 40
+    },
+    "hill_pa181138926#3b": {
+      "roadsideCapacity": 40,
+      "explicitSpaces": 0,
+      "capacity": 40
+    },
+    "hill_pa181138927#0": {
+      "roadsideCapacity": 10,
+      "explicitSpaces": 0,
+      "capacity": 10
+    },
+    "hill_pa181138927#1": {
+      "roadsideCapacity": 125,
+      "explicitSpaces": 0,
+      "capacity": 125
+    },
+    "hill_pa181138927#1b": {
+      "roadsideCapacity": 120,
+      "explicitSpaces": 0,
+      "capacity": 120
+    },
+    "hill_pa181138927#4": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "hill_pa181138927#4b": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "hill_pa181138935#0": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "hill_pa181138935#0b": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "hill_pa181138935#2": {
+      "roadsideCapacity": 25,
+      "explicitSpaces": 0,
+      "capacity": 25
+    },
+    "hill_pa181138935#2b": {
+      "roadsideCapacity": 25,
+      "explicitSpaces": 0,
+      "capacity": 25
+    },
+    "hill_pa181138936#0": {
+      "roadsideCapacity": 40,
+      "explicitSpaces": 0,
+      "capacity": 40
+    },
+    "hill_pa181138936#0b": {
+      "roadsideCapacity": 40,
+      "explicitSpaces": 0,
+      "capacity": 40
+    },
+    "hill_pa181138936#2": {
+      "roadsideCapacity": 100,
+      "explicitSpaces": 0,
+      "capacity": 100
+    },
+    "hill_pa181138936#2b": {
+      "roadsideCapacity": 100,
+      "explicitSpaces": 0,
+      "capacity": 100
+    },
+    "hill_pa_100": {
+      "roadsideCapacity": 90,
+      "explicitSpaces": 0,
+      "capacity": 90
+    },
+    "hill_pa_100a": {
+      "roadsideCapacity": 90,
+      "explicitSpaces": 0,
+      "capacity": 90
+    },
+    "hill_pa_101": {
+      "roadsideCapacity": 75,
+      "explicitSpaces": 0,
+      "capacity": 75
+    },
+    "hill_pa_101a": {
+      "roadsideCapacity": 75,
+      "explicitSpaces": 0,
+      "capacity": 75
+    },
+    "hill_pa_104": {
+      "roadsideCapacity": 100,
+      "explicitSpaces": 0,
+      "capacity": 100
+    },
+    "hill_pa_104a": {
+      "roadsideCapacity": 90,
+      "explicitSpaces": 0,
+      "capacity": 90
+    },
+    "hill_pa_105": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "hill_pa_105a": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "hill_pa_106": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "hill_pa_106a": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "hill_pa_107": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "hill_pa_107a": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "hill_pa_108": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "hill_pa_108a": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "hill_pa_120": {
+      "roadsideCapacity": 25,
+      "explicitSpaces": 0,
+      "capacity": 25
+    },
+    "hill_pa_120a": {
+      "roadsideCapacity": 25,
+      "explicitSpaces": 0,
+      "capacity": 25
+    },
+    "hill_pa_96": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "hill_pa_96a": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "hill_pa_97": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "hill_pa_97a": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "hill_pa_98": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "hill_pa_98a": {
+      "roadsideCapacity": 50,
+      "explicitSpaces": 0,
+      "capacity": 50
+    },
+    "hill_pa_99": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    },
+    "hill_pa_99a": {
+      "roadsideCapacity": 60,
+      "explicitSpaces": 0,
+      "capacity": 60
+    }
+  },
+  "lots": {
+    "J": {
+      "name": "Parking Lot J",
+      "parkingAreas": [
+        "hill_PARK_LANE1_SPACES_LEFT",
+        "hill_PARK_LANE1_SPACES_RIGHT",
+        "hill_pa181138919#0",
+        "hill_pa181138919#1",
+        "hill_pa181138919#2",
+        "hill_pa181138926#1",
+        "hill_pa181138926#1b",
+        "hill_pa181138926#3",
+        "hill_pa181138926#3b",
+        "hill_pa181138927#0",
+        "hill_pa181138927#1",
+        "hill_pa181138927#1b",
+        "hill_pa181138927#4",
+        "hill_pa181138927#4b",
+        "hill_pa181138935#0",
+        "hill_pa181138935#0b",
+        "hill_pa181138935#2",
+        "hill_pa181138935#2b",
+        "hill_pa181138936#0",
+        "hill_pa181138936#0b",
+        "hill_pa181138936#2",
+        "hill_pa181138936#2b",
+        "hill_pa_106",
+        "hill_pa_106a",
+        "hill_pa_108",
+        "hill_pa_108a",
+        "hill_pa_120",
+        "hill_pa_120a"
+      ],
+      "capacity": 1760
+    },
+    "M": {
+      "name": "Parking Lot M",
+      "parkingAreas": [
+        "hill_pa_96",
+        "hill_pa_96a",
+        "hill_pa_97",
+        "hill_pa_97a",
+        "hill_pa_98",
+        "hill_pa_98a",
+        "hill_pa_99",
+        "hill_pa_99a",
+        "hill_pa_100",
+        "hill_pa_100a",
+        "hill_pa_101",
+        "hill_pa_101a",
+        "hill_pa_104",
+        "hill_pa_104a",
+        "hill_pa_105",
+        "hill_pa_105a",
+        "hill_pa_107",
+        "hill_pa_107a"
+      ],
+      "capacity": 1180
+    },
+    "PS1": {
+      "name": "Parking Structure 1",
+      "parkingAreas": [
+        "far_pa_1",
+        "far_pa_3",
+        "far_pa_4",
+        "far_pa_5",
+        "far_pa_6",
+        "far_pa_7",
+        "far_pa_8",
+        "far_pa_9",
+        "far_pa_10",
+        "far_pa_11",
+        "far_pa_12",
+        "far_pa_13",
+        "far_pa_17",
+        "far_pa_19",
+        "far_pa_20",
+        "far_pa_21",
+        "far_pa_24"
+      ],
+      "capacity": 730
+    },
+    "F2": {
+      "name": "Parking Lot F2",
+      "parkingAreas": [
+        "far_pa_0",
+        "far_pa_109",
+        "far_pa_109a",
+        "far_pa_110",
+        "far_pa_110a",
+        "far_pa_111",
+        "far_pa_111a",
+        "far_pa_112",
+        "far_pa_112a",
+        "far_pa_113",
+        "far_pa_113a",
+        "far_pa_114",
+        "far_pa_114a",
+        "far_pa_115",
+        "far_pa_115a",
+        "far_pa_116",
+        "far_pa_116a",
+        "far_pa_14",
+        "far_pa_15",
+        "far_pa_16",
+        "far_pa_18",
+        "far_pa_2",
+        "far_pa_22",
+        "far_pa_23",
+        "far_pa_26",
+        "far_pa_27",
+        "far_pa_28",
+        "far_pa_35",
+        "far_pa_36",
+        "far_pa_37",
+        "far_pa_38",
+        "far_pa_39",
+        "far_pa_40",
+        "far_pa_43",
+        "far_pa_44",
+        "far_pa_55",
+        "far_pa_56",
+        "far_pa_57",
+        "far_pa_66",
+        "far_pa_67",
+        "far_pa_68",
+        "far_pa_71",
+        "far_pa_74",
+        "far_pa_75",
+        "far_pa_76",
+        "far_pa_77",
+        "far_pa_78",
+        "far_pa_79",
+        "far_pa_80",
+        "far_pa_81",
+        "far_pa_83",
+        "far_pa_84",
+        "far_pa_85",
+        "far_pa_86",
+        "far_pa_87",
+        "far_pa_88",
+        "far_pa_89",
+        "far_pa_90"
+      ],
+      "capacity": 2305
+    }
+  }
+}
