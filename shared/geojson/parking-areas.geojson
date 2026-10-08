@@ -1,0 +1,2425 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_0",
+        "lane": "430004130_0",
+        "campusLot": null,
+        "roadsideCapacity": 0,
+        "explicitSpaceCount": 39,
+        "lefthand": false,
+        "startPos": 5.0,
+        "endPos": 95.36
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81785789,
+          34.06164654
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_1",
+        "lane": "1189306510#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 6.99,
+        "endPos": 160.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81721352,
+          34.0608426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_10",
+        "lane": "-744058940#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 77.28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81651223,
+          34.06079219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_109",
+        "lane": "432318488#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 85.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81740265,
+          34.05946347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_109a",
+        "lane": "-432318488#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 85.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81741781,
+          34.05937471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_11",
+        "lane": "-744058941#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 20,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 31.13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81693922,
+          34.06028046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_110",
+        "lane": "-432318489_0",
+        "campusLot": null,
+        "roadsideCapacity": 70,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 107.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81713318,
+          34.05933852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_110a",
+        "lane": "432318489_0",
+        "campusLot": null,
+        "roadsideCapacity": 70,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 107.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81715994,
+          34.05924277
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_111",
+        "lane": "-432318490_0",
+        "campusLot": null,
+        "roadsideCapacity": 80,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 120.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81698445,
+          34.05920767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_111a",
+        "lane": "432318490_0",
+        "campusLot": null,
+        "roadsideCapacity": 80,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 120.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8169889,
+          34.05911807
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_112",
+        "lane": "-432318491_0",
+        "campusLot": null,
+        "roadsideCapacity": 80,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 85.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8170485,
+          34.05901554
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_112a",
+        "lane": "432318491_0",
+        "campusLot": null,
+        "roadsideCapacity": 80,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 85.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81707338,
+          34.05892065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_113",
+        "lane": "-432318492_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 50.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81713304,
+          34.05883042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_113a",
+        "lane": "432318492_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 50.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8171592,
+          34.05873992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_114",
+        "lane": "-896952385#6_0",
+        "campusLot": null,
+        "roadsideCapacity": 40,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 75.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81847888,
+          34.05866026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_114a",
+        "lane": "896952385#6_0",
+        "campusLot": null,
+        "roadsideCapacity": 40,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 5.0,
+        "endPos": 80.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81851808,
+          34.05857836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_115",
+        "lane": "-1017519391_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 60.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81853974,
+          34.05874256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_115a",
+        "lane": "1017519391_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 5.0,
+        "endPos": 60.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81852816,
+          34.0588252
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_116",
+        "lane": "-1017519390_0",
+        "campusLot": null,
+        "roadsideCapacity": 25,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 45.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81859256,
+          34.05895742
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_116a",
+        "lane": "1017519390_0",
+        "campusLot": null,
+        "roadsideCapacity": 25,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 5.0,
+        "endPos": 45.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81857301,
+          34.05903928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_12",
+        "lane": "744058940#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 20,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 29.63
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81699718,
+          34.06035849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_13",
+        "lane": "-744058940#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 74.84
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8176817,
+          34.06025118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14",
+        "lane": "-430004131_0",
+        "campusLot": null,
+        "roadsideCapacity": 20,
+        "explicitSpaceCount": 46,
+        "lefthand": false,
+        "startPos": 10.0,
+        "endPos": 111.52
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81779629,
+          34.06151014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_15",
+        "lane": "430004131_0",
+        "campusLot": null,
+        "roadsideCapacity": 0,
+        "explicitSpaceCount": 49,
+        "lefthand": false,
+        "startPos": 5.0,
+        "endPos": 113.52
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81768123,
+          34.06145818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_16",
+        "lane": "430638847_0",
+        "campusLot": null,
+        "roadsideCapacity": 40,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 7.0,
+        "endPos": 130.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81755908,
+          34.06129499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_17",
+        "lane": "-744058941#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 59.27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81750775,
+          34.06011799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_18",
+        "lane": "-430638847_0",
+        "campusLot": null,
+        "roadsideCapacity": 40,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 10.0,
+        "endPos": 120.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81763569,
+          34.06136073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_19",
+        "lane": "744058940#5.96_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 69.56
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81762235,
+          34.06017761
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2",
+        "lane": "-430004130_0",
+        "campusLot": null,
+        "roadsideCapacity": 20,
+        "explicitSpaceCount": 43,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 99.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81780102,
+          34.06157474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_20",
+        "lane": "744058941#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 60.05
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81748163,
+          34.06003784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_21",
+        "lane": "744058940#5_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 80.56
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81752833,
+          34.05993424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_22",
+        "lane": "430004134_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 15.0,
+        "endPos": 80.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81706577,
+          34.06237064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_23",
+        "lane": "-430004134_0",
+        "campusLot": null,
+        "roadsideCapacity": 20,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 25.0,
+        "endPos": 90.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81717997,
+          34.06234965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_24",
+        "lane": "-744058940#5_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 88.1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81753681,
+          34.0598477
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_26",
+        "lane": "-755398307#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 20,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 5.0,
+        "endPos": 70.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81699997,
+          34.0622847
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_27",
+        "lane": "755398307#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 20,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 10.0,
+        "endPos": 82.86
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81690205,
+          34.06226709
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_28",
+        "lane": "-430004133#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 10.0,
+        "endPos": 90.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81650719,
+          34.06204951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_3",
+        "lane": "744058940#4_0",
+        "campusLot": null,
+        "roadsideCapacity": 20,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 35.92
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81684038,
+          34.06012881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_35",
+        "lane": "-430004133#3_0",
+        "campusLot": null,
+        "roadsideCapacity": 25,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 5.0,
+        "endPos": 70.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81638055,
+          34.06209934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_36",
+        "lane": "430004133#3_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 80.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8163064,
+          34.06202099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_37",
+        "lane": "-430004133#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 20.0,
+        "endPos": 110.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8162434,
+          34.06194531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_38",
+        "lane": "-430004132_0",
+        "campusLot": null,
+        "roadsideCapacity": 25,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 10.0,
+        "endPos": 80.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81677768,
+          34.0623007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_39",
+        "lane": "430004132_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 10.0,
+        "endPos": 95.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81670479,
+          34.06222062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_4",
+        "lane": "744058941#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 20,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 31.13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81689455,
+          34.06020631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_40",
+        "lane": "430004133#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 10.0,
+        "endPos": 100.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81614198,
+          34.06193275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_43",
+        "lane": "-430638850_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 134.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81742929,
+          34.06121385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_44",
+        "lane": "430638850_0",
+        "campusLot": null,
+        "roadsideCapacity": 0,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 0.1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81808621,
+          34.06088307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_5",
+        "lane": "744058940#3_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 79.13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81628322,
+          34.06050647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_55",
+        "lane": "-430638848#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 128.06
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81739079,
+          34.06104886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_56",
+        "lane": "430638848#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 1.49,
+        "endPos": 132.68
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81734507,
+          34.06097467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_57",
+        "lane": "-1189306510#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 10.0,
+        "endPos": 160.38
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81725804,
+          34.06091758
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_6",
+        "lane": "-744058940#3_0",
+        "campusLot": null,
+        "roadsideCapacity": 70,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.92,
+        "endPos": 86.64
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81618701,
+          34.06046999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_66",
+        "lane": "432689344_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 5.52,
+        "endPos": 124.52
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8156972,
+          34.06023464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_67",
+        "lane": "-432689339#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 6.92,
+        "endPos": 124.92
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81571805,
+          34.06009882
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_68",
+        "lane": "432318495#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 5.0,
+        "endPos": 90.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81554303,
+          34.06012823
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_7",
+        "lane": "744058941#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 59.84
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81639348,
+          34.06052959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_71",
+        "lane": "-432318495#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 8.77,
+        "endPos": 90.77
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81544249,
+          34.06009667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_74",
+        "lane": "-432689342#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 8.1,
+        "endPos": 115.1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8153453,
+          34.0600469
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_75",
+        "lane": "432689339#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 10.74,
+        "endPos": 120.74
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81528799,
+          34.05997851
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_76",
+        "lane": "432689342#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 15.0,
+        "endPos": 85.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81448485,
+          34.06093112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_77",
+        "lane": "-432689342#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 5.0,
+        "endPos": 80.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81456525,
+          34.06098457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_78",
+        "lane": "-432318494#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 9.15,
+        "endPos": 70.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8146015,
+          34.0610699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_79",
+        "lane": "432318494#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 10.0,
+        "endPos": 70.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81467837,
+          34.06112723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_8",
+        "lane": "-744058941#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 59.84
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81646331,
+          34.06058876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_80",
+        "lane": "-432689340#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 25.0,
+        "endPos": 115.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8148678,
+          34.06118859
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_81",
+        "lane": "432689345_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 20.0,
+        "endPos": 95.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81475959,
+          34.06118962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_83",
+        "lane": "-430638844#4_0",
+        "campusLot": null,
+        "roadsideCapacity": 28,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 5.0,
+        "endPos": 100.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81571012,
+          34.06169121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_84",
+        "lane": "430638844#4_0",
+        "campusLot": null,
+        "roadsideCapacity": 20,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 30.0,
+        "endPos": 125.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81581484,
+          34.06169533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_85",
+        "lane": "-430638846#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 10.0,
+        "endPos": 90.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81562577,
+          34.06164786
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_86",
+        "lane": "430638846#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 90.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81551731,
+          34.06164946
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_87",
+        "lane": "-430638845_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 10.0,
+        "endPos": 100.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81547971,
+          34.06151114
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_88",
+        "lane": "430638845_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 5.0,
+        "endPos": 100.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81538854,
+          34.06147752
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_89",
+        "lane": "-430638844#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 20.0,
+        "endPos": 110.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81527851,
+          34.06147713
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_9",
+        "lane": "744058940#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 72.15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81646976,
+          34.06071072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_90",
+        "lane": "430638844#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 30,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 15.0,
+        "endPos": 105.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.81516127,
+          34.0614957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_PARK_LANE1_SPACES_LEFT",
+        "lane": "181138935#3_0",
+        "campusLot": null,
+        "roadsideCapacity": 100,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 5.0,
+        "endPos": 215.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82914308,
+          34.05840649
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_PARK_LANE1_SPACES_RIGHT",
+        "lane": "181138935#3_0",
+        "campusLot": null,
+        "roadsideCapacity": 100,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 5.0,
+        "endPos": 215.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8290927,
+          34.05837229
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138919#0",
+        "lane": "181138919#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 10,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 18.43
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82850782,
+          34.0559686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138919#1",
+        "lane": "181138919#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 10,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 13.27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82823479,
+          34.05605976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138919#2",
+        "lane": "181138919#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 10,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 17.34
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82796931,
+          34.05615101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138926#1",
+        "lane": "181138926#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 175,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 255.72
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82912182,
+          34.058027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138926#1b",
+        "lane": "181138926#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 180,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 255.72
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82905911,
+          34.05801271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138926#3",
+        "lane": "181138926#3_0",
+        "campusLot": null,
+        "roadsideCapacity": 40,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 80.58
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82860521,
+          34.05644116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138926#3b",
+        "lane": "181138926#3_0",
+        "campusLot": null,
+        "roadsideCapacity": 40,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 80.58
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82854526,
+          34.0564621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138927#0",
+        "lane": "181138927#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 10,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 19.47
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82754187,
+          34.05816633
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138927#1",
+        "lane": "181138927#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 125,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 182.2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82859656,
+          34.05789999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138927#1b",
+        "lane": "181138927#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 120,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 182.2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82853524,
+          34.05788203
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138927#4",
+        "lane": "181138927#4_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 83.38
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82811434,
+          34.05659636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138927#4b",
+        "lane": "181138927#4_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 83.38
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82805432,
+          34.05661717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138935#0",
+        "lane": "181138935#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 85.4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82879086,
+          34.05638053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138935#0b",
+        "lane": "181138935#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 85.4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82885082,
+          34.05635961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138935#2",
+        "lane": "181138935#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 25,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 64.5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82916676,
+          34.0571189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138935#2b",
+        "lane": "181138935#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 25,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 64.5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82922653,
+          34.05709763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138936#0",
+        "lane": "181138936#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 40,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 81.04
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82830227,
+          34.05654682
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138936#0b",
+        "lane": "181138936#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 40,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 81.04
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82836215,
+          34.05652574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138936#2",
+        "lane": "181138936#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 100,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 252.02
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82871134,
+          34.05805602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa181138936#2b",
+        "lane": "181138936#2_0",
+        "campusLot": null,
+        "roadsideCapacity": 100,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 252.02
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82876177,
+          34.05809016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_100",
+        "lane": "181136667#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 90,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 150.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82981816,
+          34.05552321
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_100a",
+        "lane": "181136667#1_0",
+        "campusLot": null,
+        "roadsideCapacity": 90,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 150.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82981794,
+          34.05557732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_101",
+        "lane": "181136664#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 75,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 125.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.83000352,
+          34.05544274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_101a",
+        "lane": "181136664#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 75,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 125.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.83000355,
+          34.05538863
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_104",
+        "lane": "444019542#8_0",
+        "campusLot": null,
+        "roadsideCapacity": 100,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 140.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82993231,
+          34.05482496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_104a",
+        "lane": "444019542#8_0",
+        "campusLot": null,
+        "roadsideCapacity": 90,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 140.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82993238,
+          34.05487907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_105",
+        "lane": "-181136655_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 110.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82993378,
+          34.05499421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_105a",
+        "lane": "-181136655_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 110.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82993352,
+          34.05504832
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_106",
+        "lane": "181136655_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 110.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82991039,
+          34.05507711
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_106a",
+        "lane": "181136655_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 110.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82991066,
+          34.055023
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_107",
+        "lane": "-181136663_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 110.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.83001292,
+          34.05516154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_107a",
+        "lane": "-181136663_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 110.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.83001302,
+          34.05521565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_108",
+        "lane": "181136663_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 110.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82990971,
+          34.05524464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_108a",
+        "lane": "181136663_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 110.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82990962,
+          34.05519053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_120",
+        "lane": "181138926#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 25,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 40.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82762866,
+          34.05855824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_120a",
+        "lane": "181138926#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 25,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 40.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.82762794,
+          34.05861234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_96",
+        "lane": "181135100_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 90.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.83018455,
+          34.05616245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_96a",
+        "lane": "181135100_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 90.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.83018489,
+          34.05610834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_97",
+        "lane": "437869922_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 90.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.83014516,
+          34.05598181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_97a",
+        "lane": "437869922_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 90.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.83014447,
+          34.05603592
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_98",
+        "lane": "181135104_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 90.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.83018965,
+          34.0558892
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_98a",
+        "lane": "181135104_0",
+        "campusLot": null,
+        "roadsideCapacity": 50,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 90.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.83019049,
+          34.05583509
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_99",
+        "lane": "181136661#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": true,
+        "startPos": 0.0,
+        "endPos": 100.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.8301407,
+          34.05571512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hill_pa_99a",
+        "lane": "181136661#0_0",
+        "campusLot": null,
+        "roadsideCapacity": 60,
+        "explicitSpaceCount": 0,
+        "lefthand": false,
+        "startPos": 0.0,
+        "endPos": 100.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.83014082,
+          34.05566101
+        ]
+      }
+    }
+  ]
+}

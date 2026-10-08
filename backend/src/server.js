@@ -3,6 +3,8 @@ const cors = require("cors");
 const http = require("http");
 const { Server } = require("socket.io");
 const spacesRoutes = require("./routes/spaces.routes");
+const parkingAreasRoutes = require("./routes/parkingAreas.routes");
+
 require("dotenv").config();
 
 const app = express();
@@ -10,6 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/api/spaces", spacesRoutes);
+app.use("/api/parking-areas", parkingAreasRoutes);
 
 app.get("/api/health", (req, res) => {
   res.json({

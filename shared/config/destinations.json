@@ -1,3 +1,49 @@
 {
-  "destinations": []
+  "central_academic": {
+    "name": "Central Academic Core",
+    "buildingIds": ["1", "2", "3", "4", "5", "6", "7", "8"],
+    "candidateParkingAreas": []
+  },
+
+  "student_services": {
+    "name": "Student Services Area",
+    "buildingIds": ["121", "66", "97"],
+    "candidateParkingAreas": []
+  },
+
+  "business": {
+    "name": "College of Business Administration",
+    "buildingIds": ["162", "163", "164"],
+    "candidateParkingAreas": []
+  },
+
+  "hospitality": {
+    "name": "Collins College of Hospitality Management",
+    "buildingIds": ["79", "80"],
+    "candidateParkingAreas": []
+  },
+
+  "residential": {
+    "name": "Residential Area",
+    "buildingIds": ["60", "61", "62", "63"],
+    "candidateParkingAreas": []
+  },
+
+  "agriculture": {
+    "name": "Agriculture and AgriScapes",
+    "buildingIds": ["2", "211"],
+    "candidateParkingAreas": []
+  },
+
+  "lyle_center": {
+    "name": "Lyle Center for Regenerative Studies",
+    "buildingIds": ["209"],
+    "candidateParkingAreas": []
+  },
+
+  "athletics": {
+    "name": "Athletics Area",
+    "buildingIds": [],
+    "candidateParkingAreas": []
+  }
 }
