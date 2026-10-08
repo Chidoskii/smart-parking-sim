@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getHealth } from "./services/api";
 
 import ParkingMap from "./components/Map/ParkingMap";
+import ParkingLotDashboard from "./components/ParkingLotDashboard";
 
 function App() {
   const [backendStatus, setBackendStatus] = useState("Checking...");
@@ -24,6 +25,7 @@ function App() {
     <main>
       <h1>Smart Parking Simulation</h1>
 
+      <ParkingLotDashboard />
       <ParkingMap />
 
       {error ? (

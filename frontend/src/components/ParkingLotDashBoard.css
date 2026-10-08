@@ -1,0 +1,68 @@
+.parking-dashboard {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.parking-dashboard h2 {
+  margin: 0 0 16px;
+}
+
+.parking-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.parking-lot-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: #fff;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+.parking-lot-card h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.parking-lot-capacity {
+  margin: 0 0 8px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.parking-lot-card span,
+.parking-lot-card small {
+  display: block;
+  color: #4b5563;
+}
+
+.parking-lot-card small {
+  margin-top: 8px;
+}
+
+@media (max-width: 1000px) {
+  .parking-dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .parking-dashboard {
+    padding: 12px;
+  }
+
+  .parking-dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .parking-lot-card {
+    padding: 16px;
+  }
+}

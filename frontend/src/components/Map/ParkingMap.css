@@ -1,0 +1,23 @@
+.parking-map {
+  width: 100%;
+  height: 65vh;
+  min-height: 400px;
+}
+
+.parking-lot-select {
+  min-height: 44px;
+  padding: 10px 12px;
+  font-size: 16px;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .parking-map {
+    height: 55dvh;
+    min-height: 320px;
+  }
+
+  .parking-lot-select {
+    width: 100%;
+  }
+}

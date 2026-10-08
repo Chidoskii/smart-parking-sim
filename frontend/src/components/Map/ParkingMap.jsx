@@ -3,6 +3,7 @@ import { Map, Popup } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 import socket from "../../services/socket";
+import "./ParkingMap.css";
 
 function ParkingMap() {
   const mapContainer = useRef(null);
@@ -201,6 +202,7 @@ function ParkingMap() {
 
         <select
           id="parking-lot-filter"
+          className="parking-lot-select"
           value={selectedLot}
           onChange={(event) => handleLotChange(event.target.value)}
         >
@@ -212,13 +214,7 @@ function ParkingMap() {
         </select>
       </div>
 
-      <div
-        ref={mapContainer}
-        style={{
-          width: "100%",
-          height: "600px",
-        }}
-      />
+      <div ref={mapContainer} className="parking-map" />
     </div>
   );
 }
