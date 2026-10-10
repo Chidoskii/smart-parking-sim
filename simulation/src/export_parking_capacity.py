@@ -15,13 +15,23 @@ areas = {}
 
 for area in root.findall(".//parkingArea"):
     area_id = area.get("id")
-    roadside = int(area.get("roadsideCapacity", "0"))
+
     explicit = len(area.findall("space"))
+
+    # SUMO defaults to one roadside space when no
+    # explicit spaces or roadsideCapacity are provided.
+    default_roadside = "0" if explicit > 0 else "1"
+
+    roadside = int(
+        area.get("roadsideCapacity", default_roadside)
+    )
+
+    capacity = roadside + explicit
 
     areas[area_id] = {
         "roadsideCapacity": roadside,
         "explicitSpaces": explicit,
-        "capacity": roadside + explicit,
+        "capacity": capacity,
     }
 
 lots = {}

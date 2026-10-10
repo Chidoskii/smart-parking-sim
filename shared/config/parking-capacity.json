@@ -1,5 +1,5 @@
 {
-  "totalCapacity": 5975,
+  "totalCapacity": 5976,
   "areas": {
     "far_pa_0": {
       "roadsideCapacity": 0,
@@ -232,9 +232,9 @@
       "capacity": 50
     },
     "far_pa_44": {
-      "roadsideCapacity": 0,
+      "roadsideCapacity": 1,
       "explicitSpaces": 0,
-      "capacity": 0
+      "capacity": 1
     },
     "far_pa_5": {
       "roadsideCapacity": 50,
@@ -751,7 +751,7 @@
         "far_pa_89",
         "far_pa_90"
       ],
-      "capacity": 2305
+      "capacity": 2306
     }
   }
 }
