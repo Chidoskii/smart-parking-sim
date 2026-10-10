@@ -4,7 +4,7 @@
 
     <input>
         <net-file value="../network/osm.net.xml.gz"/>
-
+        <route-files value="../routes/test_parking.rou.xml"/>
         <additional-files value="../additionals/parking.add.xml"/>
     </input>
 

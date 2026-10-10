@@ -35,7 +35,7 @@ def main():
             print(f"Unexpected areas: {sorted(extra)}")
             raise RuntimeError("Parking area inventory mismatch")
 
-        for step in range(300):
+        for step in range(1200):
             traci.simulationStep()
 
             if step % 30 == 0:
