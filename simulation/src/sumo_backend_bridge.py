@@ -15,7 +15,7 @@ SUMO_CONFIG = (
 
 BACKEND_URL = "http://localhost:5000"
 
-SIMULATION_STEPS = 1200
+SIMULATION_STEPS = 2400
 UPDATE_INTERVAL = 5
 
 # Delay between simulation steps so the dashboard

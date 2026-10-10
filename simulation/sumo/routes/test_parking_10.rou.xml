@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<routes>
+    <vType id="passenger_car" vClass="passenger" accel="2.6" decel="4.5" length="5" minGap="2.5" maxSpeed="13.9" />
+    <route id="route_to_parking" edges="180618650#0 180618650#1 180618639#5 1080493718#0 1080493718#1 180618651 1080493719#0 1080493719#1 180618642 597619392 406499605#0 406499605#1 406499606 406499936 1202990119#0 1065481894#0 1065481894#1 430004112#0 431941223#0 431941223#1 430368166#3 -430368184#2 -430368184#1 -430368184#0 430368166#5 430368166#6 430368166#7 430368166#8 430368166#9 -50439393#2 -50439393#1 -50439393#0 -1340045553#0 -428081454#4 -428081454#3 -428081454#2 -428081454#0 -13383076#1 -13383076#0 1111640274#2 1111640274#3 1111640274#5 1352266555#0 32996053 181135094#0 181136651#1 181136667#1" />
+    <vehicle id="parking_vehicle_0" type="passenger_car" route="route_to_parking" depart="0">
+        <stop parkingArea="hill_pa_100" duration="300" />
+    </vehicle>
+    <vehicle id="parking_vehicle_1" type="passenger_car" route="route_to_parking" depart="20">
+        <stop parkingArea="hill_pa_100" duration="300" />
+    </vehicle>
+    <vehicle id="parking_vehicle_2" type="passenger_car" route="route_to_parking" depart="40">
+        <stop parkingArea="hill_pa_100" duration="300" />
+    </vehicle>
+    <vehicle id="parking_vehicle_3" type="passenger_car" route="route_to_parking" depart="60">
+        <stop parkingArea="hill_pa_100" duration="300" />
+    </vehicle>
+    <vehicle id="parking_vehicle_4" type="passenger_car" route="route_to_parking" depart="80">
+        <stop parkingArea="hill_pa_100" duration="300" />
+    </vehicle>
+    <vehicle id="parking_vehicle_5" type="passenger_car" route="route_to_parking" depart="100">
+        <stop parkingArea="hill_pa_100" duration="300" />
+    </vehicle>
+    <vehicle id="parking_vehicle_6" type="passenger_car" route="route_to_parking" depart="120">
+        <stop parkingArea="hill_pa_100" duration="300" />
+    </vehicle>
+    <vehicle id="parking_vehicle_7" type="passenger_car" route="route_to_parking" depart="140">
+        <stop parkingArea="hill_pa_100" duration="300" />
+    </vehicle>
+    <vehicle id="parking_vehicle_8" type="passenger_car" route="route_to_parking" depart="160">
+        <stop parkingArea="hill_pa_100" duration="300" />
+    </vehicle>
+    <vehicle id="parking_vehicle_9" type="passenger_car" route="route_to_parking" depart="180">
+        <stop parkingArea="hill_pa_100" duration="300" />
+    </vehicle>
+</routes>
