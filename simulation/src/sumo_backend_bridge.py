@@ -24,7 +24,8 @@ VEHICLE_RESULTS = RESULTS_DIR / "vehicle_metrics.csv"
 BACKEND_URL = "http://localhost:5000"
 
 SIMULATION_STEPS = 2400
-UPDATE_INTERVAL = 1
+OCCUPANCY_UPDATE_INTERVAL = 5
+VEHICLE_UPDATE_INTERVAL = 1
 GASOLINE_DENSITY_G_PER_L = 745.0
 LITERS_PER_US_GALLON = 3.785411784
 METERS_PER_MILE = 1609.344
@@ -61,6 +62,47 @@ def update_backend(area_id, occupied):
         print(f"Backend update failed for {area_id}: {error}")
         return None
 
+def update_vehicle_positions(vehicles):
+    url = f"{BACKEND_URL}/api/vehicles/positions"
+
+    payload = json.dumps({
+        "vehicles": vehicles
+    }).encode("utf-8")
+
+    request = Request(
+        url,
+        data=payload,
+        headers={"Content-Type": "application/json"},
+        method="POST"
+    )
+
+    try:
+        with urlopen(request, timeout=5) as response:
+            return json.load(response)
+
+    except (HTTPError, URLError) as error:
+        print(f"Vehicle position update failed: {error}")
+        return None
+
+def get_vehicle_positions():
+    vehicles = []
+
+    for vehicle_id in traci.vehicle.getIDList():
+        x, y = traci.vehicle.getPosition(vehicle_id)
+
+        # Convert SUMO coordinates to longitude/latitude.
+        longitude, latitude = traci.simulation.convertGeo(x, y)
+
+        vehicles.append({
+            "id": vehicle_id,
+            "longitude": longitude,
+            "latitude": latitude,
+            "speed": traci.vehicle.getSpeed(vehicle_id),
+            "angle": traci.vehicle.getAngle(vehicle_id),
+            "roadId": traci.vehicle.getRoadID(vehicle_id),
+        })
+
+    return vehicles
 
 def load_vehicle_assignments():
     root = ET.parse(ROUTES_FILE).getroot()
@@ -251,7 +293,7 @@ def main():
                             traci.vehicle.getTimeLoss(vehicle_id)
                         )
 
-            if step % UPDATE_INTERVAL == 0:
+            if step % OCCUPANCY_UPDATE_INTERVAL == 0:
                 for area_id in parking_areas:
                     occupied = traci.parkingarea.getVehicleCount(
                         area_id
@@ -271,6 +313,10 @@ def main():
                             f"{area_id}: {occupied} occupied"
                         )
 
+            if step % VEHICLE_UPDATE_INTERVAL == 0:
+                vehicles = get_vehicle_positions()
+                update_vehicle_positions(vehicles)        
+
             time.sleep(STEP_DELAY)
             if traci.simulation.getMinExpectedNumber() == 0:
                 print("\nAll vehicles have completed their routes.")
@@ -280,6 +326,7 @@ def main():
         save_vehicle_metrics(vehicle_metrics)
 
     finally:
+        update_vehicle_positions([])
         traci.close()
 
 

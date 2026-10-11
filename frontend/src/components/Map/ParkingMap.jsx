@@ -5,6 +5,32 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import socket from "../../services/socket";
 import "./ParkingMap.css";
 
+function createVehicleGeoJSON(vehicles) {
+  return {
+    type: "FeatureCollection",
+    features: vehicles
+      .filter(
+        (vehicle) =>
+          Number.isFinite(vehicle.longitude) &&
+          Number.isFinite(vehicle.latitude),
+      )
+      .map((vehicle) => ({
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: [vehicle.longitude, vehicle.latitude],
+        },
+        properties: {
+          id: vehicle.id,
+          speed: vehicle.speed,
+          angle: vehicle.angle,
+          roadId: vehicle.roadId,
+          moving: vehicle.speed > 0.5,
+        },
+      })),
+  };
+}
+
 function ParkingMap() {
   const mapContainer = useRef(null);
   const mapRef = useRef(null);
@@ -12,6 +38,7 @@ function ParkingMap() {
   const parkingSpacesRef = useRef(null);
   const occupancyRef = useRef(new Map());
   const selectedLotRef = useRef("all");
+  const vehiclesRef = useRef([]);
 
   const [selectedLot, setSelectedLot] = useState("all");
 
@@ -76,6 +103,41 @@ function ParkingMap() {
     });
 
     mapRef.current = map;
+    let receivedLiveVehicleUpdate = false;
+
+    const handleVehiclePositions = ({ vehicles }) => {
+      if (!Array.isArray(vehicles)) return;
+
+      receivedLiveVehicleUpdate = true;
+      vehiclesRef.current = vehicles;
+
+      const source = map.getSource("vehicles");
+
+      if (source) {
+        source.setData(createVehicleGeoJSON(vehicles));
+      }
+    };
+
+    socket.on("vehicle-positions-updated", handleVehiclePositions);
+
+    fetch("http://localhost:5000/api/vehicles/positions")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Unable to fetch vehicle positions");
+        }
+        return response.json();
+      })
+      .then(({ vehicles }) => {
+        if (receivedLiveVehicleUpdate || !Array.isArray(vehicles)) return;
+
+        vehiclesRef.current = vehicles;
+
+        const source = map.getSource("vehicles");
+        if (source) {
+          source.setData(createVehicleGeoJSON(vehicles));
+        }
+      })
+      .catch((error) => console.error(error));
 
     map.on("load", async () => {
       const response = await fetch("http://localhost:5000/api/spaces/geojson");
@@ -144,6 +206,63 @@ function ParkingMap() {
       });
 
       refreshParkingSpaces();
+
+      map.addSource("vehicles", {
+        type: "geojson",
+        data: createVehicleGeoJSON(vehiclesRef.current),
+      });
+
+      map.addLayer({
+        id: "vehicle-markers",
+        type: "circle",
+        source: "vehicles",
+        paint: {
+          "circle-radius": [
+            "interpolate",
+            ["linear"],
+            ["zoom"],
+            14,
+            3,
+            17,
+            6,
+            19,
+            9,
+          ],
+          "circle-color": ["case", ["get", "moving"], "#2563eb", "#f59e0b"],
+          "circle-stroke-color": "#ffffff",
+          "circle-stroke-width": 1.5,
+          "circle-opacity": 0.95,
+        },
+      });
+
+      map.on("click", "vehicle-markers", (event) => {
+        const feature = event.features?.[0];
+        if (!feature) return;
+
+        const properties = feature.properties;
+
+        const container = document.createElement("div");
+
+        const heading = document.createElement("strong");
+        heading.textContent = properties.id;
+
+        const details = document.createElement("p");
+        const speedMph = (Number(properties.speed) * 2.23694).toFixed(1);
+
+        details.textContent = `Speed: ${speedMph} mph | Road: ${properties.roadId}`;
+
+        container.append(heading, details);
+
+        new Popup().setLngLat(event.lngLat).setDOMContent(container).addTo(map);
+      });
+
+      map.on("mouseenter", "vehicle-markers", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+
+      map.on("mouseleave", "vehicle-markers", () => {
+        map.getCanvas().style.cursor = "";
+      });
 
       const areasResponse = await fetch(
         "http://localhost:5000/api/parking-areas/geojson",
@@ -252,10 +371,12 @@ function ParkingMap() {
     return () => {
       socket.off("parking-space-updated");
       socket.off("parking-occupancy-updated");
+      socket.off("vehicle-positions-updated", handleVehiclePositions);
 
       parkingAreasRef.current = null;
       parkingSpacesRef.current = null;
       occupancyRef.current.clear();
+      vehiclesRef.current = [];
 
       mapRef.current = null;
       map.remove();

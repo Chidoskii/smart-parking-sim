@@ -6,6 +6,7 @@ const spacesRoutes = require("./routes/spaces.routes");
 const parkingAreasRoutes = require("./routes/parkingAreas.routes");
 const parkingLotsRoutes = require("./routes/parkingLots.routes");
 const occupancyRoutes = require("./routes/occupancy.routes");
+const vehicleRoutes = require("./routes/vehicles.routes");
 
 require("dotenv").config();
 
@@ -17,6 +18,7 @@ app.use("/api/spaces", spacesRoutes);
 app.use("/api/parking-areas", parkingAreasRoutes);
 app.use("/api/parking-lots", parkingLotsRoutes);
 app.use("/api/occupancy", occupancyRoutes);
+app.use("/api/vehicles", vehicleRoutes);
 
 app.get("/api/health", (req, res) => {
   res.json({
