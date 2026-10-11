@@ -23,12 +23,65 @@ function createVehicleGeoJSON(vehicles) {
         properties: {
           id: vehicle.id,
           speed: vehicle.speed,
-          angle: vehicle.angle,
+          angle: Number(vehicle.angle) || 0,
           roadId: vehicle.roadId,
           moving: vehicle.speed > 0.5,
         },
       })),
   };
+}
+
+function createCarIcon(bodyColor) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 64;
+  canvas.height = 96;
+
+  const ctx = canvas.getContext("2d");
+
+  // Tires
+  ctx.fillStyle = "#1f2937";
+  ctx.fillRect(10, 20, 9, 20);
+  ctx.fillRect(45, 20, 9, 20);
+  ctx.fillRect(10, 60, 9, 20);
+  ctx.fillRect(45, 60, 9, 20);
+
+  // Car body
+  ctx.fillStyle = bodyColor;
+  ctx.strokeStyle = "#ffffff";
+  ctx.lineWidth = 3;
+
+  ctx.beginPath();
+  ctx.roundRect(15, 8, 34, 80, 10);
+  ctx.fill();
+  ctx.stroke();
+
+  // Front windshield (front of car is UP)
+  ctx.fillStyle = "#dbeafe";
+  ctx.beginPath();
+  ctx.moveTo(19, 31);
+  ctx.lineTo(45, 31);
+  ctx.lineTo(41, 40);
+  ctx.lineTo(23, 40);
+  ctx.closePath();
+  ctx.fill();
+
+  // Rear window
+  ctx.fillStyle = "#1e3a8a";
+  ctx.beginPath();
+  ctx.roundRect(21, 61, 22, 12, 3);
+  ctx.fill();
+
+  // Headlights
+  ctx.fillStyle = "#fef08a";
+  ctx.fillRect(20, 11, 7, 5);
+  ctx.fillRect(37, 11, 7, 5);
+
+  // Taillights
+  ctx.fillStyle = "#f87171";
+  ctx.fillRect(20, 81, 7, 4);
+  ctx.fillRect(37, 81, 7, 4);
+
+  return ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
 
 function ParkingMap() {
@@ -207,6 +260,14 @@ function ParkingMap() {
 
       refreshParkingSpaces();
 
+      map.addImage("car-moving", createCarIcon("#2563eb"), {
+        pixelRatio: 2,
+      });
+
+      map.addImage("car-stopped", createCarIcon("#f59e0b"), {
+        pixelRatio: 2,
+      });
+
       map.addSource("vehicles", {
         type: "geojson",
         data: createVehicleGeoJSON(vehiclesRef.current),
@@ -214,24 +275,37 @@ function ParkingMap() {
 
       map.addLayer({
         id: "vehicle-markers",
-        type: "circle",
+        type: "symbol",
         source: "vehicles",
-        paint: {
-          "circle-radius": [
+
+        layout: {
+          "icon-image": [
+            "case",
+            ["get", "moving"],
+            "car-moving",
+            "car-stopped",
+          ],
+
+          "icon-size": [
             "interpolate",
             ["linear"],
             ["zoom"],
             14,
-            3,
-            17,
-            6,
-            19,
-            9,
+            0.35,
+            16,
+            0.55,
+            18,
+            0.8,
+            20,
+            1.1,
           ],
-          "circle-color": ["case", ["get", "moving"], "#2563eb", "#f59e0b"],
-          "circle-stroke-color": "#ffffff",
-          "circle-stroke-width": 1.5,
-          "circle-opacity": 0.95,
+
+          "icon-rotate": ["get", "angle"],
+          "icon-rotation-alignment": "map",
+          "icon-pitch-alignment": "map",
+
+          "icon-allow-overlap": true,
+          "icon-ignore-placement": true,
         },
       });
 
