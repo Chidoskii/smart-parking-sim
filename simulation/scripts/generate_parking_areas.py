@@ -21,12 +21,32 @@ def interpolate(shape, distance):
     length=math.hypot(bx-ax,by-ay)
     return (bx,by), ((bx-ax)/length,(by-ay)/length)
 
+def load_parking_lot_mapping(config_path):
+    with open(config_path, "r", encoding="utf-8") as file:
+        config = json.load(file)
+
+    mapping = {}
+
+    for lot_id, lot in config["lots"].items():
+        for area_id in lot["sumoParkingAreas"]:
+            if area_id in mapping:
+                raise ValueError(
+                    f"Parking area {area_id} belongs to multiple lots"
+                )
+
+            mapping[area_id] = lot_id
+
+    return mapping
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('parking_xml')
     parser.add_argument('network_xml')
     parser.add_argument('output')
     args=parser.parse_args()
+    project_root = Path(__file__).resolve().parents[2]
+
+    lot_mapping = load_parking_lot_mapping(project_root / "shared" / "config" / "parking-lots.json")
     with open_xml(args.network_xml) as f:
         root=ET.parse(f).getroot()
     location=root.find('location')
@@ -59,7 +79,7 @@ def main():
         x+=side*(-dy)*offset; y+=side*dx*offset
         lon,lat=transformer.transform(x-offset_x,y-offset_y)
         features.append({'type':'Feature','properties':{
-            'id':area_id,'lane':lane_id,'campusLot':None,
+            'id':area_id,'lane':lane_id,'campusLot':lot_mapping.get(area_id),
             'roadsideCapacity':int(area.get('roadsideCapacity','0')),
             'explicitSpaceCount':len(area.findall('space')),
             'lefthand':left,'startPos':start,'endPos':end

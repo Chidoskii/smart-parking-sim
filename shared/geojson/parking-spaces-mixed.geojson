@@ -1,0 +1,1645 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_0",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 0,
+        "sumoX": 1579.846,
+        "sumoY": 1256.553
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81739462689384,
+              34.061784035716514
+            ],
+            [
+              -117.81741383584603,
+              34.06176813865983
+            ],
+            [
+              -117.81737563399363,
+              34.06173616474252
+            ],
+            [
+              -117.81735642504127,
+              34.06175206179331
+            ],
+            [
+              -117.81739462689384,
+              34.061784035716514
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_1",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 1,
+        "sumoX": 1577.647,
+        "sumoY": 1254.401
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81741826530886,
+              34.061764472897885
+            ],
+            [
+              -117.81743747425222,
+              34.061748575837605
+            ],
+            [
+              -117.81739927240002,
+              34.06171660192754
+            ],
+            [
+              -117.81738006345648,
+              34.06173249898194
+            ],
+            [
+              -117.81741826530886,
+              34.061764472897885
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_2",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 2,
+        "sumoX": 1575.656,
+        "sumoY": 1252.669
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81743715786881,
+              34.06174929775592
+            ],
+            [
+              -117.81745795187484,
+              34.06173484796832
+            ],
+            [
+              -117.81742322793554,
+              34.06170023566521
+            ],
+            [
+              -117.81740243393179,
+              34.06171468544698
+            ],
+            [
+              -117.81743715786881,
+              34.06174929775592
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_3",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 3,
+        "sumoX": 1573.279,
+        "sumoY": 1250.716
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81746274684117,
+              34.06173151593747
+            ],
+            [
+              -117.81748354083851,
+              34.061717066145626
+            ],
+            [
+              -117.81744881689634,
+              34.0616824538497
+            ],
+            [
+              -117.81742802290132,
+              34.061696903635706
+            ],
+            [
+              -117.81746274684117,
+              34.06173151593747
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_4",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 4,
+        "sumoX": 1570.902,
+        "sumoY": 1248.763
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81748833580282,
+              34.0617137341138
+            ],
+            [
+              -117.81750912979146,
+              34.06169928431772
+            ],
+            [
+              -117.81747440584645,
+              34.06166467202896
+            ],
+            [
+              -117.81745361186013,
+              34.06167912181922
+            ],
+            [
+              -117.81748833580282,
+              34.0617137341138
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_5",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 5,
+        "sumoX": 1568.525,
+        "sumoY": 1246.81
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81751392475377,
+              34.06169595228491
+            ],
+            [
+              -117.81753471873367,
+              34.06168150248458
+            ],
+            [
+              -117.8174999947858,
+              34.061646890203
+            ],
+            [
+              -117.81747920080822,
+              34.06166133999749
+            ],
+            [
+              -117.81751392475377,
+              34.06169595228491
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_6",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 6,
+        "sumoX": 1566.147,
+        "sumoY": 1244.857
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81753951369397,
+              34.0616781704508
+            ],
+            [
+              -117.81756030766515,
+              34.061663720646216
+            ],
+            [
+              -117.81752558371446,
+              34.06162910837182
+            ],
+            [
+              -117.81750478974557,
+              34.061643558170566
+            ],
+            [
+              -117.81753951369397,
+              34.0616781704508
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_7",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 7,
+        "sumoX": 1563.77,
+        "sumoY": 1242.904
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81756510262343,
+              34.06166038861146
+            ],
+            [
+              -117.81758589658594,
+              34.06164593880264
+            ],
+            [
+              -117.81755117263238,
+              34.06161132653543
+            ],
+            [
+              -117.81753037867222,
+              34.06162577633842
+            ],
+            [
+              -117.81756510262343,
+              34.06166038861146
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_8",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 8,
+        "sumoX": 1561.393,
+        "sumoY": 1240.951
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.8175906915422,
+              34.0616426067669
+            ],
+            [
+              -117.81761148549596,
+              34.061628156953844
+            ],
+            [
+              -117.81757676153958,
+              34.061593544693785
+            ],
+            [
+              -117.81755596758812,
+              34.061607994501024
+            ],
+            [
+              -117.8175906915422,
+              34.0616426067669
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_9",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 9,
+        "sumoX": 1559.016,
+        "sumoY": 1238.999
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81761628045022,
+              34.06162482491711
+            ],
+            [
+              -117.81763707439528,
+              34.06161037509982
+            ],
+            [
+              -117.81760235043605,
+              34.06157576284694
+            ],
+            [
+              -117.81758155649331,
+              34.06159021265842
+            ],
+            [
+              -117.81761628045022,
+              34.06162482491711
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_10",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 10,
+        "sumoX": 1556.638,
+        "sumoY": 1237.046
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81764186934754,
+              34.06160704306211
+            ],
+            [
+              -117.81766266328388,
+              34.06159259324057
+            ],
+            [
+              -117.8176279393218,
+              34.06155798099487
+            ],
+            [
+              -117.81760714538777,
+              34.061572430810585
+            ],
+            [
+              -117.81764186934754,
+              34.06160704306211
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_11",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 11,
+        "sumoX": 1555.373,
+        "sumoY": 1236.43
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81764566922267,
+              34.061601958983594
+            ],
+            [
+              -117.81767094533629,
+              34.061593849413434
+            ],
+            [
+              -117.81765145745271,
+              34.06155177642649
+            ],
+            [
+              -117.81762618134958,
+              34.061559885992565
+            ],
+            [
+              -117.81764566922267,
+              34.061601958983594
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_12",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 12,
+        "sumoX": 1552.494,
+        "sumoY": 1235.346
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.8176767738488,
+              34.061591979396695
+            ],
+            [
+              -117.81770204995638,
+              34.0615838698202
+            ],
+            [
+              -117.81768256205993,
+              34.06154179683833
+            ],
+            [
+              -117.81765728596282,
+              34.06154990641072
+            ],
+            [
+              -117.8176767738488,
+              34.061591979396695
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_13",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 13,
+        "sumoX": 1549.614,
+        "sumoY": 1234.263
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81770787846749,
+              34.06158199980202
+            ],
+            [
+              -117.81773315456903,
+              34.0615738902192
+            ],
+            [
+              -117.8177136666597,
+              34.06153181724238
+            ],
+            [
+              -117.81768839056862,
+              34.061539926821084
+            ],
+            [
+              -117.81770787846749,
+              34.06158199980202
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_14",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 14,
+        "sumoX": 1546.735,
+        "sumoY": 1233.179
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81773898307875,
+              34.06157202019955
+            ],
+            [
+              -117.81776425917423,
+              34.06156391061041
+            ],
+            [
+              -117.81774477125202,
+              34.06152183763865
+            ],
+            [
+              -117.81771949516701,
+              34.061529947223676
+            ],
+            [
+              -117.81773898307875,
+              34.06157202019955
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_15",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 15,
+        "sumoX": 1543.856,
+        "sumoY": 1232.096
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81777008768256,
+              34.06156204058931
+            ],
+            [
+              -117.817795363772,
+              34.06155393099384
+            ],
+            [
+              -117.81777587583693,
+              34.06151185802713
+            ],
+            [
+              -117.81775059975794,
+              34.061519967618494
+            ],
+            [
+              -117.81777008768256,
+              34.06156204058931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_16",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 16,
+        "sumoX": 1540.976,
+        "sumoY": 1231.012
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81780119227894,
+              34.06155206097128
+            ],
+            [
+              -117.81782646836236,
+              34.06154395136949
+            ],
+            [
+              -117.81780698041437,
+              34.06150187840784
+            ],
+            [
+              -117.81778170434144,
+              34.06150998800552
+            ],
+            [
+              -117.81780119227894,
+              34.06155206097128
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_17",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 17,
+        "sumoX": 1538.097,
+        "sumoY": 1229.928
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.8178322968679,
+              34.06154208134547
+            ],
+            [
+              -117.81785757294527,
+              34.06153397173736
+            ],
+            [
+              -117.81783808498442,
+              34.061491898780766
+            ],
+            [
+              -117.81781280891752,
+              34.06150000838477
+            ],
+            [
+              -117.8178322968679,
+              34.06154208134547
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_18",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 18,
+        "sumoX": 1535.218,
+        "sumoY": 1228.845
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.8178634014494,
+              34.06153210171187
+            ],
+            [
+              -117.81788867752074,
+              34.06152399209745
+            ],
+            [
+              -117.81786918954701,
+              34.0614819191459
+            ],
+            [
+              -117.81784391348616,
+              34.06149002875623
+            ],
+            [
+              -117.8178634014494,
+              34.06153210171187
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_14_roadside_19",
+        "parkingAreaId": "far_pa_14",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 19,
+        "sumoX": 1532.338,
+        "sumoY": 1227.761
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81789450602349,
+              34.06152212207051
+            ],
+            [
+              -117.8179197820888,
+              34.061514012449756
+            ],
+            [
+              -117.81790029410217,
+              34.061471939503264
+            ],
+            [
+              -117.81787501804735,
+              34.061480049119915
+            ],
+            [
+              -117.81789450602349,
+              34.06152212207051
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_0",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 0,
+        "sumoX": 1494.188,
+        "sumoY": 1224.58
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81832041549468,
+              34.06144177470702
+            ],
+            [
+              -117.81829355521764,
+              34.06144469940261
+            ],
+            [
+              -117.81830058345838,
+              34.06148940936875
+            ],
+            [
+              -117.81832744374924,
+              34.06148648467143
+            ],
+            [
+              -117.81832041549468,
+              34.06144177470702
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_1",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 1,
+        "sumoX": 1497.165,
+        "sumoY": 1224.945
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81828818518323,
+              34.06144528412092
+            ],
+            [
+              -117.81826132490386,
+              34.06144820880951
+            ],
+            [
+              -117.81826835312802,
+              34.06149291877771
+            ],
+            [
+              -117.81829521342125,
+              34.06148999408742
+            ],
+            [
+              -117.81828818518323,
+              34.06144528412092
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_2",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 2,
+        "sumoX": 1500.143,
+        "sumoY": 1225.311
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.818255954869,
+              34.06144879352644
+            ],
+            [
+              -117.81822909458722,
+              34.061451718208
+            ],
+            [
+              -117.81823612279486,
+              34.061496428178266
+            ],
+            [
+              -117.81826298309042,
+              34.061493503494994
+            ],
+            [
+              -117.818255954869,
+              34.06144879352644
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_3",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 3,
+        "sumoX": 1503.12,
+        "sumoY": 1225.676
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.8182237245519,
+              34.06145230292353
+            ],
+            [
+              -117.81819686426779,
+              34.06145522759807
+            ],
+            [
+              -117.81820389245885,
+              34.06149993757041
+            ],
+            [
+              -117.81823075275679,
+              34.06149701289413
+            ],
+            [
+              -117.8182237245519,
+              34.06145230292353
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_4",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 4,
+        "sumoX": 1506.098,
+        "sumoY": 1226.041
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81819149423198,
+              34.0614558123122
+            ],
+            [
+              -117.8181646339455,
+              34.06145873697974
+            ],
+            [
+              -117.81817166212001,
+              34.06150344695411
+            ],
+            [
+              -117.8181985224203,
+              34.061500522284874
+            ],
+            [
+              -117.81819149423198,
+              34.0614558123122
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_5",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 5,
+        "sumoX": 1509.075,
+        "sumoY": 1226.407
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81815926390922,
+              34.061459321692446
+            ],
+            [
+              -117.81813240362037,
+              34.06146224635298
+            ],
+            [
+              -117.81813943177833,
+              34.061506956329424
+            ],
+            [
+              -117.81816629208097,
+              34.061504031667184
+            ],
+            [
+              -117.81815926390922,
+              34.061459321692446
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_6",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 6,
+        "sumoX": 1512.053,
+        "sumoY": 1226.772
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81812703358365,
+              34.0614628310643
+            ],
+            [
+              -117.81810017329244,
+              34.06146575571781
+            ],
+            [
+              -117.8181072014338,
+              34.061510465696315
+            ],
+            [
+              -117.81813406173882,
+              34.06150754104109
+            ],
+            [
+              -117.81812703358365,
+              34.0614628310643
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_7",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 7,
+        "sumoX": 1515.03,
+        "sumoY": 1227.137
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.8180948032552,
+              34.06146634042772
+            ],
+            [
+              -117.81806794296166,
+              34.06146926507422
+            ],
+            [
+              -117.81807497108646,
+              34.061513975054794
+            ],
+            [
+              -117.81810183139383,
+              34.06151105040658
+            ],
+            [
+              -117.8180948032552,
+              34.06146634042772
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_8",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 8,
+        "sumoX": 1518.008,
+        "sumoY": 1227.503
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81806257292398,
+              34.06146984978274
+            ],
+            [
+              -117.81803571262802,
+              34.06147277442221
+            ],
+            [
+              -117.81804274073629,
+              34.061517484404845
+            ],
+            [
+              -117.81806960104603,
+              34.06151455976366
+            ],
+            [
+              -117.81806257292398,
+              34.06146984978274
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_9",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 9,
+        "sumoX": 1521.884,
+        "sumoY": 1228.065
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81801520199299,
+              34.06147408974663
+            ],
+            [
+              -117.81798944109775,
+              34.06148106297231
+            ],
+            [
+              -117.81800619824617,
+              34.06152394295751
+            ],
+            [
+              -117.81803195915285,
+              34.0615169697282
+            ],
+            [
+              -117.81801520199299,
+              34.06147408974663
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_10",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 10,
+        "sumoX": 1524.744,
+        "sumoY": 1228.97
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81798429085673,
+              34.06148245709206
+            ],
+            [
+              -117.81795852995633,
+              34.061489430311305
+            ],
+            [
+              -117.81797528709097,
+              34.06153231030087
+            ],
+            [
+              -117.81800104800284,
+              34.06152533707798
+            ],
+            [
+              -117.81798429085673,
+              34.06148245709206
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_11",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 11,
+        "sumoX": 1527.604,
+        "sumoY": 1229.875
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81795337971425,
+              34.06149082442978
+            ],
+            [
+              -117.81792761880864,
+              34.06149779764261
+            ],
+            [
+              -117.81794437592954,
+              34.06154067763652
+            ],
+            [
+              -117.81797013684661,
+              34.06153370442005
+            ],
+            [
+              -117.81795337971425,
+              34.06149082442978
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_12",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 12,
+        "sumoX": 1530.464,
+        "sumoY": 1230.78
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81792246856556,
+              34.06149919175979
+            ],
+            [
+              -117.81789670765477,
+              34.06150616496621
+            ],
+            [
+              -117.8179134647619,
+              34.0615490449645
+            ],
+            [
+              -117.81793922568416,
+              34.06154207175444
+            ],
+            [
+              -117.81792246856556,
+              34.06149919175979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_13",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 13,
+        "sumoX": 1533.324,
+        "sumoY": 1231.685
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.8178915574106,
+              34.061507559082116
+            ],
+            [
+              -117.81786579649463,
+              34.061514532282125
+            ],
+            [
+              -117.81788255358806,
+              34.06155741228475
+            ],
+            [
+              -117.81790831451548,
+              34.061550439081124
+            ],
+            [
+              -117.8178915574106,
+              34.061507559082116
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_14",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 14,
+        "sumoX": 1536.184,
+        "sumoY": 1232.59
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81786064624946,
+              34.061515926396744
+            ],
+            [
+              -117.8178348853283,
+              34.06152289959032
+            ],
+            [
+              -117.81785164240797,
+              34.061565779597316
+            ],
+            [
+              -117.81787740334059,
+              34.0615588064001
+            ],
+            [
+              -117.81786064624946,
+              34.061515926396744
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_15",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 15,
+        "sumoX": 1539.045,
+        "sumoY": 1233.495
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81782973508207,
+              34.06152429370367
+            ],
+            [
+              -117.81780397415575,
+              34.06153126689084
+            ],
+            [
+              -117.81782073122166,
+              34.061574146902196
+            ],
+            [
+              -117.81784649215948,
+              34.061567173711396
+            ],
+            [
+              -117.81782973508207,
+              34.06152429370367
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_16",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 16,
+        "sumoX": 1541.905,
+        "sumoY": 1234.4
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81779882390849,
+              34.06153266100289
+            ],
+            [
+              -117.81777306297697,
+              34.06153963418367
+            ],
+            [
+              -117.81778982002912,
+              34.061582514199365
+            ],
+            [
+              -117.81781558097211,
+              34.06157554101498
+            ],
+            [
+              -117.81779882390849,
+              34.06153266100289
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_17",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 17,
+        "sumoX": 1544.765,
+        "sumoY": 1235.305
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81776791272866,
+              34.061541028294414
+            ],
+            [
+              -117.81774215179195,
+              34.06154800146877
+            ],
+            [
+              -117.81775890883036,
+              34.06159088148885
+            ],
+            [
+              -117.81778466977855,
+              34.06158390831087
+            ],
+            [
+              -117.81776791272866,
+              34.061541028294414
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_18",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 18,
+        "sumoX": 1548.846,
+        "sumoY": 1237.512
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81771369468392,
+              34.061561391975914
+            ],
+            [
+              -117.81769216922537,
+              34.061575079697654
+            ],
+            [
+              -117.8177250618188,
+              34.061610909597356
+            ],
+            [
+              -117.81774658728092,
+              34.06159722186986
+            ],
+            [
+              -117.81771369468392,
+              34.061561391975914
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "far_pa_2_roadside_19",
+        "parkingAreaId": "far_pa_2",
+        "campusLot": "F2",
+        "status": "available",
+        "geometryType": "provisional",
+        "row": 0,
+        "column": 19,
+        "sumoX": 1551.244,
+        "sumoY": 1239.314
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.81768786575262,
+              34.06157781621155
+            ],
+            [
+              -117.81766634028573,
+              34.06159150392886
+            ],
+            [
+              -117.81769923287493,
+              34.06162733383544
+            ],
+            [
+              -117.81772075834537,
+              34.061613646112384
+            ],
+            [
+              -117.81768786575262,
+              34.06157781621155
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

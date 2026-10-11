@@ -6,7 +6,7 @@
       "properties": {
         "id": "far_pa_0",
         "lane": "430004130_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 0,
         "explicitSpaceCount": 39,
         "lefthand": false,
@@ -26,7 +26,7 @@
       "properties": {
         "id": "far_pa_1",
         "lane": "1189306510#0_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -46,7 +46,7 @@
       "properties": {
         "id": "far_pa_10",
         "lane": "-744058940#2_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -66,7 +66,7 @@
       "properties": {
         "id": "far_pa_109",
         "lane": "432318488#1_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -86,7 +86,7 @@
       "properties": {
         "id": "far_pa_109a",
         "lane": "-432318488#1_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -106,7 +106,7 @@
       "properties": {
         "id": "far_pa_11",
         "lane": "-744058941#1_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 20,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -126,7 +126,7 @@
       "properties": {
         "id": "far_pa_110",
         "lane": "-432318489_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 70,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -146,7 +146,7 @@
       "properties": {
         "id": "far_pa_110a",
         "lane": "432318489_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 70,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -166,7 +166,7 @@
       "properties": {
         "id": "far_pa_111",
         "lane": "-432318490_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 80,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -186,7 +186,7 @@
       "properties": {
         "id": "far_pa_111a",
         "lane": "432318490_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 80,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -206,7 +206,7 @@
       "properties": {
         "id": "far_pa_112",
         "lane": "-432318491_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 80,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -226,7 +226,7 @@
       "properties": {
         "id": "far_pa_112a",
         "lane": "432318491_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 80,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -246,7 +246,7 @@
       "properties": {
         "id": "far_pa_113",
         "lane": "-432318492_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -266,7 +266,7 @@
       "properties": {
         "id": "far_pa_113a",
         "lane": "432318492_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -286,7 +286,7 @@
       "properties": {
         "id": "far_pa_114",
         "lane": "-896952385#6_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 40,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -306,7 +306,7 @@
       "properties": {
         "id": "far_pa_114a",
         "lane": "896952385#6_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 40,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -326,7 +326,7 @@
       "properties": {
         "id": "far_pa_115",
         "lane": "-1017519391_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -346,7 +346,7 @@
       "properties": {
         "id": "far_pa_115a",
         "lane": "1017519391_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -366,7 +366,7 @@
       "properties": {
         "id": "far_pa_116",
         "lane": "-1017519390_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 25,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -386,7 +386,7 @@
       "properties": {
         "id": "far_pa_116a",
         "lane": "1017519390_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 25,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -406,7 +406,7 @@
       "properties": {
         "id": "far_pa_12",
         "lane": "744058940#1_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 20,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -426,7 +426,7 @@
       "properties": {
         "id": "far_pa_13",
         "lane": "-744058940#0_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -446,7 +446,7 @@
       "properties": {
         "id": "far_pa_14",
         "lane": "-430004131_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 20,
         "explicitSpaceCount": 46,
         "lefthand": false,
@@ -466,7 +466,7 @@
       "properties": {
         "id": "far_pa_15",
         "lane": "430004131_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 0,
         "explicitSpaceCount": 49,
         "lefthand": false,
@@ -486,7 +486,7 @@
       "properties": {
         "id": "far_pa_16",
         "lane": "430638847_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 40,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -506,7 +506,7 @@
       "properties": {
         "id": "far_pa_17",
         "lane": "-744058941#0_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -526,7 +526,7 @@
       "properties": {
         "id": "far_pa_18",
         "lane": "-430638847_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 40,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -546,7 +546,7 @@
       "properties": {
         "id": "far_pa_19",
         "lane": "744058940#5.96_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -566,7 +566,7 @@
       "properties": {
         "id": "far_pa_2",
         "lane": "-430004130_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 20,
         "explicitSpaceCount": 43,
         "lefthand": false,
@@ -586,7 +586,7 @@
       "properties": {
         "id": "far_pa_20",
         "lane": "744058941#0_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -606,7 +606,7 @@
       "properties": {
         "id": "far_pa_21",
         "lane": "744058940#5_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -626,7 +626,7 @@
       "properties": {
         "id": "far_pa_22",
         "lane": "430004134_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -646,7 +646,7 @@
       "properties": {
         "id": "far_pa_23",
         "lane": "-430004134_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 20,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -666,7 +666,7 @@
       "properties": {
         "id": "far_pa_24",
         "lane": "-744058940#5_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -686,7 +686,7 @@
       "properties": {
         "id": "far_pa_26",
         "lane": "-755398307#0_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 20,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -706,7 +706,7 @@
       "properties": {
         "id": "far_pa_27",
         "lane": "755398307#0_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 20,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -726,7 +726,7 @@
       "properties": {
         "id": "far_pa_28",
         "lane": "-430004133#2_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -746,7 +746,7 @@
       "properties": {
         "id": "far_pa_3",
         "lane": "744058940#4_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 20,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -766,7 +766,7 @@
       "properties": {
         "id": "far_pa_35",
         "lane": "-430004133#3_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 25,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -786,7 +786,7 @@
       "properties": {
         "id": "far_pa_36",
         "lane": "430004133#3_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -806,7 +806,7 @@
       "properties": {
         "id": "far_pa_37",
         "lane": "-430004133#1_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -826,7 +826,7 @@
       "properties": {
         "id": "far_pa_38",
         "lane": "-430004132_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 25,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -846,7 +846,7 @@
       "properties": {
         "id": "far_pa_39",
         "lane": "430004132_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -866,7 +866,7 @@
       "properties": {
         "id": "far_pa_4",
         "lane": "744058941#1_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 20,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -886,7 +886,7 @@
       "properties": {
         "id": "far_pa_40",
         "lane": "430004133#1_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -906,7 +906,7 @@
       "properties": {
         "id": "far_pa_43",
         "lane": "-430638850_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -926,7 +926,7 @@
       "properties": {
         "id": "far_pa_44",
         "lane": "430638850_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 0,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -946,7 +946,7 @@
       "properties": {
         "id": "far_pa_5",
         "lane": "744058940#3_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -966,7 +966,7 @@
       "properties": {
         "id": "far_pa_55",
         "lane": "-430638848#2_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -986,7 +986,7 @@
       "properties": {
         "id": "far_pa_56",
         "lane": "430638848#2_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1006,7 +1006,7 @@
       "properties": {
         "id": "far_pa_57",
         "lane": "-1189306510#0_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1026,7 +1026,7 @@
       "properties": {
         "id": "far_pa_6",
         "lane": "-744058940#3_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 70,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1046,7 +1046,7 @@
       "properties": {
         "id": "far_pa_66",
         "lane": "432689344_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1066,7 +1066,7 @@
       "properties": {
         "id": "far_pa_67",
         "lane": "-432689339#0_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1086,7 +1086,7 @@
       "properties": {
         "id": "far_pa_68",
         "lane": "432318495#1_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1106,7 +1106,7 @@
       "properties": {
         "id": "far_pa_7",
         "lane": "744058941#2_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1126,7 +1126,7 @@
       "properties": {
         "id": "far_pa_71",
         "lane": "-432318495#1_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1146,7 +1146,7 @@
       "properties": {
         "id": "far_pa_74",
         "lane": "-432689342#0_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1166,7 +1166,7 @@
       "properties": {
         "id": "far_pa_75",
         "lane": "432689339#1_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1186,7 +1186,7 @@
       "properties": {
         "id": "far_pa_76",
         "lane": "432689342#1_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1206,7 +1206,7 @@
       "properties": {
         "id": "far_pa_77",
         "lane": "-432689342#1_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1226,7 +1226,7 @@
       "properties": {
         "id": "far_pa_78",
         "lane": "-432318494#0_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1246,7 +1246,7 @@
       "properties": {
         "id": "far_pa_79",
         "lane": "432318494#0_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1266,7 +1266,7 @@
       "properties": {
         "id": "far_pa_8",
         "lane": "-744058941#2_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1286,7 +1286,7 @@
       "properties": {
         "id": "far_pa_80",
         "lane": "-432689340#0_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1306,7 +1306,7 @@
       "properties": {
         "id": "far_pa_81",
         "lane": "432689345_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1326,7 +1326,7 @@
       "properties": {
         "id": "far_pa_83",
         "lane": "-430638844#4_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 28,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1346,7 +1346,7 @@
       "properties": {
         "id": "far_pa_84",
         "lane": "430638844#4_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 20,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1366,7 +1366,7 @@
       "properties": {
         "id": "far_pa_85",
         "lane": "-430638846#1_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1386,7 +1386,7 @@
       "properties": {
         "id": "far_pa_86",
         "lane": "430638846#1_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1406,7 +1406,7 @@
       "properties": {
         "id": "far_pa_87",
         "lane": "-430638845_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1426,7 +1426,7 @@
       "properties": {
         "id": "far_pa_88",
         "lane": "430638845_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1446,7 +1446,7 @@
       "properties": {
         "id": "far_pa_89",
         "lane": "-430638844#2_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1466,7 +1466,7 @@
       "properties": {
         "id": "far_pa_9",
         "lane": "744058940#2_0",
-        "campusLot": null,
+        "campusLot": "PS1",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1486,7 +1486,7 @@
       "properties": {
         "id": "far_pa_90",
         "lane": "430638844#2_0",
-        "campusLot": null,
+        "campusLot": "F2",
         "roadsideCapacity": 30,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1506,7 +1506,7 @@
       "properties": {
         "id": "hill_PARK_LANE1_SPACES_LEFT",
         "lane": "181138935#3_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 100,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -1526,7 +1526,7 @@
       "properties": {
         "id": "hill_PARK_LANE1_SPACES_RIGHT",
         "lane": "181138935#3_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 100,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1546,7 +1546,7 @@
       "properties": {
         "id": "hill_pa181138919#0",
         "lane": "181138919#0_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 10,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1566,7 +1566,7 @@
       "properties": {
         "id": "hill_pa181138919#1",
         "lane": "181138919#1_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 10,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1586,7 +1586,7 @@
       "properties": {
         "id": "hill_pa181138919#2",
         "lane": "181138919#2_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 10,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1606,7 +1606,7 @@
       "properties": {
         "id": "hill_pa181138926#1",
         "lane": "181138926#1_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 175,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1626,7 +1626,7 @@
       "properties": {
         "id": "hill_pa181138926#1b",
         "lane": "181138926#1_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 180,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -1646,7 +1646,7 @@
       "properties": {
         "id": "hill_pa181138926#3",
         "lane": "181138926#3_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 40,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1666,7 +1666,7 @@
       "properties": {
         "id": "hill_pa181138926#3b",
         "lane": "181138926#3_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 40,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -1686,7 +1686,7 @@
       "properties": {
         "id": "hill_pa181138927#0",
         "lane": "181138927#0_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 10,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1706,7 +1706,7 @@
       "properties": {
         "id": "hill_pa181138927#1",
         "lane": "181138927#1_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 125,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1726,7 +1726,7 @@
       "properties": {
         "id": "hill_pa181138927#1b",
         "lane": "181138927#1_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 120,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -1746,7 +1746,7 @@
       "properties": {
         "id": "hill_pa181138927#4",
         "lane": "181138927#4_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1766,7 +1766,7 @@
       "properties": {
         "id": "hill_pa181138927#4b",
         "lane": "181138927#4_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -1786,7 +1786,7 @@
       "properties": {
         "id": "hill_pa181138935#0",
         "lane": "181138935#0_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1806,7 +1806,7 @@
       "properties": {
         "id": "hill_pa181138935#0b",
         "lane": "181138935#0_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -1826,7 +1826,7 @@
       "properties": {
         "id": "hill_pa181138935#2",
         "lane": "181138935#2_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 25,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1846,7 +1846,7 @@
       "properties": {
         "id": "hill_pa181138935#2b",
         "lane": "181138935#2_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 25,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -1866,7 +1866,7 @@
       "properties": {
         "id": "hill_pa181138936#0",
         "lane": "181138936#0_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 40,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1886,7 +1886,7 @@
       "properties": {
         "id": "hill_pa181138936#0b",
         "lane": "181138936#0_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 40,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -1906,7 +1906,7 @@
       "properties": {
         "id": "hill_pa181138936#2",
         "lane": "181138936#2_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 100,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1926,7 +1926,7 @@
       "properties": {
         "id": "hill_pa181138936#2b",
         "lane": "181138936#2_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 100,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -1946,7 +1946,7 @@
       "properties": {
         "id": "hill_pa_100",
         "lane": "181136667#1_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 90,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -1966,7 +1966,7 @@
       "properties": {
         "id": "hill_pa_100a",
         "lane": "181136667#1_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 90,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -1986,7 +1986,7 @@
       "properties": {
         "id": "hill_pa_101",
         "lane": "181136664#0_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 75,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -2006,7 +2006,7 @@
       "properties": {
         "id": "hill_pa_101a",
         "lane": "181136664#0_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 75,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -2026,7 +2026,7 @@
       "properties": {
         "id": "hill_pa_104",
         "lane": "444019542#8_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 100,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -2046,7 +2046,7 @@
       "properties": {
         "id": "hill_pa_104a",
         "lane": "444019542#8_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 90,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -2066,7 +2066,7 @@
       "properties": {
         "id": "hill_pa_105",
         "lane": "-181136655_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -2086,7 +2086,7 @@
       "properties": {
         "id": "hill_pa_105a",
         "lane": "-181136655_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -2106,7 +2106,7 @@
       "properties": {
         "id": "hill_pa_106",
         "lane": "181136655_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -2126,7 +2126,7 @@
       "properties": {
         "id": "hill_pa_106a",
         "lane": "181136655_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -2146,7 +2146,7 @@
       "properties": {
         "id": "hill_pa_107",
         "lane": "-181136663_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -2166,7 +2166,7 @@
       "properties": {
         "id": "hill_pa_107a",
         "lane": "-181136663_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -2186,7 +2186,7 @@
       "properties": {
         "id": "hill_pa_108",
         "lane": "181136663_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -2206,7 +2206,7 @@
       "properties": {
         "id": "hill_pa_108a",
         "lane": "181136663_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -2226,7 +2226,7 @@
       "properties": {
         "id": "hill_pa_120",
         "lane": "181138926#0_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 25,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -2246,7 +2246,7 @@
       "properties": {
         "id": "hill_pa_120a",
         "lane": "181138926#0_0",
-        "campusLot": null,
+        "campusLot": "J",
         "roadsideCapacity": 25,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -2266,7 +2266,7 @@
       "properties": {
         "id": "hill_pa_96",
         "lane": "181135100_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -2286,7 +2286,7 @@
       "properties": {
         "id": "hill_pa_96a",
         "lane": "181135100_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -2306,7 +2306,7 @@
       "properties": {
         "id": "hill_pa_97",
         "lane": "437869922_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -2326,7 +2326,7 @@
       "properties": {
         "id": "hill_pa_97a",
         "lane": "437869922_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -2346,7 +2346,7 @@
       "properties": {
         "id": "hill_pa_98",
         "lane": "181135104_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -2366,7 +2366,7 @@
       "properties": {
         "id": "hill_pa_98a",
         "lane": "181135104_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 50,
         "explicitSpaceCount": 0,
         "lefthand": false,
@@ -2386,7 +2386,7 @@
       "properties": {
         "id": "hill_pa_99",
         "lane": "181136661#0_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": true,
@@ -2406,7 +2406,7 @@
       "properties": {
         "id": "hill_pa_99a",
         "lane": "181136661#0_0",
-        "campusLot": null,
+        "campusLot": "M",
         "roadsideCapacity": 60,
         "explicitSpaceCount": 0,
         "lefthand": false,

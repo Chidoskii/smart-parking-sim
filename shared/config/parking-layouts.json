@@ -1,0 +1,18 @@
+{
+  "defaults": {
+    "spaceWidth": 2.5,
+    "spaceLength": 5.0,
+    "laneOffset": 5.0,
+    "rowSpacing": 6.0,
+    "targetSpacing": 3.0
+  },
+  "areas": {
+    "hill_pa181138927#0": {
+      "rows": 2,
+      "spacesPerRow": 5,
+      "laneOffset": 5.0,
+      "rowSpacing": 6.0,
+      "side": "left"
+    }
+  }
+}
