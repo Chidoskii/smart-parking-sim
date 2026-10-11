@@ -16,6 +16,16 @@ router.get("/geojson", (req, res) => {
   res.json(parkingData);
 });
 
+// Temporary endpoint for generated parking-space previews
+router.get("/preview", (req, res) => {
+  const previewPath = path.resolve(
+    __dirname,
+    "../../../shared/geojson/parking-spaces-preview.geojson",
+  );
+
+  res.sendFile(previewPath);
+});
+
 // Update one parking space
 router.post("/:spaceId/status", (req, res) => {
   const { spaceId } = req.params;

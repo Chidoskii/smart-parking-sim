@@ -25,6 +25,9 @@ BACKEND_URL = "http://localhost:5000"
 
 SIMULATION_STEPS = 2400
 UPDATE_INTERVAL = 5
+GASOLINE_DENSITY_G_PER_L = 745.0
+LITERS_PER_US_GALLON = 3.785411784
+METERS_PER_MILE = 1609.344
 
 # Delay between simulation steps so the dashboard
 # can display occupancy changes.
@@ -84,6 +87,11 @@ def save_vehicle_metrics(vehicle_metrics):
         "waiting_time",
         "time_loss",
         "parking_success",
+        "co2_g",
+        "fuel_g",
+        "fuel_gallons",
+        "distance_m",
+        "distance_miles",
     ]
 
     with open(
@@ -148,6 +156,11 @@ def main():
                 "waiting_time": None,
                 "time_loss": None,
                 "parking_success": False,
+                "co2_g": 0.0,
+                "fuel_g": 0.0,
+                "fuel_gallons": 0.0,
+                "distance_m": 0.0,
+                "distance_miles": 0.0,
             }
 
         print(f"Connected to {len(parking_areas)} parking areas")
@@ -158,11 +171,35 @@ def main():
         for step in range(SIMULATION_STEPS):
             traci.simulationStep()
             current_time = traci.simulation.getTime()
-
             # Record actual vehicle departures.
             for vehicle_id in traci.simulation.getDepartedIDList():
                 if vehicle_id in vehicle_metrics:
                     vehicle_metrics[vehicle_id]["departure_time"] = current_time
+
+            # Collect emissions and distance before parking.
+            # SUMO CO2 and fuel consumption getters return rates in mg/s.
+            step_length = traci.simulation.getDeltaT()
+
+            for vehicle_id, metrics in vehicle_metrics.items():
+                if metrics["departure_time"] is None:
+                    continue
+
+                if metrics["parking_success"]:
+                    continue
+
+                if vehicle_id not in traci.vehicle.getIDList():
+                    continue
+
+                co2_mg_s = traci.vehicle.getCO2Emission(vehicle_id)
+                fuel_mg_s = traci.vehicle.getFuelConsumption(vehicle_id)
+
+                metrics["co2_g"] += (co2_mg_s * step_length) / 1000.0
+                metrics["fuel_g"] += (fuel_mg_s * step_length) / 1000.0
+                metrics["fuel_gallons"] = (metrics["fuel_g"] / GASOLINE_DENSITY_G_PER_L / LITERS_PER_US_GALLON)
+
+                # Record current cumulative vehicle distance.
+                metrics["distance_m"] = traci.vehicle.getDistance(vehicle_id)
+                metrics["distance_miles"] = (metrics["distance_m"] / METERS_PER_MILE)
 
             # Check which vehicles are currently parked.
             for area_id in parking_areas:
