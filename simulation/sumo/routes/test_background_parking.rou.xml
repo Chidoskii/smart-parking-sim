@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes>
+    <vType
+        id="background_car"
+        vClass="passenger"
+        length="5"
+        minGap="2.5"
+        maxSpeed="13.9"
+    />
+
+    <vehicle
+        id="background_0"
+        type="background_car"
+        depart="0"
+        departPos="stop"
+    >
+        <route edges="181138927#0"/>
+        <stop parkingArea="hill_pa181138927#0" duration="3600"/>
+    </vehicle>
+
+    <vehicle
+        id="background_1"
+        type="background_car"
+        depart="0"
+        departPos="stop"
+    >
+        <route edges="181138927#0"/>
+        <stop parkingArea="hill_pa181138927#0" duration="3600"/>
+    </vehicle>
+
+    <vehicle
+        id="background_2"
+        type="background_car"
+        depart="0"
+        departPos="stop"
+    >
+        <route edges="181138927#0"/>
+        <stop parkingArea="hill_pa181138927#0" duration="3600"/>
+    </vehicle>
+
+    <vehicle
+        id="background_3"
+        type="background_car"
+        depart="0"
+        departPos="stop"
+    >
+        <route edges="181138927#0"/>
+        <stop parkingArea="hill_pa181138927#0" duration="3600"/>
+    </vehicle>
+
+    <vehicle
+        id="background_4"
+        type="background_car"
+        depart="0"
+        departPos="stop"
+    >
+        <route edges="181138927#0"/>
+        <stop parkingArea="hill_pa181138927#0" duration="3600"/>
+    </vehicle>
+
+    <vehicle
+        id="background_5"
+        type="background_car"
+        depart="0"
+        departPos="stop"
+    >
+        <route edges="181138927#0"/>
+        <stop parkingArea="hill_pa181138927#0" duration="3600"/>
+    </vehicle>
+
+    <vehicle
+        id="background_6"
+        type="background_car"
+        depart="0"
+        departPos="stop"
+    >
+        <route edges="181138927#0"/>
+        <stop parkingArea="hill_pa181138927#0" duration="3600"/>
+    </vehicle>
+
+    <vehicle
+        id="background_7"
+        type="background_car"
+        depart="0"
+        departPos="stop"
+    >
+        <route edges="181138927#0"/>
+        <stop parkingArea="hill_pa181138927#0" duration="3600"/>
+    </vehicle>
+</routes>
