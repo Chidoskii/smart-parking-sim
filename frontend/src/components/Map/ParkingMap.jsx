@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Map, Popup } from "maplibre-gl";
+import { Map as MapLibreMap, Popup } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 import socket from "../../services/socket";
@@ -9,11 +9,66 @@ function ParkingMap() {
   const mapContainer = useRef(null);
   const mapRef = useRef(null);
   const parkingAreasRef = useRef(null);
+  const parkingSpacesRef = useRef(null);
+  const occupancyRef = useRef(new Map());
+  const selectedLotRef = useRef("all");
 
   const [selectedLot, setSelectedLot] = useState("all");
 
+  const refreshParkingSpaces = () => {
+    const map = mapRef.current;
+    const parkingData = parkingSpacesRef.current;
+
+    if (!map || !parkingData) return;
+
+    const grouped = new Map();
+
+    for (const feature of parkingData.features) {
+      const areaId = feature.properties.parkingAreaId;
+
+      if (!grouped.has(areaId)) {
+        grouped.set(areaId, []);
+      }
+
+      grouped.get(areaId).push(feature);
+    }
+
+    for (const [areaId, features] of grouped) {
+      const occupied = occupancyRef.current.get(areaId);
+
+      if (occupied === undefined) continue;
+
+      features.sort((a, b) =>
+        a.properties.id.localeCompare(b.properties.id, undefined, {
+          numeric: true,
+        }),
+      );
+
+      features.forEach((feature, index) => {
+        feature.properties.status = index < occupied ? "occupied" : "available";
+      });
+    }
+
+    const filteredFeatures =
+      selectedLotRef.current === "all"
+        ? parkingData.features
+        : parkingData.features.filter(
+            (feature) =>
+              feature.properties.campusLot === selectedLotRef.current,
+          );
+
+    const source = map.getSource("parking-spaces");
+
+    if (source) {
+      source.setData({
+        ...parkingData,
+        features: filteredFeatures,
+      });
+    }
+  };
+
   useEffect(() => {
-    const map = new Map({
+    const map = new MapLibreMap({
       container: mapContainer.current,
       style: "https://tiles.openfreemap.org/styles/liberty",
       center: [-117.819, 34.056],
@@ -26,10 +81,42 @@ function ParkingMap() {
       const response = await fetch("http://localhost:5000/api/spaces/geojson");
 
       const parkingData = await response.json();
+      parkingSpacesRef.current = parkingData;
+
+      const occupancyResponse = await fetch(
+        "http://localhost:5000/api/occupancy/areas",
+      );
+
+      if (!occupancyResponse.ok) {
+        throw new Error("Unable to fetch parking occupancy");
+      }
+
+      const occupancyData = await occupancyResponse.json();
+
+      for (const area of occupancyData.areas) {
+        if (!occupancyRef.current.has(area.id)) {
+          occupancyRef.current.set(area.id, area.occupied);
+        }
+      }
 
       map.addSource("parking-spaces", {
         type: "geojson",
         data: parkingData,
+      });
+
+      socket.on("parking-occupancy-updated", (payload) => {
+        const area = payload.area;
+
+        if (!area) return;
+
+        const areaId = area.id ?? area.areaId ?? area.parkingAreaId;
+        const occupied = Number(area.occupied);
+
+        if (!areaId || !Number.isFinite(occupied)) return;
+
+        occupancyRef.current.set(areaId, Math.max(0, occupied));
+
+        refreshParkingSpaces();
       });
 
       map.addLayer({
@@ -55,6 +142,8 @@ function ParkingMap() {
           "fill-outline-color": "#ffffff",
         },
       });
+
+      refreshParkingSpaces();
 
       const areasResponse = await fetch(
         "http://localhost:5000/api/parking-areas/geojson",
@@ -144,34 +233,40 @@ function ParkingMap() {
       });
 
       socket.on("parking-space-updated", ({ spaceId, status }) => {
+        const parkingData = parkingSpacesRef.current;
+
+        if (!parkingData) return;
+
         const feature = parkingData.features.find(
           (space) => space.properties.id === spaceId,
         );
 
-        if (!feature) {
-          return;
-        }
+        if (!feature) return;
 
         feature.properties.status = status;
 
-        const source = map.getSource("parking-spaces");
-
-        if (source) {
-          source.setData(parkingData);
-        }
+        refreshParkingSpaces();
       });
     });
 
     return () => {
       socket.off("parking-space-updated");
-      mapRef.current = null;
+      socket.off("parking-occupancy-updated");
+
       parkingAreasRef.current = null;
+      parkingSpacesRef.current = null;
+      occupancyRef.current.clear();
+
+      mapRef.current = null;
       map.remove();
     };
   }, []);
 
   const handleLotChange = (lotId) => {
     setSelectedLot(lotId);
+
+    selectedLotRef.current = lotId;
+    refreshParkingSpaces();
 
     const map = mapRef.current;
     const parkingAreas = parkingAreasRef.current;

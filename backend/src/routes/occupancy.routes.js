@@ -3,6 +3,7 @@ const express = require("express");
 const {
   getAreaOccupancy,
   updateAreaOccupancy,
+  getAllAreaOccupancy,
   getLotOccupancy,
   getAllLotOccupancy,
 } = require("../services/occupancyManager");
@@ -23,6 +24,11 @@ router.get("/lots/:lotId", (req, res) => {
   } catch (error) {
     res.status(404).json({ error: error.message });
   }
+});
+
+// GET /api/occupancy/areas
+router.get("/areas", (req, res) => {
+  res.json(getAllAreaOccupancy());
 });
 
 // GET /api/occupancy/areas/:areaId

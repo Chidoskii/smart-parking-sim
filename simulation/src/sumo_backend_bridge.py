@@ -24,14 +24,14 @@ VEHICLE_RESULTS = RESULTS_DIR / "vehicle_metrics.csv"
 BACKEND_URL = "http://localhost:5000"
 
 SIMULATION_STEPS = 2400
-UPDATE_INTERVAL = 5
+UPDATE_INTERVAL = 1
 GASOLINE_DENSITY_G_PER_L = 745.0
 LITERS_PER_US_GALLON = 3.785411784
 METERS_PER_MILE = 1609.344
 
 # Delay between simulation steps so the dashboard
 # can display occupancy changes.
-STEP_DELAY = 0.05
+STEP_DELAY = 0.1
 
 
 def update_backend(area_id, occupied):
@@ -166,7 +166,23 @@ def main():
         print(f"Connected to {len(parking_areas)} parking areas")
 
         # Store the last occupancy successfully sent.
+        # Synchronize the backend with SUMO's initial parking occupancy.
         last_occupancy = {}
+
+        print("Synchronizing initial parking occupancy...")
+
+        for area_id in parking_areas:
+            occupied = traci.parkingarea.getVehicleCount(area_id)
+
+            result = update_backend(area_id, occupied)
+
+            if result is not None:
+                last_occupancy[area_id] = occupied
+
+        print(
+            f"Initialized occupancy for "
+            f"{len(last_occupancy)}/{len(parking_areas)} parking areas"
+        )
 
         for step in range(SIMULATION_STEPS):
             traci.simulationStep()

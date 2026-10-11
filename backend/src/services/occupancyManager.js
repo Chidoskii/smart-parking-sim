@@ -53,6 +53,12 @@ function updateAreaOccupancy(areaId, occupied) {
   return getAreaOccupancy(areaId);
 }
 
+function getAllAreaOccupancy() {
+  return {
+    areas: Object.keys(capacityData.areas).map(getAreaOccupancy),
+  };
+}
+
 function getLotOccupancy(lotId) {
   const lot = capacityData.lots[lotId];
 
@@ -90,6 +96,7 @@ function getAllLotOccupancy() {
 
 module.exports = {
   getAreaOccupancy,
+  getAllAreaOccupancy,
   updateAreaOccupancy,
   getLotOccupancy,
   getAllLotOccupancy,
