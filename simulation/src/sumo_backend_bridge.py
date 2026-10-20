@@ -8,6 +8,7 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.parse import quote
 from urllib.error import HTTPError, URLError
+from parking_policies import get_parking_policy
 
 import traci
 
@@ -189,6 +190,10 @@ def main():
     args = parser.parse_args()
 
     scenario = args.scenario
+
+    policy = get_parking_policy(scenario)
+
+    print(f"Selected parking policy: {type(policy).__name__}")
 
     print("Starting SUMO-to-backend bridge...")
     print(f"Scenario: {scenario}")
