@@ -1,6 +1,7 @@
 import csv
 import json
 import time
+import argparse
 import xml.etree.ElementTree as ET
 
 from pathlib import Path
@@ -19,7 +20,24 @@ SUMO_CONFIG = (
 ROUTES_FILE = ROOT / "simulation/sumo/routes/test_parking.rou.xml"
 
 RESULTS_DIR = ROOT / "simulation/results"
-VEHICLE_RESULTS = RESULTS_DIR / "vehicle_metrics.csv"
+
+SCENARIOS = ("baseline", "availability", "smart")
+
+
+def create_run_directory(scenario):
+    scenario_dir = RESULTS_DIR / scenario
+    scenario_dir.mkdir(parents=True, exist_ok=True)
+
+    run_number = 1
+
+    while True:
+        run_dir = scenario_dir / f"run_{run_number:03d}"
+
+        try:
+            run_dir.mkdir(exist_ok=False)
+            return run_dir
+        except FileExistsError:
+            run_number += 1
 
 BACKEND_URL = "http://localhost:5000"
 
@@ -117,8 +135,8 @@ def load_vehicle_assignments():
 
     return assignments
 
-def save_vehicle_metrics(vehicle_metrics):
-    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+def save_vehicle_metrics(vehicle_metrics, run_dir):
+    vehicle_results = run_dir / "vehicle_metrics.csv"
 
     fieldnames = [
         "vehicle_id",
@@ -137,7 +155,7 @@ def save_vehicle_metrics(vehicle_metrics):
     ]
 
     with open(
-        VEHICLE_RESULTS,
+        vehicle_results,
         "w",
         newline="",
         encoding="utf-8",
@@ -152,12 +170,28 @@ def save_vehicle_metrics(vehicle_metrics):
         if metrics["parking_success"]
     )
 
-    print(f"\nVehicle metrics saved to: {VEHICLE_RESULTS}")
+    print(f"\nVehicle metrics saved to: {vehicle_results}")
     print(f"Successfully parked: {successful}/{len(vehicle_metrics)}")
 
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="Run the smart parking SUMO simulation."
+    )
+
+    parser.add_argument(
+        "--scenario",
+        choices=SCENARIOS,
+        default="baseline",
+        help="Experiment scenario name."
+    )
+
+    args = parser.parse_args()
+
+    scenario = args.scenario
+
     print("Starting SUMO-to-backend bridge...")
+    print(f"Scenario: {scenario}")
 
     # Verify the backend is available before starting SUMO.
     try:
@@ -323,7 +357,9 @@ def main():
                 break
 
         print("\nSimulation completed.")
-        save_vehicle_metrics(vehicle_metrics)
+
+        run_dir = create_run_directory(scenario)
+        save_vehicle_metrics(vehicle_metrics, run_dir)
 
     finally:
         update_vehicle_positions([])
