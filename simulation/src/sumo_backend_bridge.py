@@ -1,6 +1,7 @@
 import csv
 import json
 import time
+import sumolib
 import argparse
 import xml.etree.ElementTree as ET
 
@@ -22,6 +23,10 @@ SUMO_CONFIG = (
 )
 
 ROUTES_FILE = ROOT / "simulation/sumo/routes/test_parking.rou.xml"
+NETWORK_FILE = ROOT / "simulation/sumo/network/osm.net.xml.gz"
+PARKING_FILE = ROOT / "simulation/sumo/additionals/parking.add.xml"
+
+PARKING_SEARCH_DISTANCE_M = 200.0
 
 RESULTS_DIR = ROOT / "simulation/results"
 
@@ -149,6 +154,110 @@ def load_vehicle_assignments():
 
     return assignments
 
+def load_search_boundaries():
+    """
+    Calculate a fixed search-start boundary for every vehicle.
+
+    The boundary is 200 meters of route distance before the
+    entrance to the vehicle's originally preferred parking area.
+    """
+
+    net = sumolib.net.readNet(str(NETWORK_FILE))
+
+    routes_root = ET.parse(ROUTES_FILE).getroot()
+    parking_root = ET.parse(PARKING_FILE).getroot()
+
+    routes = {
+        route.get("id"): route.get("edges").split()
+        for route in routes_root.findall("route")
+    }
+
+    parking_areas = {
+        area.get("id"): area
+        for area in parking_root.findall("parkingArea")
+    }
+
+    boundaries = {}
+
+    for vehicle in routes_root.findall("vehicle"):
+        vehicle_id = vehicle.get("id")
+        stop = vehicle.find("stop")
+
+        if stop is None:
+            continue
+
+        area_id = stop.get("parkingArea")
+
+        if not area_id:
+            continue
+
+        area = parking_areas[area_id]
+
+        route_id = vehicle.get("route")
+
+        if route_id is not None:
+            edges = routes[route_id]
+        else:
+            inline_route = vehicle.find("route")
+            if inline_route is None:
+                raise ValueError(f"No route for {vehicle_id}")
+            edges = inline_route.get("edges").split()
+
+        parking_lane = area.get("lane")
+        parking_edge = parking_lane.rsplit("_", 1)[0]
+        parking_position = float(area.get("startPos", "0.0"))
+
+        # Find the final occurrence of the preferred parking edge.
+        parking_index = next(
+            (
+                i for i in range(len(edges) - 1, -1, -1)
+                if edges[i] == parking_edge
+            ),
+            None
+        )
+
+        if parking_index is None:
+            raise ValueError(
+                f"{vehicle_id}: parking edge {parking_edge} "
+                "not found in original route"
+            )
+
+        remaining = PARKING_SEARCH_DISTANCE_M
+
+        boundary = None
+
+        for index in range(parking_index, -1, -1):
+            edge_id = edges[index]
+            edge = net.getEdge(edge_id)
+
+            if index == parking_index:
+                usable_length = parking_position
+            else:
+                usable_length = edge.getLength()
+
+            if remaining <= usable_length:
+                boundary = {
+                    "edge": edge_id,
+                    "position": usable_length - remaining,
+                    "route_index": index,
+                }
+                break
+
+            remaining -= usable_length
+
+        # If the route is shorter than 200 meters,
+        # begin measuring at departure.
+        if boundary is None:
+            boundary = {
+                "edge": edges[0],
+                "position": 0.0,
+                "route_index": 0,
+            }
+
+        boundaries[vehicle_id] = boundary
+
+    return boundaries
+
 def save_vehicle_metrics(vehicle_metrics, run_dir):
     vehicle_results = run_dir / "vehicle_metrics.csv"
 
@@ -159,6 +268,8 @@ def save_vehicle_metrics(vehicle_metrics, run_dir):
         "departure_time",
         "parking_arrival_time",
         "time_to_parking",
+        "search_start_time",
+        "parking_search_time",
         "waiting_time",
         "time_loss",
         "parking_success",
@@ -275,6 +386,9 @@ def main():
         print(f"Initially available spaces: {total_capacity - total_occupied}")
 
         assignments = load_vehicle_assignments()
+        search_boundaries = load_search_boundaries()
+
+        print(f"Calculated search boundaries for {len(search_boundaries)} vehicles")
 
         vehicle_metrics = {}
 
@@ -286,6 +400,8 @@ def main():
                 "departure_time": None,
                 "parking_arrival_time": None,
                 "time_to_parking": None,
+                "search_start_time": None,
+                "parking_search_time": None,
                 "waiting_time": None,
                 "time_loss": None,
                 "parking_success": False,
@@ -325,7 +441,40 @@ def main():
             for vehicle_id in traci.simulation.getDepartedIDList():
                 if vehicle_id in vehicle_metrics:
                     vehicle_metrics[vehicle_id]["departure_time"] = current_time
+            # Detect when vehicles enter their original parking search zone.
+            active_vehicle_ids = set(traci.vehicle.getIDList())
 
+            for vehicle_id, metrics in vehicle_metrics.items():
+                if metrics["departure_time"] is None:
+                    continue
+
+                if metrics["parking_success"]:
+                    continue
+
+                if metrics["search_start_time"] is not None:
+                    continue
+
+                if vehicle_id not in active_vehicle_ids:
+                    continue
+
+                boundary = search_boundaries.get(vehicle_id)
+
+                if boundary is None:
+                    continue
+
+                current_route_index = traci.vehicle.getRouteIndex(vehicle_id)
+                current_edge = traci.vehicle.getRoadID(vehicle_id)
+                current_position = traci.vehicle.getLanePosition(vehicle_id)
+
+                if (
+                    current_route_index > boundary["route_index"]
+                    or (
+                        current_route_index == boundary["route_index"]
+                        and current_edge == boundary["edge"]
+                        and current_position >= boundary["position"]
+                    )
+                ):
+                    metrics["search_start_time"] = current_time
             # Collect emissions and distance before parking.
             # SUMO CO2 and fuel consumption getters return rates in mg/s.
             step_length = traci.simulation.getDeltaT()
@@ -374,6 +523,13 @@ def main():
                         if departure is not None:
                             metrics["time_to_parking"] = (
                                 current_time - departure
+                            )
+
+                        search_start = metrics["search_start_time"]
+
+                        if search_start is not None:
+                            metrics["parking_search_time"] = (
+                                current_time - search_start
                             )
 
                         # Capture waiting time and time loss at arrival.
