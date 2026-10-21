@@ -8,7 +8,10 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.parse import quote
 from urllib.error import HTTPError, URLError
-from parking_policies import get_parking_policy
+try:
+    from .parking_policies import get_parking_policy
+except ImportError:
+    from parking_policies import get_parking_policy
 
 import traci
 
@@ -131,8 +134,18 @@ def load_vehicle_assignments():
         vehicle_id = vehicle.get("id")
         stop = vehicle.find("stop")
 
-        if stop is not None:
-            assignments[vehicle_id] = stop.get("parkingArea")
+        if stop is None:
+            continue
+
+        preferred_area = stop.get("parkingArea")
+
+        if not preferred_area:
+            continue
+
+        assignments[vehicle_id] = {
+            "preferred_parking_area": preferred_area,
+            "assigned_parking_area": preferred_area,
+        }
 
     return assignments
 
@@ -141,6 +154,7 @@ def save_vehicle_metrics(vehicle_metrics, run_dir):
 
     fieldnames = [
         "vehicle_id",
+        "preferred_parking_area",
         "assigned_parking_area",
         "departure_time",
         "parking_arrival_time",
@@ -148,6 +162,7 @@ def save_vehicle_metrics(vehicle_metrics, run_dir):
         "waiting_time",
         "time_loss",
         "parking_success",
+        "parking_reassignments",
         "co2_g",
         "fuel_g",
         "fuel_gallons",
@@ -174,6 +189,29 @@ def save_vehicle_metrics(vehicle_metrics, run_dir):
     print(f"\nVehicle metrics saved to: {vehicle_results}")
     print(f"Successfully parked: {successful}/{len(vehicle_metrics)}")
 
+def get_parking_area_inventory():
+    parking_file = ROOT / "simulation/sumo/additionals/parking.add.xml"
+    root = ET.parse(parking_file).getroot()
+
+    capacities = {
+        area.get("id"): int(area.get("roadsideCapacity"))
+        for area in root.findall("parkingArea")
+    }
+
+    inventory = []
+
+    for area_id in traci.parkingarea.getIDList():
+        capacity = capacities[area_id]
+        occupied = traci.parkingarea.getVehicleCount(area_id)
+
+        inventory.append({
+            "id": area_id,
+            "capacity": capacity,
+            "occupied": occupied,
+            "available": max(0, capacity - occupied),
+        })
+
+    return inventory
 
 def main():
     parser = argparse.ArgumentParser(
@@ -222,21 +260,36 @@ def main():
 
     try:
         parking_areas = traci.parkingarea.getIDList()
+        parking_inventory = get_parking_area_inventory()
+
+        total_capacity = sum(
+            area["capacity"] for area in parking_inventory
+        )
+
+        total_occupied = sum(
+            area["occupied"] for area in parking_inventory
+        )
+
+        print(f"Total parking capacity: {total_capacity}")
+        print(f"Initially occupied spaces: {total_occupied}")
+        print(f"Initially available spaces: {total_capacity - total_occupied}")
 
         assignments = load_vehicle_assignments()
 
         vehicle_metrics = {}
 
-        for vehicle_id, area_id in assignments.items():
+        for vehicle_id, assignment in assignments.items():
             vehicle_metrics[vehicle_id] = {
                 "vehicle_id": vehicle_id,
-                "assigned_parking_area": area_id,
+                "preferred_parking_area": assignment["preferred_parking_area"],
+                "assigned_parking_area": assignment["assigned_parking_area"],
                 "departure_time": None,
                 "parking_arrival_time": None,
                 "time_to_parking": None,
                 "waiting_time": None,
                 "time_loss": None,
                 "parking_success": False,
+                "parking_reassignments": 0,
                 "co2_g": 0.0,
                 "fuel_g": 0.0,
                 "fuel_gallons": 0.0,
