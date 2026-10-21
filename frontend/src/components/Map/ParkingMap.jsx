@@ -31,57 +31,236 @@ function createVehicleGeoJSON(vehicles) {
   };
 }
 
-function createCarIcon(bodyColor) {
-  const canvas = document.createElement("canvas");
-  canvas.width = 64;
-  canvas.height = 96;
+function tintColor(hex, amt) {
+  const h = hex.replace("#", "");
+  const [r, g, b] = [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const c = (v) => Math.max(0, Math.min(255, v + amt));
+  return `rgb(${c(r)},${c(g)},${c(b)})`;
+}
 
+function createCarIcon(bodyColor) {
+  const W = 64,
+    H = 96;
+  const canvas = document.createElement("canvas");
+  canvas.width = W;
+  canvas.height = H;
   const ctx = canvas.getContext("2d");
 
-  // Tires
-  ctx.fillStyle = "#1f2937";
-  ctx.fillRect(10, 20, 9, 20);
-  ctx.fillRect(45, 20, 9, 20);
-  ctx.fillRect(10, 60, 9, 20);
-  ctx.fillRect(45, 60, 9, 20);
+  const dark = tintColor(bodyColor, -30);
+  const slightly = tintColor(bodyColor, -12);
 
-  // Car body
-  ctx.fillStyle = bodyColor;
-  ctx.strokeStyle = "#ffffff";
-  ctx.lineWidth = 3;
+  // Car body path (reused for multiple draws)
+  function bodyPath() {
+    ctx.beginPath();
+    ctx.moveTo(22, 8);
+    ctx.bezierCurveTo(22, 6, 42, 6, 42, 8); // front bumper
+    ctx.bezierCurveTo(50, 10, 52, 18, 50, 26); // front-right fender flare
+    ctx.lineTo(50, 60);
+    ctx.bezierCurveTo(52, 68, 50, 76, 42, 88); // rear-right fender
+    ctx.bezierCurveTo(42, 90, 22, 90, 22, 88); // rear bumper
+    ctx.bezierCurveTo(14, 76, 12, 68, 14, 60); // rear-left fender
+    ctx.lineTo(14, 26);
+    ctx.bezierCurveTo(12, 18, 14, 10, 22, 8); // front-left fender flare
+    ctx.closePath();
+  }
 
-  ctx.beginPath();
-  ctx.roundRect(15, 8, 34, 80, 10);
+  // 1. Drop shadow
+  ctx.save();
+  ctx.shadowColor = "rgba(0,0,0,0.38)";
+  ctx.shadowBlur = 8;
+  ctx.shadowOffsetX = 1;
+  ctx.shadowOffsetY = 4;
+  ctx.fillStyle = "rgba(0,0,0,0.01)";
+  bodyPath();
   ctx.fill();
-  ctx.stroke();
+  ctx.restore();
 
-  // Front windshield (front of car is UP)
-  ctx.fillStyle = "#dbeafe";
+  // 2. Tires (drawn before body so body overlaps them slightly)
+  function drawTire(x, y, w, h) {
+    ctx.fillStyle = "#1c1c1e";
+    ctx.beginPath();
+    ctx.roundRect(x, y, w, h, 4);
+    ctx.fill();
+    ctx.fillStyle = "#8d8d93";
+    ctx.beginPath();
+    ctx.roundRect(x + 2, y + 2, w - 4, h - 4, 3);
+    ctx.fill();
+    ctx.fillStyle = "#3a3a3c";
+    ctx.beginPath();
+    ctx.roundRect(x + 4, y + 4, w - 8, h - 8, 2);
+    ctx.fill();
+    ctx.fillStyle = "#c7c7cc";
+    ctx.beginPath();
+    ctx.arc(x + w / 2, y + h / 2, 2, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  drawTire(3, 16, 14, 20);
+  drawTire(47, 16, 14, 20);
+  drawTire(3, 60, 14, 20);
+  drawTire(47, 60, 14, 20);
+
+  // 3. Body fill
+  ctx.fillStyle = bodyColor;
+  bodyPath();
+  ctx.fill();
+
+  // 4. Hood (slightly darker)
+  ctx.fillStyle = slightly;
   ctx.beginPath();
-  ctx.moveTo(19, 31);
-  ctx.lineTo(45, 31);
-  ctx.lineTo(41, 40);
-  ctx.lineTo(23, 40);
+  ctx.moveTo(22, 8);
+  ctx.bezierCurveTo(22, 6, 42, 6, 42, 8);
+  ctx.bezierCurveTo(50, 10, 52, 18, 50, 26);
+  ctx.lineTo(14, 26);
+  ctx.bezierCurveTo(12, 18, 14, 10, 22, 8);
   ctx.closePath();
   ctx.fill();
 
-  // Rear window
-  ctx.fillStyle = "#1e3a8a";
+  // 5. Front windshield (large and prominent)
+  ctx.fillStyle = dark;
   ctx.beginPath();
-  ctx.roundRect(21, 61, 22, 12, 3);
+  ctx.moveTo(18, 27);
+  ctx.lineTo(46, 27);
+  ctx.lineTo(44, 49);
+  ctx.lineTo(20, 49);
+  ctx.closePath();
   ctx.fill();
 
-  // Headlights
-  ctx.fillStyle = "#fef08a";
-  ctx.fillRect(20, 11, 7, 5);
-  ctx.fillRect(37, 11, 7, 5);
+  ctx.fillStyle = "#bae6fd";
+  ctx.globalAlpha = 0.92;
+  ctx.beginPath();
+  ctx.moveTo(20, 29);
+  ctx.lineTo(44, 29);
+  ctx.lineTo(42, 47);
+  ctx.lineTo(22, 47);
+  ctx.closePath();
+  ctx.fill();
+  ctx.globalAlpha = 1;
 
-  // Taillights
-  ctx.fillStyle = "#f87171";
-  ctx.fillRect(20, 81, 7, 4);
-  ctx.fillRect(37, 81, 7, 4);
+  // Glass glare
+  ctx.fillStyle = "rgba(255,255,255,0.48)";
+  ctx.beginPath();
+  ctx.moveTo(21, 30);
+  ctx.lineTo(31, 30);
+  ctx.lineTo(29, 40);
+  ctx.lineTo(21, 40);
+  ctx.closePath();
+  ctx.fill();
 
-  return ctx.getImageData(0, 0, canvas.width, canvas.height);
+  // 6. Roof panel
+  ctx.fillStyle = dark;
+  ctx.beginPath();
+  ctx.roundRect(19, 49, 26, 10, 3);
+  ctx.fill();
+
+  // 7. Rear windshield
+  ctx.fillStyle = dark;
+  ctx.beginPath();
+  ctx.moveTo(18, 59);
+  ctx.lineTo(46, 59);
+  ctx.lineTo(44, 74);
+  ctx.lineTo(20, 74);
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.fillStyle = "#1e3a8a";
+  ctx.globalAlpha = 0.88;
+  ctx.beginPath();
+  ctx.moveTo(20, 61);
+  ctx.lineTo(44, 61);
+  ctx.lineTo(42, 72);
+  ctx.lineTo(22, 72);
+  ctx.closePath();
+  ctx.fill();
+  ctx.globalAlpha = 1;
+
+  ctx.fillStyle = "rgba(255,255,255,0.15)";
+  ctx.beginPath();
+  ctx.moveTo(21, 62);
+  ctx.lineTo(27, 62);
+  ctx.lineTo(26, 68);
+  ctx.lineTo(21, 68);
+  ctx.closePath();
+  ctx.fill();
+
+  // 8. Trunk panel
+  ctx.fillStyle = slightly;
+  ctx.beginPath();
+  ctx.moveTo(20, 75);
+  ctx.lineTo(44, 75);
+  ctx.bezierCurveTo(50, 76, 50, 84, 42, 88);
+  ctx.bezierCurveTo(42, 90, 22, 90, 22, 88);
+  ctx.bezierCurveTo(14, 84, 14, 76, 20, 75);
+  ctx.closePath();
+  ctx.fill();
+
+  // 9. Side mirrors
+  ctx.fillStyle = dark;
+  ctx.beginPath();
+  ctx.roundRect(7, 33, 7, 5, 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.roundRect(50, 33, 7, 5, 2);
+  ctx.fill();
+  ctx.fillStyle = "rgba(186,230,253,0.5)";
+  ctx.beginPath();
+  ctx.roundRect(8, 34, 5, 3, 1);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.roundRect(51, 34, 5, 3, 1);
+  ctx.fill();
+
+  // 10. Headlights
+  ctx.fillStyle = "#fef9c3";
+  ctx.beginPath();
+  ctx.roundRect(18, 10, 9, 6, 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.roundRect(37, 10, 9, 6, 2);
+  ctx.fill();
+  ctx.fillStyle = "#ffffff";
+  ctx.beginPath();
+  ctx.ellipse(21, 12, 2.5, 1.5, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.ellipse(42, 12, 2.5, 1.5, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.strokeStyle = "rgba(253,224,71,0.7)";
+  ctx.lineWidth = 1.5;
+  ctx.lineCap = "round";
+  ctx.beginPath();
+  ctx.moveTo(20, 17);
+  ctx.lineTo(44, 17);
+  ctx.stroke();
+
+  // 11. Taillights
+  ctx.fillStyle = "#fca5a5";
+  ctx.beginPath();
+  ctx.roundRect(18, 80, 9, 6, 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.roundRect(37, 80, 9, 6, 2);
+  ctx.fill();
+  ctx.fillStyle = "#ef4444";
+  ctx.beginPath();
+  ctx.roundRect(19, 81, 7, 4, 1);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.roundRect(38, 81, 7, 4, 1);
+  ctx.fill();
+  ctx.strokeStyle = "rgba(239,68,68,0.6)";
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.moveTo(20, 80);
+  ctx.lineTo(44, 80);
+  ctx.stroke();
+
+  // 12. Body outline
+  ctx.strokeStyle = "rgba(255,255,255,0.35)";
+  ctx.lineWidth = 1.2;
+  bodyPath();
+  ctx.stroke();
+
+  return ctx.getImageData(0, 0, W, H);
 }
 
 function ParkingMap() {
