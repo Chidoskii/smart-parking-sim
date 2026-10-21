@@ -39,3 +39,5 @@ data/experiments/*
 Thumbs.db
 .vscode/
 .idea/
+
+*.xml.bak
