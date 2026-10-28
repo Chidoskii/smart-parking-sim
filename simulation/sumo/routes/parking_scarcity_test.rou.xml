@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<routes>
+    <vType id="passenger_car" vClass="passenger" accel="2.6" decel="4.5" length="5" minGap="2.5" maxSpeed="13.9" />
+    <route id="background_route" edges="180618650#0 180618650#1 180618639#5 1080493718#0 1080493718#1 180618651 1080493719#0 1080493719#1 180618642 597619392 406499605#0 406499605#1 406499606 406499936 1202990119#0 1202990119#1 1202990121#1 1202990122 -741012159#1 -741012159#0 1001728051 1202990140#0 -896952385#7 896952386#0 896952386#1 896952386#2 896952386#3 -896952385#0 1202990141#0 1202990141#1 431913450#0 431913450#1 431913450#2 1189306508#0 1189306508#1 1186697642 -1186697643 430638848#1 430638848#2" />
+    <vehicle id="background_vehicle_0" type="passenger_car" route="background_route" depart="0">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_1" type="passenger_car" route="background_route" depart="1">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_2" type="passenger_car" route="background_route" depart="2">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_3" type="passenger_car" route="background_route" depart="3">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_4" type="passenger_car" route="background_route" depart="4">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_5" type="passenger_car" route="background_route" depart="5">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_6" type="passenger_car" route="background_route" depart="6">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_7" type="passenger_car" route="background_route" depart="7">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_8" type="passenger_car" route="background_route" depart="8">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_9" type="passenger_car" route="background_route" depart="9">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_10" type="passenger_car" route="background_route" depart="10">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_11" type="passenger_car" route="background_route" depart="11">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_12" type="passenger_car" route="background_route" depart="12">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_13" type="passenger_car" route="background_route" depart="13">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_14" type="passenger_car" route="background_route" depart="14">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_15" type="passenger_car" route="background_route" depart="15">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_16" type="passenger_car" route="background_route" depart="16">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_17" type="passenger_car" route="background_route" depart="17">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_18" type="passenger_car" route="background_route" depart="18">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_19" type="passenger_car" route="background_route" depart="19">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_20" type="passenger_car" route="background_route" depart="20">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_21" type="passenger_car" route="background_route" depart="21">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_22" type="passenger_car" route="background_route" depart="22">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_23" type="passenger_car" route="background_route" depart="23">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_24" type="passenger_car" route="background_route" depart="24">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_25" type="passenger_car" route="background_route" depart="25">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_26" type="passenger_car" route="background_route" depart="26">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_27" type="passenger_car" route="background_route" depart="27">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+    <vehicle id="background_vehicle_28" type="passenger_car" route="background_route" depart="28">
+        <stop parkingArea="far_pa_56" duration="1200" />
+    </vehicle>
+</routes>
