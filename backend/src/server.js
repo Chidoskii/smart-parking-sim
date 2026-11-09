@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const http = require("http");
@@ -7,8 +8,6 @@ const parkingAreasRoutes = require("./routes/parkingAreas.routes");
 const parkingLotsRoutes = require("./routes/parkingLots.routes");
 const occupancyRoutes = require("./routes/occupancy.routes");
 const vehicleRoutes = require("./routes/vehicles.routes");
-
-require("dotenv").config();
 
 const app = express();
 

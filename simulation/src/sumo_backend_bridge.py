@@ -1,6 +1,7 @@
 import csv
 import json
 import time
+import math
 import sumolib
 import argparse
 import xml.etree.ElementTree as ET
@@ -11,8 +12,16 @@ from urllib.parse import quote
 from urllib.error import HTTPError, URLError
 try:
     from .parking_policies import get_parking_policy
+    from .campus_destinations import (
+        DEFAULT_DESTINATION,
+        get_destination_coordinates,
+    )
 except ImportError:
     from parking_policies import get_parking_policy
+    from campus_destinations import (
+        DEFAULT_DESTINATION,
+        get_destination_coordinates,
+    )
 
 import traci
 
@@ -27,7 +36,9 @@ NETWORK_FILE = ROOT / "simulation/sumo/network/osm.net.xml.gz"
 PARKING_FILE = ROOT / "simulation/sumo/additionals/parking.add.xml"
 
 PARKING_SEARCH_DISTANCE_M = 200.0
-
+BASELINE_SEARCH_DISTANCE = 200.0
+BASELINE_LOCAL_RADIUS = 250.0
+BASELINE_MAX_ALTERNATIVES = 3
 RESULTS_DIR = ROOT / "simulation/results"
 
 SCENARIOS = ("baseline", "availability", "smart")
@@ -157,7 +168,7 @@ def load_vehicle_assignments(route_file):
 
     return assignments
 
-def load_search_boundaries(route_file):
+def load_search_boundaries(route_file, parking_file):
     """
     Calculate a fixed search-start boundary for every vehicle.
 
@@ -168,7 +179,7 @@ def load_search_boundaries(route_file):
     net = sumolib.net.readNet(str(NETWORK_FILE))
 
     routes_root = ET.parse(route_file).getroot()
-    parking_root = ET.parse(PARKING_FILE).getroot()
+    parking_root = ET.parse(parking_file).getroot()
 
     routes = {
         route.get("id"): route.get("edges").split()
@@ -213,11 +224,13 @@ def load_search_boundaries(route_file):
         parking_edge = parking_lane.rsplit("_", 1)[0]
         parking_position = float(area.get("startPos", "0.0"))
 
-        # Find the final occurrence of the preferred parking edge.
+        # Find the first occurrence of the preferred parking edge.
+        # This represents the inbound journey to the parking area,
+        # rather than a possible revisit during the return trip.
         parking_index = next(
             (
-                i for i in range(len(edges) - 1, -1, -1)
-                if edges[i] == parking_edge
+                i for i, edge_id in enumerate(edges)
+                if edge_id == parking_edge
             ),
             None
         )
@@ -271,8 +284,19 @@ def save_vehicle_metrics(vehicle_metrics, run_dir):
         "vehicle_id",
         "preferred_parking_area",
         "assigned_parking_area",
+        "destination_building",
+        "destination_displacement_m",
+        "estimated_walking_time_s",
+        "walking_distance_m",
+        "walking_time_s",
         "departure_time",
         "parking_arrival_time",
+        "parking_departure_time",
+        "actual_parking_duration_s",
+        "return_travel_time_s",
+        "return_distance_m",
+        "completed_return_trip",
+        "exit_arrival_time",
         "time_to_parking",
         "search_start_time",
         "parking_search_time",
@@ -296,7 +320,10 @@ def save_vehicle_metrics(vehicle_metrics, run_dir):
     ) as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerows(vehicle_metrics.values())
+        writer.writerows(
+            {name: metrics.get(name) for name in fieldnames}
+            for metrics in vehicle_metrics.values()
+        )
 
     successful = sum(
         1
@@ -307,8 +334,7 @@ def save_vehicle_metrics(vehicle_metrics, run_dir):
     print(f"\nVehicle metrics saved to: {vehicle_results}")
     print(f"Successfully parked: {successful}/{len(vehicle_metrics)}")
 
-def get_parking_area_inventory():
-    parking_file = ROOT / "simulation/sumo/additionals/parking.add.xml"
+def get_parking_area_inventory(parking_file):
     root = ET.parse(parking_file).getroot()
 
     capacities = {
@@ -331,7 +357,12 @@ def get_parking_area_inventory():
 
     return inventory
 
-def get_reachable_parking_candidates(vehicle_id, inventory, reservations):
+def get_reachable_parking_candidates(
+    vehicle_id,
+    inventory,
+    reservations,
+    destination_xy=None,
+):
     candidates = []
 
     for area in inventory:
@@ -359,11 +390,19 @@ def get_reachable_parking_candidates(vehicle_id, inventory, reservations):
         if not route.edges:
             continue
 
-        candidates.append({
+        candidate = {
             "id": area_id,
             "capacity": area["capacity"],
             "distance": route.length,
-        })
+        }
+
+        if destination_xy is not None:
+            candidate["walking_distance"] = calculate_walking_distance(
+                area_id,
+                destination_xy,
+            )
+
+        candidates.append(candidate)
 
     return candidates
 
@@ -392,6 +431,233 @@ def get_pending_reservations(vehicle_metrics):
     return reservations
 
 
+def get_parking_area_coordinates(parking_area_id):
+    lane_id = traci.parkingarea.getLaneID(parking_area_id)
+
+    start_pos = traci.parkingarea.getStartPos(parking_area_id)
+    end_pos = traci.parkingarea.getEndPos(parking_area_id)
+
+    midpoint = (start_pos + end_pos) / 2
+
+    # Extract the edge ID and lane index from the lane ID.
+    edge_id, lane_index = lane_id.rsplit("_", 1)
+
+    return traci.simulation.convert2D(
+        edge_id,
+        midpoint,
+        laneIndex=int(lane_index),
+    )
+
+
+def calculate_destination_displacement(
+    preferred_parking_area,
+    assigned_parking_area,
+):
+    preferred_x, preferred_y = get_parking_area_coordinates(
+        preferred_parking_area
+    )
+
+    assigned_x, assigned_y = get_parking_area_coordinates(
+        assigned_parking_area
+    )
+
+    return math.hypot(
+        assigned_x - preferred_x,
+        assigned_y - preferred_y,
+    )
+
+
+def estimate_walking_time(displacement_m, walking_speed_mps=1.4):
+    return displacement_m / walking_speed_mps
+
+def calculate_walking_distance(parking_area_id, destination_xy):
+    parking_xy = get_parking_area_coordinates(parking_area_id)
+
+    return math.dist(parking_xy, destination_xy)
+
+def diagnose_parking_queues(vehicle_metrics, parking_file):
+    inventory = {
+        area["id"]: area
+        for area in get_parking_area_inventory(parking_file)
+    }
+
+    print("\n--- PARKING QUEUE DIAGNOSTICS ---")
+
+    for vehicle_id in traci.vehicle.getIDList():
+        if not vehicle_id.startswith("parking_vehicle_"):
+            continue
+
+        metrics = vehicle_metrics.get(vehicle_id)
+
+        if metrics is None or metrics["parking_success"]:
+            continue
+
+        area_id = metrics["assigned_parking_area"]
+        area = inventory.get(area_id)
+
+        if area is None:
+            continue
+
+        speed = traci.vehicle.getSpeed(vehicle_id)
+        waiting_time = traci.vehicle.getWaitingTime(vehicle_id)
+
+        if speed > 0.5 and waiting_time < 30:
+            continue
+
+        print(
+            f"{vehicle_id} | "
+            f"area={area_id} | "
+            f"capacity={area['capacity']} | "
+            f"occupied={area['occupied']} | "
+            f"available={area['available']} | "
+            f"speed={speed:.2f} | "
+            f"waiting={waiting_time:.0f}s | "
+            f"road={traci.vehicle.getRoadID(vehicle_id)}"
+        )
+
+def diagnose_vehicle_blocking(vehicle_id):
+    if vehicle_id not in traci.vehicle.getIDList():
+        return
+
+    leader = traci.vehicle.getLeader(vehicle_id, 100)
+
+    print(f"\n--- BLOCKING DIAGNOSTIC: {vehicle_id} ---")
+    print("Road:", traci.vehicle.getRoadID(vehicle_id))
+    print("Lane:", traci.vehicle.getLaneID(vehicle_id))
+    print("Speed:", traci.vehicle.getSpeed(vehicle_id))
+    print("Waiting:", traci.vehicle.getWaitingTime(vehicle_id))
+    print("Leader:", leader)
+    print("Current stop state:", traci.vehicle.getStopState(vehicle_id))
+
+def handle_baseline_local_search(
+    vehicle_metrics,
+    parking_file,
+    attempted_vehicles,
+):
+    inventory = {
+        area["id"]: area
+        for area in get_parking_area_inventory(parking_file)
+    }
+
+    for vehicle_id in traci.vehicle.getIDList():
+
+        if vehicle_id not in vehicle_metrics:
+            continue
+
+        if vehicle_id in attempted_vehicles:
+            continue
+
+        metrics = vehicle_metrics[vehicle_id]
+
+        if metrics["parking_success"]:
+            continue
+
+        preferred_area = metrics["assigned_parking_area"]
+        preferred_info = inventory.get(preferred_area)
+
+        if preferred_info is None:
+            continue
+
+        if preferred_info["available"] > 0:
+            continue
+
+        # Check whether the driver is approaching the preferred area.
+        lane_id = traci.parkingarea.getLaneID(preferred_area)
+        edge_id = traci.lane.getEdgeID(lane_id)
+        lane_pos = traci.parkingarea.getStartPos(preferred_area)
+
+        distance = traci.vehicle.getDrivingDistance(
+            vehicle_id,
+            edge_id,
+            lane_pos,
+        )
+
+        if not 0 <= distance <= BASELINE_SEARCH_DISTANCE:
+            continue
+
+        # One local search attempt per vehicle for this first test.
+        attempted_vehicles.add(vehicle_id)
+
+        print(
+            f"BASELINE SEARCH: {vehicle_id} "
+            f"found {preferred_area} full "
+            f"at distance {distance:.1f}m"
+        )
+
+        # Search only around the preferred parking area.
+        preferred_xy = get_parking_area_coordinates(preferred_area)
+
+        candidates = []
+
+        for area in inventory.values():
+
+            candidate_id = area["id"]
+
+            if candidate_id == preferred_area:
+                continue
+
+            if area["available"] <= 0:
+                continue
+
+            candidate_xy = get_parking_area_coordinates(candidate_id)
+
+            local_distance = math.dist(
+                preferred_xy,
+                candidate_xy,
+            )
+
+            if local_distance > BASELINE_LOCAL_RADIUS:
+                continue
+
+            candidates.append({
+                "id": candidate_id,
+                "local_distance": local_distance,
+            })
+
+        # Deterministic nearest-first local selection.
+        candidates.sort(
+            key=lambda area: (
+                area["local_distance"],
+                area["id"],
+            )
+        )
+
+        if not candidates:
+            print(
+                f"BASELINE NO LOCAL PARKING: {vehicle_id}"
+            )
+            continue
+
+        # Try at most three nearby alternatives.
+        for candidate in candidates[:BASELINE_MAX_ALTERNATIVES]:
+
+            candidate_id = candidate["id"]
+
+            try:
+                traci.vehicle.rerouteParkingArea(
+                    vehicle_id,
+                    candidate_id,
+                )
+
+            except traci.TraCIException as error:
+                print(
+                    f"BASELINE REROUTE FAILED: "
+                    f"{vehicle_id} -> {candidate_id}: {error}"
+                )
+                continue
+
+            metrics["assigned_parking_area"] = candidate_id
+            metrics["parking_reassignments"] += 1
+
+            print(
+                f"BASELINE LOCAL REASSIGNMENT: "
+                f"{vehicle_id} "
+                f"{preferred_area} -> {candidate_id} "
+                f"({candidate['local_distance']:.1f}m away)"
+            )
+
+            break
+
 def main():
     parser = argparse.ArgumentParser(
         description="Run the smart parking SUMO simulation."
@@ -411,9 +677,23 @@ def main():
         help="SUMO route file to use for this simulation."
     )
 
+    parser.add_argument(
+        "--parking-file",
+        type=Path,
+        default=PARKING_FILE,
+        help="SUMO parking configuration file."
+    )
+
     args = parser.parse_args()
 
     route_file = args.route_file.resolve()
+
+    parking_file = args.parking_file.resolve()
+
+    baseline_attempted_vehicles = set()
+
+    if not parking_file.is_file():
+        parser.error(f"Parking file not found: {parking_file}")
 
     if not route_file.is_file():
         parser.error(f"Route file not found: {route_file}")
@@ -449,11 +729,15 @@ def main():
         str(SUMO_CONFIG),
         "--route-files",
         str(route_file),
+        "--additional-files",
+        str(parking_file),
+        "--time-to-teleport",
+        "-1",
     ])
 
     try:
         parking_areas = traci.parkingarea.getIDList()
-        parking_inventory = get_parking_area_inventory()
+        parking_inventory = get_parking_area_inventory(parking_file)
 
         total_capacity = sum(
             area["capacity"] for area in parking_inventory
@@ -468,7 +752,7 @@ def main():
         print(f"Initially available spaces: {total_capacity - total_occupied}")
 
         assignments = load_vehicle_assignments(route_file)
-        search_boundaries = load_search_boundaries(route_file)
+        search_boundaries = load_search_boundaries(route_file, parking_file)
 
         print(f"Calculated search boundaries for {len(search_boundaries)} vehicles")
 
@@ -479,8 +763,21 @@ def main():
                 "vehicle_id": vehicle_id,
                 "preferred_parking_area": assignment["preferred_parking_area"],
                 "assigned_parking_area": assignment["assigned_parking_area"],
+                "destination_building": DEFAULT_DESTINATION,
+                "destination_displacement_m": None,
+                "estimated_walking_time_s": None,
+                "walking_distance_m": None,
+                "walking_time_s": None,
                 "departure_time": None,
                 "parking_arrival_time": None,
+                "parking_departure_time": None,
+                "actual_parking_duration_s": None,
+                "return_travel_time_s": None,
+                "return_distance_m": None,
+                "completed_return_trip": False,
+                "exit_arrival_time": None,
+                "_parking_departure_distance_m": None,
+                "_last_distance_m": 0.0,
                 "time_to_parking": None,
                 "search_start_time": None,
                 "parking_search_time": None,
@@ -520,6 +817,20 @@ def main():
         for step in range(SIMULATION_STEPS):
             traci.simulationStep()
             current_time = traci.simulation.getTime()
+
+            if scenario == "baseline" and step % 10 == 0:
+                handle_baseline_local_search(
+                    vehicle_metrics,
+                    parking_file,
+                    baseline_attempted_vehicles,
+                )
+
+            # Diagnose parking queues and vehicle blocking.
+            if step == 1200:
+                diagnose_parking_queues(vehicle_metrics, parking_file)
+                diagnose_vehicle_blocking("parking_vehicle_6")
+
+            # Record vehicle teleportation.
             for vehicle_id in traci.simulation.getStartingTeleportIDList():
                 if vehicle_id in vehicle_metrics:
                     vehicle_metrics[vehicle_id]["teleported"] = True
@@ -565,12 +876,14 @@ def main():
                     )
                 ):
                     metrics["search_start_time"] = current_time
-                    if scenario == "availability":
-                        inventory = get_parking_area_inventory()
+                    
+                    if scenario in ("availability", "smart"):
+                        inventory = get_parking_area_inventory(parking_file)
                         reservations = get_pending_reservations(vehicle_metrics)
 
                         preferred_area = metrics["assigned_parking_area"]
 
+                        # Exclude this vehicle's own reservation.
                         reservations[preferred_area] = max(
                             0,
                             reservations.get(preferred_area, 0) - 1,
@@ -585,7 +898,10 @@ def main():
                         }
 
                         preferred_info = next(
-                            (area for area in inventory if area["id"] == preferred_area),
+                            (
+                                area for area in inventory
+                                if area["id"] == preferred_area
+                            ),
                             None,
                         )
 
@@ -594,12 +910,36 @@ def main():
                                 f"WARNING: Unknown parking area "
                                 f"{preferred_area} for {vehicle_id}"
                             )
+                            continue
 
-                        elif occupancy[preferred_area] >= preferred_info["capacity"]:
+                        preferred_full = (
+                            occupancy[preferred_area]
+                            >= preferred_info["capacity"]
+                        )
+
+                        # Availability acts only when preferred is full.
+                        # Smart evaluates all feasible parking choices.
+                        should_evaluate = (
+                            scenario == "smart"
+                            or (
+                                scenario == "availability"
+                                and preferred_full
+                            )
+                        )
+
+                        if should_evaluate:
+                            destination_xy = None
+
+                            if scenario == "smart":
+                                destination_xy = get_destination_coordinates(
+                                    metrics["destination_building"]
+                                )
+
                             candidates = get_reachable_parking_candidates(
                                 vehicle_id,
                                 inventory,
                                 reservations,
+                                destination_xy=destination_xy,
                             )
 
                             selected_area = policy.select_parking_area(
@@ -609,7 +949,10 @@ def main():
                                 occupancy=occupancy,
                             )
 
-                            if selected_area is not None and selected_area != preferred_area:
+                            if (
+                                selected_area is not None
+                                and selected_area != preferred_area
+                            ):
                                 try:
                                     traci.vehicle.rerouteParkingArea(
                                         vehicle_id,
@@ -631,11 +974,47 @@ def main():
                                         f"{vehicle_id}: {error}"
                                     )
 
-                            else:
+                            elif selected_area is None:
                                 print(
                                     f"NO AVAILABLE ALTERNATIVE: "
                                     f"{vehicle_id} at time {current_time:.0f}s"
                                 )
+
+            # Snapshot parked vehicles to detect departure after their stop.
+            parked_now = set()
+            for area_id in parking_areas:
+                parked_now.update(traci.parkingarea.getVehicleIDs(area_id))
+
+            # Detect experimental vehicles that have left their parking stop.
+            for vehicle_id, metrics in vehicle_metrics.items():
+                if (metrics["parking_arrival_time"] is None
+                        or metrics["parking_departure_time"] is not None):
+                    continue
+                if vehicle_id in active_vehicle_ids and vehicle_id not in parked_now:
+                    metrics["parking_departure_time"] = current_time
+                    metrics["actual_parking_duration_s"] = round(
+                        current_time - metrics["parking_arrival_time"], 2
+                    )
+                    metrics["_parking_departure_distance_m"] = traci.vehicle.getDistance(vehicle_id)
+                    print(f"LEFT PARKING: {vehicle_id} at {current_time:.0f}s")
+
+            # Detect completed trips. SUMO reports arrived IDs when a route ends.
+            for vehicle_id in traci.simulation.getArrivedIDList():
+                if vehicle_id not in vehicle_metrics:
+                    continue
+                metrics = vehicle_metrics[vehicle_id]
+                if metrics["parking_departure_time"] is not None:
+                    metrics["exit_arrival_time"] = current_time
+                    metrics["return_travel_time_s"] = round(
+                        current_time - metrics["parking_departure_time"], 2
+                    )
+                    start_distance = metrics["_parking_departure_distance_m"]
+                    if start_distance is not None:
+                        metrics["return_distance_m"] = round(
+                            max(0.0, metrics["_last_distance_m"] - start_distance), 2
+                        )
+                    metrics["completed_return_trip"] = not metrics["teleported"]
+
             # Collect emissions and distance before parking.
             # SUMO CO2 and fuel consumption getters return rates in mg/s.
             step_length = traci.simulation.getDeltaT()
@@ -659,7 +1038,14 @@ def main():
 
                 # Record current cumulative vehicle distance.
                 metrics["distance_m"] = traci.vehicle.getDistance(vehicle_id)
+                metrics["_last_distance_m"] = metrics["distance_m"]
                 metrics["distance_miles"] = (metrics["distance_m"] / METERS_PER_MILE)
+
+            # Preserve the last observed odometer reading after parking too.
+            # This does not change the original inbound-only distance metric.
+            for vehicle_id, metrics in vehicle_metrics.items():
+                if vehicle_id in active_vehicle_ids:
+                    metrics["_last_distance_m"] = traci.vehicle.getDistance(vehicle_id)
 
             # Check which vehicles are currently parked.
             for area_id in parking_areas:
@@ -678,6 +1064,42 @@ def main():
                     ):
                         metrics["parking_arrival_time"] = current_time
                         metrics["parking_success"] = True
+
+                        # Calculate walking distance from the assigned parking area
+                        # to the vehicle's desired campus building.
+                        destination_id = metrics["destination_building"]
+
+                        destination_xy = get_destination_coordinates(destination_id)
+
+                        walking_distance = calculate_walking_distance(
+                            area_id,
+                            destination_xy,
+                        )
+
+                        metrics["walking_distance_m"] = round(walking_distance, 2)
+
+                        metrics["walking_time_s"] = round(
+                            estimate_walking_time(walking_distance), 2
+                        )
+
+                        # Measure displacement from the originally preferred parking area
+                        # to the parking area where the vehicle actually parked.
+                        preferred_area = metrics["preferred_parking_area"]
+                        final_area = metrics["assigned_parking_area"]
+
+                        if preferred_area and final_area:
+                            displacement = calculate_destination_displacement(
+                                preferred_area,
+                                final_area,
+                            )
+
+                            metrics["destination_displacement_m"] = round(
+                                displacement, 2
+                            )
+
+                            metrics["estimated_walking_time_s"] = round(
+                                estimate_walking_time(displacement), 2
+                            )
 
                         departure = metrics["departure_time"]
 

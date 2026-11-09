@@ -6,50 +6,93 @@ const capacityPath = path.resolve(
   "../../../shared/config/parking-capacity.json",
 );
 
+const scenarioPath = process.env.PARKING_SCENARIO_FILE;
+
 const capacityData = JSON.parse(fs.readFileSync(capacityPath, "utf8"));
 
-// In-memory occupancy state.
-// Initially, all areas are assumed empty for testing.
+const scenarioData = scenarioPath
+  ? JSON.parse(fs.readFileSync(path.resolve(scenarioPath), "utf8"))
+  : null;
+
+console.log("Parking scenario path:", scenarioPath || "DEFAULT");
+console.log("Scenario loaded:", scenarioData !== null);
+
+if (scenarioData) {
+  console.log("Scenario:", scenarioData.scenario);
+  console.log(
+    "Modeled initial occupancy:",
+    scenarioData.modeled_initial_occupied,
+  );
+}
+
 const occupancy = new Map();
 
 for (const areaId of Object.keys(capacityData.areas)) {
   occupancy.set(areaId, 0);
 }
 
-function getAreaOccupancy(areaId) {
+function getCapacity(areaId) {
   const area = capacityData.areas[areaId];
 
   if (!area) {
     throw new Error(`Unknown parking area: ${areaId}`);
   }
 
-  const occupied = occupancy.get(areaId);
-  const capacity = area.capacity;
+  if (!scenarioData) {
+    return {
+      physicalCapacity: area.capacity,
+      initialOccupied: 0,
+      effectiveCapacity: area.capacity,
+    };
+  }
+
+  const scenarioArea = scenarioData.areas[areaId];
+
+  if (!scenarioArea) {
+    throw new Error(`Missing scenario area: ${areaId}`);
+  }
+
+  return {
+    physicalCapacity: scenarioArea.physical_capacity,
+    initialOccupied: scenarioArea.modeled_initial_occupied,
+    effectiveCapacity: scenarioArea.effective_capacity,
+  };
+}
+
+function getAreaOccupancy(areaId) {
+  const { physicalCapacity, initialOccupied, effectiveCapacity } =
+    getCapacity(areaId);
+
+  const simulatedOccupied = occupancy.get(areaId);
+  const occupied = initialOccupied + simulatedOccupied;
 
   return {
     id: areaId,
-    capacity,
+    capacity: physicalCapacity,
+    effectiveCapacity,
+    initialOccupied,
+    simulatedOccupied,
     occupied,
-    available: capacity - occupied,
-    occupancyRate: capacity > 0 ? (occupied / capacity) * 100 : 0,
+    available: Math.max(0, effectiveCapacity - simulatedOccupied),
+    occupancyRate:
+      physicalCapacity > 0 ? (occupied / physicalCapacity) * 100 : 0,
   };
 }
 
 function updateAreaOccupancy(areaId, occupied) {
-  const area = capacityData.areas[areaId];
+  const { effectiveCapacity } = getCapacity(areaId);
 
-  if (!area) {
-    throw new Error(`Unknown parking area: ${areaId}`);
-  }
-
-  if (!Number.isInteger(occupied) || occupied < 0 || occupied > area.capacity) {
+  if (
+    !Number.isInteger(occupied) ||
+    occupied < 0 ||
+    occupied > effectiveCapacity
+  ) {
     throw new Error(
-      `Invalid occupancy for ${areaId}. Must be between 0 and ${area.capacity}`,
+      `Invalid occupancy for ${areaId}. Must be between 0 and ${effectiveCapacity}`,
     );
   }
 
   occupancy.set(areaId, occupied);
-
   return getAreaOccupancy(areaId);
 }
 
@@ -68,15 +111,17 @@ function getLotOccupancy(lotId) {
 
   const areas = lot.parkingAreas.map(getAreaOccupancy);
 
+  const capacity = areas.reduce((sum, area) => sum + area.capacity, 0);
+
   const occupied = areas.reduce((sum, area) => sum + area.occupied, 0);
 
   return {
     id: lotId,
     name: lot.name,
-    capacity: lot.capacity,
+    capacity,
     occupied,
-    available: lot.capacity - occupied,
-    occupancyRate: lot.capacity > 0 ? (occupied / lot.capacity) * 100 : 0,
+    available: capacity - occupied,
+    occupancyRate: capacity > 0 ? (occupied / capacity) * 100 : 0,
     parkingAreaCount: areas.length,
   };
 }
@@ -84,12 +129,14 @@ function getLotOccupancy(lotId) {
 function getAllLotOccupancy() {
   const lots = Object.keys(capacityData.lots).map(getLotOccupancy);
 
+  const totalCapacity = lots.reduce((sum, lot) => sum + lot.capacity, 0);
+
   const totalOccupied = lots.reduce((sum, lot) => sum + lot.occupied, 0);
 
   return {
-    totalCapacity: capacityData.totalCapacity,
+    totalCapacity,
     totalOccupied,
-    totalAvailable: capacityData.totalCapacity - totalOccupied,
+    totalAvailable: totalCapacity - totalOccupied,
     lots,
   };
 }

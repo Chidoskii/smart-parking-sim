@@ -298,13 +298,21 @@ function ParkingMap() {
       if (occupied === undefined) continue;
 
       features.sort((a, b) =>
-        a.properties.id.localeCompare(b.properties.id, undefined, {
-          numeric: true,
-        }),
+        String(a.properties.id).localeCompare(
+          String(b.properties.id),
+          undefined,
+          { numeric: true },
+        ),
+      );
+
+      const occupiedCount = Math.min(
+        features.length,
+        Math.max(0, Math.floor(occupied)),
       );
 
       features.forEach((feature, index) => {
-        feature.properties.status = index < occupied ? "occupied" : "available";
+        feature.properties.status =
+          index < occupiedCount ? "occupied" : "available";
       });
     }
 
@@ -388,8 +396,10 @@ function ParkingMap() {
       const occupancyData = await occupancyResponse.json();
 
       for (const area of occupancyData.areas) {
-        if (!occupancyRef.current.has(area.id)) {
-          occupancyRef.current.set(area.id, area.occupied);
+        const occupied = Number(area.occupied);
+
+        if (Number.isFinite(occupied)) {
+          occupancyRef.current.set(area.id, Math.max(0, occupied));
         }
       }
 
