@@ -2,7 +2,7 @@ from pathlib import Path
 import json
 import traci
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 
 CONFIG = ROOT / "simulation/sumo/config/campus.sumocfg"
 CAPACITY_FILE = ROOT / "shared/config/parking-capacity.json"

@@ -3,7 +3,7 @@ import argparse
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 
 SOURCE_FILE = ROOT / "simulation/sumo/routes/test_parking.rou.xml"
 OUTPUT_FILE = ROOT / "simulation/sumo/routes/parking_scarcity_test.rou.xml"

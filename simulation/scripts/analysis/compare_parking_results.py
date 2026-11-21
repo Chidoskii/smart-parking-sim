@@ -2,7 +2,7 @@
 import csv
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 RESULTS_DIR = ROOT / "simulation" / "results"
 
 SCENARIOS = ("baseline", "availability", "smart")

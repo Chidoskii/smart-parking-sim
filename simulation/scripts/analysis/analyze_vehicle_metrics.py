@@ -5,7 +5,7 @@ from collections import defaultdict
 from pathlib import Path
 from statistics import mean
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 
 METRICS_FILE = ROOT / "simulation/results/vehicle_metrics.csv"
 LOTS_FILE = ROOT / "shared/config/parking-lots.json"

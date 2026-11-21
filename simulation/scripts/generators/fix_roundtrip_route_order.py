@@ -1,7 +1,7 @@
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 
 route_file = (
     ROOT / "simulation/sumo/routes/combined_parking_roundtrip.rou.xml"

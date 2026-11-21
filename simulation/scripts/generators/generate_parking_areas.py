@@ -44,7 +44,7 @@ def main():
     parser.add_argument('network_xml')
     parser.add_argument('output')
     args=parser.parse_args()
-    project_root = Path(__file__).resolve().parents[2]
+    project_root = Path(__file__).resolve().parents[3]
 
     lot_mapping = load_parking_lot_mapping(project_root / "shared" / "config" / "parking-lots.json")
     with open_xml(args.network_xml) as f:

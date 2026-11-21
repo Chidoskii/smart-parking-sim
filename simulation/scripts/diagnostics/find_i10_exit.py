@@ -3,7 +3,7 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 import sumolib
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 
 net = sumolib.net.readNet(
     str(ROOT / "simulation/sumo/network/osm.net.xml.gz")

@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 from collections import Counter
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 
 EXPLICIT_FILE = ROOT / "shared/geojson/parking-spaces.geojson"
 PREVIEW_FILE = ROOT / "shared/geojson/parking-spaces-preview.geojson"

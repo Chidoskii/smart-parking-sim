@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 
 import sumolib
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 
 NETWORK = ROOT / "simulation/sumo/network/osm.net.xml.gz"
 PARKING = ROOT / "simulation/sumo/additionals/parking.add.xml"
