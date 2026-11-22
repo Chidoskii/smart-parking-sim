@@ -41,7 +41,7 @@ BASELINE_LOCAL_RADIUS = 250.0
 BASELINE_MAX_ALTERNATIVES = 3
 RESULTS_DIR = ROOT / "simulation/results"
 
-SCENARIOS = ("baseline", "availability", "smart")
+SCENARIOS = ("baseline", "availability", "smart", "smart_v2")
 
 
 def create_run_directory(scenario):
@@ -149,8 +149,9 @@ def load_vehicle_assignments(route_file):
     for vehicle in root.findall("vehicle"):
         vehicle_id = vehicle.get("id")
 
-        if not vehicle_id.startswith("parking_vehicle_"):
+        if not vehicle_id or not vehicle_id.startswith("parking_vehicle_"):
             continue
+
         stop = vehicle.find("stop")
 
         if stop is None:
@@ -161,9 +162,18 @@ def load_vehicle_assignments(route_file):
         if not preferred_area:
             continue
 
+        # Read the destination assigned to this vehicle.
+        destination = DEFAULT_DESTINATION
+
+        for param in vehicle.findall("param"):
+            if param.get("key") == "destination_building":
+                destination = param.get("value", DEFAULT_DESTINATION)
+                break
+
         assignments[vehicle_id] = {
             "preferred_parking_area": preferred_area,
             "assigned_parking_area": preferred_area,
+            "destination_building": destination,
         }
 
     return assignments
@@ -292,6 +302,7 @@ def save_vehicle_metrics(vehicle_metrics, run_dir):
         "departure_time",
         "parking_arrival_time",
         "parking_departure_time",
+        "parking_event_count",
         "actual_parking_duration_s",
         "return_travel_time_s",
         "return_distance_m",
@@ -529,22 +540,20 @@ def diagnose_vehicle_blocking(vehicle_id):
     print("Leader:", leader)
     print("Current stop state:", traci.vehicle.getStopState(vehicle_id))
 
+
 def handle_baseline_local_search(
     vehicle_metrics,
     parking_file,
-    attempted_vehicles,
+    search_state,
 ):
+    # Occupancy is used only when the driver reaches an area.
     inventory = {
         area["id"]: area
         for area in get_parking_area_inventory(parking_file)
     }
 
     for vehicle_id in traci.vehicle.getIDList():
-
         if vehicle_id not in vehicle_metrics:
-            continue
-
-        if vehicle_id in attempted_vehicles:
             continue
 
         metrics = vehicle_metrics[vehicle_id]
@@ -552,19 +561,27 @@ def handle_baseline_local_search(
         if metrics["parking_success"]:
             continue
 
-        preferred_area = metrics["assigned_parking_area"]
-        preferred_info = inventory.get(preferred_area)
+        current_area = metrics["assigned_parking_area"]
 
-        if preferred_info is None:
+        if current_area not in inventory:
             continue
 
-        if preferred_info["available"] > 0:
+        state = search_state.setdefault(
+            vehicle_id,
+            {
+                "visited_areas": set(),
+                "reassignments": 0,
+                "search_exhausted": False,
+            },
+        )
+
+        if state["search_exhausted"]:
             continue
 
-        # Check whether the driver is approaching the preferred area.
-        lane_id = traci.parkingarea.getLaneID(preferred_area)
+        # Observe occupancy only near the assigned parking area.
+        lane_id = traci.parkingarea.getLaneID(current_area)
         edge_id = traci.lane.getEdgeID(lane_id)
-        lane_pos = traci.parkingarea.getStartPos(preferred_area)
+        lane_pos = traci.parkingarea.getStartPos(current_area)
 
         distance = traci.vehicle.getDrivingDistance(
             vehicle_id,
@@ -572,65 +589,54 @@ def handle_baseline_local_search(
             lane_pos,
         )
 
-        if not 0 <= distance <= BASELINE_SEARCH_DISTANCE:
+        if not 0 <= distance <= 20.0:
             continue
 
-        # One local search attempt per vehicle for this first test.
-        attempted_vehicles.add(vehicle_id)
+        if inventory[current_area]["available"] > 0:
+            continue
+
+        state["visited_areas"].add(current_area)
 
         print(
-            f"BASELINE SEARCH: {vehicle_id} "
-            f"found {preferred_area} full "
-            f"at distance {distance:.1f}m"
+            f"BASELINE FULL: {vehicle_id} "
+            f"observed {current_area} full "
+            f"at {distance:.1f}m"
         )
 
-        # Search only around the preferred parking area.
-        preferred_xy = get_parking_area_coordinates(preferred_area)
+        if state["reassignments"] >= BASELINE_MAX_ALTERNATIVES:
+            state["search_exhausted"] = True
+            print(f"BASELINE SEARCH EXHAUSTED: {vehicle_id}")
+            continue
 
+        current_xy = get_parking_area_coordinates(current_area)
         candidates = []
 
-        for area in inventory.values():
-
-            candidate_id = area["id"]
-
-            if candidate_id == preferred_area:
-                continue
-
-            if area["available"] <= 0:
+        for candidate_id in inventory:
+            if candidate_id in state["visited_areas"]:
                 continue
 
             candidate_xy = get_parking_area_coordinates(candidate_id)
-
-            local_distance = math.dist(
-                preferred_xy,
-                candidate_xy,
-            )
+            local_distance = math.dist(current_xy, candidate_xy)
 
             if local_distance > BASELINE_LOCAL_RADIUS:
                 continue
 
+            # Do not inspect candidate occupancy here.
             candidates.append({
                 "id": candidate_id,
                 "local_distance": local_distance,
             })
 
-        # Deterministic nearest-first local selection.
         candidates.sort(
-            key=lambda area: (
-                area["local_distance"],
-                area["id"],
+            key=lambda candidate: (
+                candidate["local_distance"],
+                candidate["id"],
             )
         )
 
-        if not candidates:
-            print(
-                f"BASELINE NO LOCAL PARKING: {vehicle_id}"
-            )
-            continue
+        reassigned = False
 
-        # Try at most three nearby alternatives.
-        for candidate in candidates[:BASELINE_MAX_ALTERNATIVES]:
-
+        for candidate in candidates:
             candidate_id = candidate["id"]
 
             try:
@@ -638,25 +644,24 @@ def handle_baseline_local_search(
                     vehicle_id,
                     candidate_id,
                 )
-
-            except traci.TraCIException as error:
-                print(
-                    f"BASELINE REROUTE FAILED: "
-                    f"{vehicle_id} -> {candidate_id}: {error}"
-                )
+            except traci.TraCIException:
                 continue
 
             metrics["assigned_parking_area"] = candidate_id
             metrics["parking_reassignments"] += 1
+            state["reassignments"] += 1
+            reassigned = True
 
             print(
-                f"BASELINE LOCAL REASSIGNMENT: "
-                f"{vehicle_id} "
-                f"{preferred_area} -> {candidate_id} "
-                f"({candidate['local_distance']:.1f}m away)"
+                f"BASELINE REASSIGNED: {vehicle_id} "
+                f"{current_area} -> {candidate_id}"
             )
-
             break
+
+        if not reassigned:
+            state["search_exhausted"] = True
+            print(f"BASELINE NO REACHABLE PARKING: {vehicle_id}")
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -690,7 +695,7 @@ def main():
 
     parking_file = args.parking_file.resolve()
 
-    baseline_attempted_vehicles = set()
+    baseline_search_state = {}
 
     if not parking_file.is_file():
         parser.error(f"Parking file not found: {parking_file}")
@@ -757,13 +762,14 @@ def main():
         print(f"Calculated search boundaries for {len(search_boundaries)} vehicles")
 
         vehicle_metrics = {}
+        previously_parked = set()
 
         for vehicle_id, assignment in assignments.items():
             vehicle_metrics[vehicle_id] = {
                 "vehicle_id": vehicle_id,
                 "preferred_parking_area": assignment["preferred_parking_area"],
                 "assigned_parking_area": assignment["assigned_parking_area"],
-                "destination_building": DEFAULT_DESTINATION,
+                "destination_building": assignment["destination_building"],
                 "destination_displacement_m": None,
                 "estimated_walking_time_s": None,
                 "walking_distance_m": None,
@@ -771,6 +777,7 @@ def main():
                 "departure_time": None,
                 "parking_arrival_time": None,
                 "parking_departure_time": None,
+                "parking_event_count": 0,
                 "actual_parking_duration_s": None,
                 "return_travel_time_s": None,
                 "return_distance_m": None,
@@ -818,11 +825,11 @@ def main():
             traci.simulationStep()
             current_time = traci.simulation.getTime()
 
-            if scenario == "baseline" and step % 10 == 0:
+            if scenario == "baseline":
                 handle_baseline_local_search(
                     vehicle_metrics,
                     parking_file,
-                    baseline_attempted_vehicles,
+                    baseline_search_state,
                 )
 
             # Diagnose parking queues and vehicle blocking.
@@ -877,7 +884,7 @@ def main():
                 ):
                     metrics["search_start_time"] = current_time
                     
-                    if scenario in ("availability", "smart"):
+                    if scenario in ("availability", "smart", "smart_v2"):
                         inventory = get_parking_area_inventory(parking_file)
                         reservations = get_pending_reservations(vehicle_metrics)
 
@@ -920,7 +927,7 @@ def main():
                         # Availability acts only when preferred is full.
                         # Smart evaluates all feasible parking choices.
                         should_evaluate = (
-                            scenario == "smart"
+                            scenario in ("smart", "smart_v2")
                             or (
                                 scenario == "availability"
                                 and preferred_full
@@ -930,7 +937,7 @@ def main():
                         if should_evaluate:
                             destination_xy = None
 
-                            if scenario == "smart":
+                            if scenario in ("smart", "smart_v2"):
                                 destination_xy = get_destination_coordinates(
                                     metrics["destination_building"]
                                 )
@@ -984,6 +991,20 @@ def main():
             parked_now = set()
             for area_id in parking_areas:
                 parked_now.update(traci.parkingarea.getVehicleIDs(area_id))
+
+            # Count distinct parking events, not simulation steps.
+            newly_parked = parked_now - previously_parked
+
+            for vehicle_id in newly_parked:
+                if vehicle_id in vehicle_metrics:
+                    vehicle_metrics[vehicle_id]["parking_event_count"] += 1
+
+                    print(
+                        f"PARKING EVENT: {vehicle_id} "
+                        f"count={vehicle_metrics[vehicle_id]['parking_event_count']}"
+                    )
+
+            previously_parked = parked_now.copy()
 
             # Detect experimental vehicles that have left their parking stop.
             for vehicle_id, metrics in vehicle_metrics.items():

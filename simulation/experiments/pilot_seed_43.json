@@ -1,0 +1,21 @@
+{
+  "bridge": "simulation/src/sumo_backend_bridge.py",
+  "policies": [
+    "baseline",
+    "availability",
+    "smart",
+    "smart_v2"
+  ],
+  "experiments": [
+    {
+      "name": "distributed_high_occupancy",
+      "parking_file": "simulation/sumo/scenarios/high_occupancy/parking_seed_42.add.xml",
+      "trials": [
+        {
+          "seed": 43,
+          "route_file": "simulation/sumo/routes/scenarios/normal/seed_43_distributed.rou.xml"
+        }
+      ]
+    }
+  ]
+}
