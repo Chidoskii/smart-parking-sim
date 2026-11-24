@@ -408,19 +408,46 @@ function ParkingMap() {
         data: parkingData,
       });
 
-      socket.on("parking-occupancy-updated", (payload) => {
-        const area = payload.area;
+      socket.on("parking-occupancy-updated", async (payload) => {
+        // A single parking area changed during the simulation.
+        if (payload.area) {
+          const area = payload.area;
+          const areaId = area.id ?? area.areaId ?? area.parkingAreaId;
+          const occupied = Number(area.occupied);
 
-        if (!area) return;
+          if (!areaId || !Number.isFinite(occupied)) return;
 
-        const areaId = area.id ?? area.areaId ?? area.parkingAreaId;
-        const occupied = Number(area.occupied);
+          occupancyRef.current.set(areaId, Math.max(0, occupied));
+          refreshParkingSpaces();
+          return;
+        }
 
-        if (!areaId || !Number.isFinite(occupied)) return;
+        // A scenario switch occurred. Reload all parking-area occupancy.
+        try {
+          const response = await fetch(
+            "http://localhost:5000/api/occupancy/areas",
+          );
 
-        occupancyRef.current.set(areaId, Math.max(0, occupied));
+          if (!response.ok) {
+            throw new Error("Unable to refresh parking occupancy");
+          }
 
-        refreshParkingSpaces();
+          const data = await response.json();
+
+          occupancyRef.current.clear();
+
+          for (const area of data.areas) {
+            const occupied = Number(area.occupied);
+
+            if (Number.isFinite(occupied)) {
+              occupancyRef.current.set(area.id, Math.max(0, occupied));
+            }
+          }
+
+          refreshParkingSpaces();
+        } catch (error) {
+          console.error("Failed to refresh parking map:", error);
+        }
       });
 
       map.addLayer({

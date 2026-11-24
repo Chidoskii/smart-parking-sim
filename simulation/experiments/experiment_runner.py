@@ -12,12 +12,57 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+from urllib import request, error
 from datetime import datetime, timezone
 from statistics import mean, stdev
 
 POLICIES = ('baseline', 'availability', 'smart', 'smart_v2')
 METRICS = ('time_to_parking', 'parking_search_time', 'waiting_time', 'time_loss', 'distance_m', 'walking_distance_m', 'co2_g')
 COUNTS = ('parking_reassignments', 'parking_success', 'completed_return_trip', 'teleported')
+
+def initialize_parking_scenario(parking_file):
+    """Load the matching occupancy scenario into the backend."""
+
+    scenario = parking_file.parent.name
+
+    if scenario not in ("normal_occupancy", "high_occupancy"):
+        raise ValueError(
+            f"Unknown occupancy scenario directory: {scenario}"
+        )
+
+    url = "http://localhost:5000/api/occupancy/scenario"
+
+    payload = json.dumps({
+        "scenario": scenario
+    }).encode("utf-8")
+
+    req = request.Request(
+        url,
+        data=payload,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+
+    try:
+        with request.urlopen(req, timeout=10) as response:
+            result = json.load(response)
+    except (error.URLError, TimeoutError) as exc:
+        raise RuntimeError(
+            f"Unable to initialize backend scenario '{scenario}': {exc}"
+        ) from exc
+
+    if not result.get("success") or result.get("scenario") != scenario:
+        raise RuntimeError(
+            f"Backend rejected occupancy scenario '{scenario}': {result}"
+        )
+
+    print(
+        f"Backend initialized: {scenario} | "
+        f"capacity={result['totalCapacity']} | "
+        f"occupied={result['totalOccupied']} | "
+        f"available={result['totalAvailable']}",
+        flush=True,
+    )
 
 
 def as_float(value):
@@ -116,7 +161,7 @@ def main():
     parser.add_argument('--report-only', action='store_true', help='Aggregate trial manifest without launching SUMO')
     parser.add_argument('--stop-on-error', action='store_true')
     args = parser.parse_args()
-    root = Path(__file__).resolve().parent
+    root = Path(__file__).resolve().parents[2]
     os.chdir(root)
     config_path = root / args.config
     report_dir = root / args.report_dir
@@ -144,10 +189,15 @@ def main():
                     if any(r.get('experiment') == label and r.get('seed') == seed and r.get('policy') == policy and r.get('status') == 'complete' for r in records):
                         print(f'SKIP completed: {label}, seed={seed}, policy={policy}')
                         continue
+                    # Initialize the backend with the correct parking occupancy.
+                    # This also resets simulated occupancy from the previous trial.
+                    initialize_parking_scenario(parking)
+
                     policy_dir = root / 'simulation/results' / policy
                     before = snapshot_runs(policy_dir)
+
                     cmd = [sys.executable, str(bridge), '--scenario', policy,
-                           '--route-file', str(route), '--parking-file', str(parking)]
+                        '--route-file', str(route), '--parking-file', str(parking)]
                     print(f'\nRUN: {label}, seed={seed}, policy={policy}', flush=True)
                     started = datetime.now(timezone.utc).isoformat()
                     log_path = report_dir / 'logs' / f'{re.sub(r"[^a-zA-Z0-9_-]", "_", label)}_seed{seed}_{policy}_{datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%f")}.log'

@@ -6,11 +6,11 @@ const capacityPath = path.resolve(
   "../../../shared/config/parking-capacity.json",
 );
 
-const scenarioPath = process.env.PARKING_SCENARIO_FILE;
-
 const capacityData = JSON.parse(fs.readFileSync(capacityPath, "utf8"));
 
-const scenarioData = scenarioPath
+let scenarioPath = process.env.PARKING_SCENARIO_FILE || null;
+
+let scenarioData = scenarioPath
   ? JSON.parse(fs.readFileSync(path.resolve(scenarioPath), "utf8"))
   : null;
 
@@ -29,6 +29,54 @@ const occupancy = new Map();
 
 for (const areaId of Object.keys(capacityData.areas)) {
   occupancy.set(areaId, 0);
+}
+
+function loadScenario(filePath) {
+  const resolvedPath = path.resolve(filePath);
+  const newScenario = JSON.parse(fs.readFileSync(resolvedPath, "utf8"));
+
+  if (!newScenario.areas || typeof newScenario.areas !== "object") {
+    throw new Error("Invalid scenario: missing parking areas");
+  }
+
+  for (const [areaId, area] of Object.entries(capacityData.areas)) {
+    const scenarioArea = newScenario.areas[areaId];
+
+    if (!scenarioArea) {
+      throw new Error(`Scenario missing parking area: ${areaId}`);
+    }
+
+    const physical = scenarioArea.physical_capacity;
+    const initial = scenarioArea.modeled_initial_occupied;
+    const effective = scenarioArea.effective_capacity;
+
+    if (
+      !Number.isInteger(physical) ||
+      !Number.isInteger(initial) ||
+      !Number.isInteger(effective) ||
+      !(
+        physical === area.roadsideCapacity || physical === area.explicitSpaces
+      ) ||
+      initial < 0 ||
+      effective < 0 ||
+      initial + effective !== physical
+    ) {
+      throw new Error(`Invalid scenario capacity for ${areaId}`);
+    }
+  }
+
+  // Commit the new scenario only after validation succeeds.
+  scenarioData = newScenario;
+  scenarioPath = resolvedPath;
+
+  // Reset occupancy for every trial.
+  for (const areaId of occupancy.keys()) {
+    occupancy.set(areaId, 0);
+  }
+
+  console.log(`Loaded parking scenario: ${newScenario.scenario}`);
+
+  return getAllLotOccupancy();
 }
 
 function getCapacity(areaId) {
@@ -147,4 +195,5 @@ module.exports = {
   updateAreaOccupancy,
   getLotOccupancy,
   getAllLotOccupancy,
+  loadScenario,
 };

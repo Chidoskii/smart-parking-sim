@@ -1,0 +1,612 @@
+{
+  "scenario": "normal_occupancy",
+  "seed": 42,
+  "areas": {
+    "far_pa_0": {
+      "physical_capacity": 39,
+      "modeled_initial_occupied": 16,
+      "effective_capacity": 23
+    },
+    "far_pa_1": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_10": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_109": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_109a": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_11": {
+      "physical_capacity": 20,
+      "modeled_initial_occupied": 8,
+      "effective_capacity": 12
+    },
+    "far_pa_110": {
+      "physical_capacity": 70,
+      "modeled_initial_occupied": 28,
+      "effective_capacity": 42
+    },
+    "far_pa_110a": {
+      "physical_capacity": 70,
+      "modeled_initial_occupied": 28,
+      "effective_capacity": 42
+    },
+    "far_pa_111": {
+      "physical_capacity": 80,
+      "modeled_initial_occupied": 32,
+      "effective_capacity": 48
+    },
+    "far_pa_111a": {
+      "physical_capacity": 80,
+      "modeled_initial_occupied": 32,
+      "effective_capacity": 48
+    },
+    "far_pa_112": {
+      "physical_capacity": 80,
+      "modeled_initial_occupied": 32,
+      "effective_capacity": 48
+    },
+    "far_pa_112a": {
+      "physical_capacity": 80,
+      "modeled_initial_occupied": 32,
+      "effective_capacity": 48
+    },
+    "far_pa_113": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_113a": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_114": {
+      "physical_capacity": 40,
+      "modeled_initial_occupied": 16,
+      "effective_capacity": 24
+    },
+    "far_pa_114a": {
+      "physical_capacity": 40,
+      "modeled_initial_occupied": 16,
+      "effective_capacity": 24
+    },
+    "far_pa_115": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_115a": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_116": {
+      "physical_capacity": 25,
+      "modeled_initial_occupied": 10,
+      "effective_capacity": 15
+    },
+    "far_pa_116a": {
+      "physical_capacity": 25,
+      "modeled_initial_occupied": 10,
+      "effective_capacity": 15
+    },
+    "far_pa_12": {
+      "physical_capacity": 20,
+      "modeled_initial_occupied": 8,
+      "effective_capacity": 12
+    },
+    "far_pa_13": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_14": {
+      "physical_capacity": 20,
+      "modeled_initial_occupied": 8,
+      "effective_capacity": 12
+    },
+    "far_pa_15": {
+      "physical_capacity": 49,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 29
+    },
+    "far_pa_16": {
+      "physical_capacity": 40,
+      "modeled_initial_occupied": 16,
+      "effective_capacity": 24
+    },
+    "far_pa_17": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_18": {
+      "physical_capacity": 40,
+      "modeled_initial_occupied": 16,
+      "effective_capacity": 24
+    },
+    "far_pa_19": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_2": {
+      "physical_capacity": 20,
+      "modeled_initial_occupied": 8,
+      "effective_capacity": 12
+    },
+    "far_pa_20": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_21": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_22": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_23": {
+      "physical_capacity": 20,
+      "modeled_initial_occupied": 8,
+      "effective_capacity": 12
+    },
+    "far_pa_24": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_26": {
+      "physical_capacity": 20,
+      "modeled_initial_occupied": 8,
+      "effective_capacity": 12
+    },
+    "far_pa_27": {
+      "physical_capacity": 20,
+      "modeled_initial_occupied": 8,
+      "effective_capacity": 12
+    },
+    "far_pa_28": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_3": {
+      "physical_capacity": 20,
+      "modeled_initial_occupied": 8,
+      "effective_capacity": 12
+    },
+    "far_pa_35": {
+      "physical_capacity": 25,
+      "modeled_initial_occupied": 10,
+      "effective_capacity": 15
+    },
+    "far_pa_36": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_37": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_38": {
+      "physical_capacity": 25,
+      "modeled_initial_occupied": 10,
+      "effective_capacity": 15
+    },
+    "far_pa_39": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_4": {
+      "physical_capacity": 20,
+      "modeled_initial_occupied": 8,
+      "effective_capacity": 12
+    },
+    "far_pa_40": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_43": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_44": {
+      "physical_capacity": 1,
+      "modeled_initial_occupied": 0,
+      "effective_capacity": 1
+    },
+    "far_pa_5": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_55": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_56": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_57": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_6": {
+      "physical_capacity": 70,
+      "modeled_initial_occupied": 28,
+      "effective_capacity": 42
+    },
+    "far_pa_66": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "far_pa_67": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "far_pa_68": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "far_pa_7": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_71": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "far_pa_74": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "far_pa_75": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "far_pa_76": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_77": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_78": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_79": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_8": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_80": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_81": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_83": {
+      "physical_capacity": 28,
+      "modeled_initial_occupied": 11,
+      "effective_capacity": 17
+    },
+    "far_pa_84": {
+      "physical_capacity": 20,
+      "modeled_initial_occupied": 8,
+      "effective_capacity": 12
+    },
+    "far_pa_85": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_86": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_87": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_88": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_89": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "far_pa_9": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "far_pa_90": {
+      "physical_capacity": 30,
+      "modeled_initial_occupied": 12,
+      "effective_capacity": 18
+    },
+    "hill_PARK_LANE1_SPACES_LEFT": {
+      "physical_capacity": 100,
+      "modeled_initial_occupied": 40,
+      "effective_capacity": 60
+    },
+    "hill_PARK_LANE1_SPACES_RIGHT": {
+      "physical_capacity": 100,
+      "modeled_initial_occupied": 40,
+      "effective_capacity": 60
+    },
+    "hill_pa181138919#0": {
+      "physical_capacity": 10,
+      "modeled_initial_occupied": 4,
+      "effective_capacity": 6
+    },
+    "hill_pa181138919#1": {
+      "physical_capacity": 10,
+      "modeled_initial_occupied": 4,
+      "effective_capacity": 6
+    },
+    "hill_pa181138919#2": {
+      "physical_capacity": 10,
+      "modeled_initial_occupied": 4,
+      "effective_capacity": 6
+    },
+    "hill_pa181138926#1": {
+      "physical_capacity": 175,
+      "modeled_initial_occupied": 70,
+      "effective_capacity": 105
+    },
+    "hill_pa181138926#1b": {
+      "physical_capacity": 180,
+      "modeled_initial_occupied": 72,
+      "effective_capacity": 108
+    },
+    "hill_pa181138926#3": {
+      "physical_capacity": 40,
+      "modeled_initial_occupied": 16,
+      "effective_capacity": 24
+    },
+    "hill_pa181138926#3b": {
+      "physical_capacity": 40,
+      "modeled_initial_occupied": 16,
+      "effective_capacity": 24
+    },
+    "hill_pa181138927#0": {
+      "physical_capacity": 10,
+      "modeled_initial_occupied": 4,
+      "effective_capacity": 6
+    },
+    "hill_pa181138927#1": {
+      "physical_capacity": 125,
+      "modeled_initial_occupied": 50,
+      "effective_capacity": 75
+    },
+    "hill_pa181138927#1b": {
+      "physical_capacity": 120,
+      "modeled_initial_occupied": 48,
+      "effective_capacity": 72
+    },
+    "hill_pa181138927#4": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "hill_pa181138927#4b": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "hill_pa181138935#0": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "hill_pa181138935#0b": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "hill_pa181138935#2": {
+      "physical_capacity": 25,
+      "modeled_initial_occupied": 10,
+      "effective_capacity": 15
+    },
+    "hill_pa181138935#2b": {
+      "physical_capacity": 25,
+      "modeled_initial_occupied": 10,
+      "effective_capacity": 15
+    },
+    "hill_pa181138936#0": {
+      "physical_capacity": 40,
+      "modeled_initial_occupied": 16,
+      "effective_capacity": 24
+    },
+    "hill_pa181138936#0b": {
+      "physical_capacity": 40,
+      "modeled_initial_occupied": 16,
+      "effective_capacity": 24
+    },
+    "hill_pa181138936#2": {
+      "physical_capacity": 100,
+      "modeled_initial_occupied": 40,
+      "effective_capacity": 60
+    },
+    "hill_pa181138936#2b": {
+      "physical_capacity": 100,
+      "modeled_initial_occupied": 40,
+      "effective_capacity": 60
+    },
+    "hill_pa_100": {
+      "physical_capacity": 90,
+      "modeled_initial_occupied": 36,
+      "effective_capacity": 54
+    },
+    "hill_pa_100a": {
+      "physical_capacity": 90,
+      "modeled_initial_occupied": 36,
+      "effective_capacity": 54
+    },
+    "hill_pa_101": {
+      "physical_capacity": 75,
+      "modeled_initial_occupied": 30,
+      "effective_capacity": 45
+    },
+    "hill_pa_101a": {
+      "physical_capacity": 75,
+      "modeled_initial_occupied": 30,
+      "effective_capacity": 45
+    },
+    "hill_pa_104": {
+      "physical_capacity": 100,
+      "modeled_initial_occupied": 40,
+      "effective_capacity": 60
+    },
+    "hill_pa_104a": {
+      "physical_capacity": 90,
+      "modeled_initial_occupied": 36,
+      "effective_capacity": 54
+    },
+    "hill_pa_105": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "hill_pa_105a": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "hill_pa_106": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "hill_pa_106a": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "hill_pa_107": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "hill_pa_107a": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "hill_pa_108": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "hill_pa_108a": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "hill_pa_120": {
+      "physical_capacity": 25,
+      "modeled_initial_occupied": 10,
+      "effective_capacity": 15
+    },
+    "hill_pa_120a": {
+      "physical_capacity": 25,
+      "modeled_initial_occupied": 10,
+      "effective_capacity": 15
+    },
+    "hill_pa_96": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "hill_pa_96a": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "hill_pa_97": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "hill_pa_97a": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "hill_pa_98": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "hill_pa_98a": {
+      "physical_capacity": 50,
+      "modeled_initial_occupied": 20,
+      "effective_capacity": 30
+    },
+    "hill_pa_99": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    },
+    "hill_pa_99a": {
+      "physical_capacity": 60,
+      "modeled_initial_occupied": 24,
+      "effective_capacity": 36
+    }
+  },
+  "modeled_initial_occupied": 2355
+}

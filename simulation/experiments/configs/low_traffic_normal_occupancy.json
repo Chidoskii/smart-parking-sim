@@ -1,0 +1,37 @@
+{
+  "bridge": "simulation/src/sumo_backend_bridge.py",
+  "policies": [
+    "baseline",
+    "availability",
+    "smart",
+    "smart_v2"
+  ],
+  "experiments": [
+    {
+      "name": "low_traffic_normal_occupancy",
+      "parking_file": "simulation/sumo/scenarios/normal_occupancy/parking_seed_42.add.xml",
+      "trials": [
+        {
+          "seed": 42,
+          "route_file": "simulation/sumo/routes/scenarios/low/seed_42_traffic.rou.xml"
+        },
+        {
+          "seed": 43,
+          "route_file": "simulation/sumo/routes/scenarios/low/seed_43_traffic.rou.xml"
+        },
+        {
+          "seed": 44,
+          "route_file": "simulation/sumo/routes/scenarios/low/seed_44_traffic.rou.xml"
+        },
+        {
+          "seed": 45,
+          "route_file": "simulation/sumo/routes/scenarios/low/seed_45_traffic.rou.xml"
+        },
+        {
+          "seed": 46,
+          "route_file": "simulation/sumo/routes/scenarios/low/seed_46_traffic.rou.xml"
+        }
+      ]
+    }
+  ]
+}

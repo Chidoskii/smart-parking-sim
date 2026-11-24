@@ -73,6 +73,44 @@ METERS_PER_MILE = 1609.344
 STEP_DELAY = 0.01
 
 
+def load_initial_occupancy(parking_file):
+    occupancy_file = (
+        parking_file.parent
+        / parking_file.name.replace(
+            "parking_seed_", "occupancy_seed_"
+        ).replace(".add.xml", ".json")
+    )
+
+    if not occupancy_file.is_file():
+        raise FileNotFoundError(
+            f"Occupancy configuration not found: {occupancy_file}"
+        )
+
+    with occupancy_file.open("r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    initial_occupancy = {
+        area_id: int(area["modeled_initial_occupied"])
+        for area_id, area in data["areas"].items()
+    }
+
+    # Calculate physical capacity from individual parking areas.
+    # This works for both normal and high occupancy configurations.
+    physical_capacity = sum(
+        int(area["physical_capacity"])
+        for area in data["areas"].values()
+    )
+
+    total_initial_occupied = sum(initial_occupancy.values())
+
+    print(
+        f"Loaded initial occupancy: {data['scenario']} | "
+        f"occupied={total_initial_occupied} | "
+        f"physical capacity={physical_capacity}"
+    )
+
+    return initial_occupancy
+
 def update_backend(area_id, occupied):
     encoded_area_id = quote(area_id, safe="")
 
@@ -803,18 +841,21 @@ def main():
         print(f"Connected to {len(parking_areas)} parking areas")
 
         # Store the last occupancy successfully sent.
-        # Synchronize the backend with SUMO's initial parking occupancy.
         last_occupancy = {}
+
+        # Load the pre-existing physical parking occupancy.
+        initial_occupancy = load_initial_occupancy(parking_file)
 
         print("Synchronizing initial parking occupancy...")
 
         for area_id in parking_areas:
-            occupied = traci.parkingarea.getVehicleCount(area_id)
+            sumo_occupied = traci.parkingarea.getVehicleCount(area_id)
 
-            result = update_backend(area_id, occupied)
+            # Backend automatically adds the scenario's initial occupancy.
+            result = update_backend(area_id, sumo_occupied)
 
             if result is not None:
-                last_occupancy[area_id] = occupied
+                last_occupancy[area_id] = sumo_occupied
 
         print(
             f"Initialized occupancy for "
@@ -1147,22 +1188,27 @@ def main():
 
             if step % OCCUPANCY_UPDATE_INTERVAL == 0:
                 for area_id in parking_areas:
-                    occupied = traci.parkingarea.getVehicleCount(
-                        area_id
-                    )
+                    sumo_occupied = traci.parkingarea.getVehicleCount(area_id)
 
-                    # Only send an update if occupancy changed.
-                    if last_occupancy.get(area_id) == occupied:
+                    # Only send an update when SUMO occupancy changes.
+                    if last_occupancy.get(area_id) == sumo_occupied:
                         continue
 
-                    result = update_backend(area_id, occupied)
+                    # Send only SUMO occupancy to the backend.
+                    result = update_backend(area_id, sumo_occupied)
 
                     if result is not None:
-                        last_occupancy[area_id] = occupied
+                        last_occupancy[area_id] = sumo_occupied
+
+                        # Calculate total physical occupancy for logging.
+                        total_occupied = (
+                            initial_occupancy[area_id] + sumo_occupied
+                        )
 
                         print(
                             f"Time {traci.simulation.getTime():.0f}s | "
-                            f"{area_id}: {occupied} occupied"
+                            f"{area_id}: {total_occupied} occupied "
+                            f"({sumo_occupied} simulated)"
                         )
 
             if step % VEHICLE_UPDATE_INTERVAL == 0:
