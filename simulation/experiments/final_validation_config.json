@@ -1,0 +1,18 @@
+{
+  "bridge": "simulation/src/sumo_backend_bridge.py",
+  "policies": [
+    "baseline"
+  ],
+  "experiments": [
+    {
+      "name": "destination_informed_normal_high_occupancy",
+      "parking_file": "simulation/sumo/scenarios/high_occupancy/parking_seed_42.add.xml",
+      "trials": [
+        {
+          "seed": 42,
+          "route_file": "simulation/sumo/routes/scenarios/normal/seed_42_destination_informed.rou.xml"
+        }
+      ]
+    }
+  ]
+}

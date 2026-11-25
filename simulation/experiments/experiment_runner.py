@@ -13,6 +13,7 @@ import re
 import subprocess
 import sys
 from urllib import request, error
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from statistics import mean, stdev
 
@@ -104,11 +105,24 @@ def summarize_vehicle_csv(path):
     result['total_co2_g'] = sum(as_float(row['co2_g']) or 0 for row in rows)
     for metric in COUNTS:
         result[f'total_{metric}'] = sum(as_count(row[metric]) for row in rows)
+    result['parking_success_rate'] = (
+        result['total_parking_success'] / len(rows)
+    )
+
+    result['return_trip_success_rate'] = (
+        result['total_completed_return_trip'] / len(rows)
+    )
+
+    result['total_parking_failures'] = (
+        len(rows) - result['total_parking_success']
+    )
+
     result['complete'] = (
         result['total_parking_success'] == len(rows)
         and result['total_completed_return_trip'] == len(rows)
         and result['total_teleported'] == 0
     )
+
     return result
 
 
@@ -125,33 +139,287 @@ def write_csv(path, rows):
 
 def build_report(records, report_dir):
     write_csv(report_dir / 'trial_summary.csv', records)
+
     groups = {}
+
     for record in records:
-        groups.setdefault((record['experiment'], record['policy']), []).append(record)
+        groups.setdefault(
+            (record['experiment'], record['policy']), []
+        ).append(record)
+
+    vehicle_keys = [f'avg_{m}' for m in METRICS] + [
+        'total_co2_g',
+        'total_parking_reassignments',
+        'total_parking_success',
+        'total_completed_return_trip',
+        'total_teleported',
+        'parking_success_rate',
+        'return_trip_success_rate',
+        'total_parking_failures',
+    ]
+
+    network_suffixes = [
+        'vehicle_count',
+        'completed_trips',
+        'unfinished_trips',
+        'completion_rate',
+        'avg_duration_s',
+        'avg_active_duration_s',
+        'avg_distance_m',
+        'total_completed_distance_m',
+        'avg_waiting_time_s',
+        'avg_time_loss_s',
+        'avg_depart_delay_s',
+        'emissions_count',
+        'avg_co2_g',
+        'total_co2_g',
+    ]
+
+    network_keys = [
+        f'{prefix}_{suffix}'
+        for prefix in ('network', 'background', 'parking')
+        for suffix in network_suffixes
+    ]
+
+    network_keys += [
+        'network_loaded',
+        'network_inserted',
+        'network_running',
+        'network_waiting',
+        'network_teleports',
+        'network_collisions',
+        'network_emergency_stops',
+        'simulation_duration_s',
+        'execution_duration_s',
+    ]
+
     report_rows = []
+
     for (experiment, policy), group in sorted(groups.items()):
-        valid = [r for r in group if r.get('status') == 'complete']
-        row = {'experiment': experiment, 'policy': policy,
-               'trials_attempted': len(group), 'trials_complete': len(valid),
-               'trials_incomplete': len(group) - len(valid)}
-        for key in [f'avg_{m}' for m in METRICS] + ['total_co2_g', 'total_parking_reassignments', 'total_parking_success', 'total_completed_return_trip', 'total_teleported']:
-            values = [as_float(r.get(key)) for r in valid]
-            values = [v for v in values if v is not None]
-            row[f'mean_{key}'] = mean(values) if values else None
-            row[f'std_{key}'] = stdev(values) if len(values) > 1 else (0.0 if values else None)
+        valid = [
+            r for r in group
+            if r.get('status') == 'complete'
+        ]
+
+        network_valid = [
+            r for r in valid
+            if r.get('network_metrics_available') is True
+        ]
+
+        row = {
+            'experiment': experiment,
+            'policy': policy,
+            'trials_attempted': len(group),
+            'trials_complete': len(valid),
+            'trials_incomplete': len(group) - len(valid),
+            'trials_with_network_metrics': len(network_valid),
+        }
+
+        def aggregate(keys, source):
+            for key in keys:
+                values = [
+                    as_float(r.get(key))
+                    for r in source
+                ]
+
+                values = [
+                    v for v in values
+                    if v is not None
+                ]
+
+                row[f'mean_{key}'] = (
+                    mean(values) if values else None
+                )
+
+                row[f'std_{key}'] = (
+                    stdev(values)
+                    if len(values) > 1
+                    else (0.0 if values else None)
+                )
+
+                row[f'n_{key}'] = len(values)
+
+        aggregate(vehicle_keys, valid)
+
+        if network_valid:
+            aggregate(network_keys, network_valid)
+
         report_rows.append(row)
-    write_csv(report_dir / 'policy_comparison.csv', report_rows)
+
+    write_csv(
+        report_dir / 'policy_comparison.csv',
+        report_rows
+    )
+
     print(f'\nTrial report: {report_dir / "trial_summary.csv"}')
     print(f'Policy report: {report_dir / "policy_comparison.csv"}')
+
     print('\nPolicy summary (complete trials only):')
+
     for row in report_rows:
-        print(f"{row['experiment']} / {row['policy']}: {row['trials_complete']}/{row['trials_attempted']} complete; "
-              f"avg driving={row['mean_avg_distance_m']}, avg walking={row['mean_avg_walking_distance_m']}, "
-              f"avg CO2={row['mean_avg_co2_g']}")
+        print(
+            f"{row['experiment']} / {row['policy']}: "
+            f"{row['trials_complete']}/"
+            f"{row['trials_attempted']} complete; "
+            f"avg driving={row['mean_avg_distance_m']}, "
+            f"avg walking={row['mean_avg_walking_distance_m']}, "
+            f"avg CO2={row['mean_avg_co2_g']}"
+        )
+
+        if row['trials_with_network_metrics'] > 0:
+            print(
+                f"  Network: "
+                f"avg waiting="
+                f"{row['mean_network_avg_waiting_time_s']}, "
+                f"total CO2="
+                f"{row['mean_network_total_co2_g']} g, "
+                f"background avg time loss="
+                f"{row['mean_background_avg_time_loss_s']} s"
+            )
 
 
 def snapshot_runs(policy_dir):
     return {p.resolve() for p in policy_dir.glob('run_*') if p.is_dir()}
+
+def summarize_network_metrics(run_dir):
+    run_dir = Path(run_dir)
+
+    tripinfo_file = run_dir / "tripinfo.xml"
+    statistics_file = run_dir / "statistics.xml"
+
+    if not tripinfo_file.exists():
+        raise FileNotFoundError(tripinfo_file)
+
+    if not statistics_file.exists():
+        raise FileNotFoundError(statistics_file)
+
+    trips = ET.parse(tripinfo_file).getroot().findall("tripinfo")
+    statistics = ET.parse(statistics_file).getroot()
+
+    def summarize_group(group, prefix):
+        completed = [
+            trip for trip in group
+            if float(trip.attrib["arrival"]) >= 0
+        ]
+
+        def average(values):
+            return sum(values) / len(values) if values else None
+
+        durations = [
+            float(trip.attrib["duration"])
+            for trip in completed
+        ]
+
+        active_durations = [
+            float(trip.attrib["duration"])
+            - float(trip.attrib["stopTime"])
+            for trip in completed
+        ]
+
+        distances = [
+            float(trip.attrib["routeLength"])
+            for trip in completed
+        ]
+
+        waiting_times = [
+            float(trip.attrib["waitingTime"])
+            for trip in completed
+        ]
+
+        time_losses = [
+            float(trip.attrib["timeLoss"])
+            for trip in completed
+        ]
+
+        departure_delays = [
+            float(trip.attrib["departDelay"])
+            for trip in completed
+        ]
+
+        co2_values = []
+
+        for trip in group:
+            emissions = trip.find("emissions")
+
+            if emissions is not None:
+                co2_values.append(
+                    float(emissions.attrib["CO2_abs"]) / 1000
+                )
+
+        return {
+            f"{prefix}_vehicle_count": len(group),
+            f"{prefix}_completed_trips": len(completed),
+            f"{prefix}_unfinished_trips": (
+                len(group) - len(completed)
+            ),
+            f"{prefix}_completion_rate": (
+                len(completed) / len(group)
+                if group else None
+            ),
+            f"{prefix}_avg_duration_s": average(durations),
+            f"{prefix}_avg_active_duration_s": average(
+                active_durations
+            ),
+            f"{prefix}_avg_distance_m": average(distances),
+            f"{prefix}_total_completed_distance_m": sum(distances),
+            f"{prefix}_avg_waiting_time_s": average(waiting_times),
+            f"{prefix}_avg_time_loss_s": average(time_losses),
+            f"{prefix}_avg_depart_delay_s": average(
+                departure_delays
+            ),
+            f"{prefix}_emissions_count": len(co2_values),
+            f"{prefix}_avg_co2_g": average(co2_values),
+            f"{prefix}_total_co2_g": (
+                sum(co2_values) if co2_values else None
+            ),
+        }
+
+    background_trips = [
+        trip for trip in trips
+        if trip.attrib["id"].startswith("background_vehicle_")
+    ]
+
+    parking_trips = [
+        trip for trip in trips
+        if trip.attrib["id"].startswith("parking_vehicle_")
+    ]
+
+    results = {}
+
+    results.update(summarize_group(trips, "network"))
+
+    results.update(
+        summarize_group(background_trips, "background")
+    )
+
+    results.update(
+        summarize_group(parking_trips, "parking")
+    )
+
+    vehicles = statistics.find("vehicles")
+    teleports = statistics.find("teleports")
+    safety = statistics.find("safety")
+    performance = statistics.find("performance")
+
+    results.update({
+        "network_loaded": int(vehicles.attrib["loaded"]),
+        "network_inserted": int(vehicles.attrib["inserted"]),
+        "network_running": int(vehicles.attrib["running"]),
+        "network_waiting": int(vehicles.attrib["waiting"]),
+        "network_teleports": int(teleports.attrib["total"]),
+        "network_collisions": int(safety.attrib["collisions"]),
+        "network_emergency_stops": int(
+            safety.attrib["emergencyStops"]
+        ),
+        "simulation_duration_s": float(
+            performance.attrib["duration"]
+        ),
+        "execution_duration_s": float(
+            performance.attrib["clockDuration"]
+        ),
+    })
+
+    return results
 
 
 def main():
@@ -215,9 +483,43 @@ def main():
                         metrics_path = created[0] / 'vehicle_metrics.csv'
                         record['metrics_file'] = str(metrics_path.relative_to(root))
                         try:
-                            record.update(summarize_vehicle_csv(metrics_path))
-                            record['status'] = 'complete' if proc.returncode == 0 and record['complete'] else 'incomplete'
-                        except (ValueError, OSError) as error:
+                            record.update(
+                                summarize_vehicle_csv(metrics_path)
+                            )
+
+                            network_metrics = summarize_network_metrics(
+                                metrics_path.parent
+                            )
+
+                            record.update(network_metrics)
+
+                            record['network_metrics_available'] = True
+
+                            record['network_complete'] = (
+                                record['network_loaded']
+                                == record['network_completed_trips']
+                                and record['network_running'] == 0
+                                and record['network_waiting'] == 0
+                                and record['network_teleports'] == 0
+                                and record['network_emissions_count']
+                                == record['network_vehicle_count']
+                            )
+
+                            record['status'] = (
+                                'complete'
+                                if proc.returncode == 0
+                                and record['network_complete']
+                                and record['vehicle_count'] == 40
+                                and record['parking_vehicle_count'] == 40
+                                else 'incomplete'
+                            )
+
+                        except (
+                            ValueError,
+                            OSError,
+                            ET.ParseError,
+                            KeyError,
+                        ) as error:
                             record['status'] = 'error'
                             record['error'] = str(error)
                     else:

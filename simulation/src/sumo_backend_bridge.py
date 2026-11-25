@@ -578,13 +578,110 @@ def diagnose_vehicle_blocking(vehicle_id):
     print("Leader:", leader)
     print("Current stop state:", traci.vehicle.getStopState(vehicle_id))
 
+def reassign_parking_area(vehicle_id, candidate_id):
+    original_route = traci.vehicle.getRoute(vehicle_id)
+    original_exit = original_route[-1]
+
+    current_road = traci.vehicle.getRoadID(vehicle_id)
+    route_index = traci.vehicle.getRouteIndex(vehicle_id)
+    vehicle_type = traci.vehicle.getTypeID(vehicle_id)
+
+    candidate_lane = traci.parkingarea.getLaneID(candidate_id)
+    candidate_edge = traci.lane.getEdgeID(candidate_lane)
+
+    # Preserve the committed movement through an internal junction.
+    if current_road.startswith(":"):
+        if route_index + 1 >= len(original_route):
+            return False
+
+        current_edge = original_route[route_index]
+        next_edge = original_route[route_index + 1]
+
+        route_prefix = [current_edge]
+        routing_origin = next_edge
+    else:
+        route_prefix = []
+        routing_origin = current_road
+
+    # Calculate the route to the new parking area.
+    outbound = traci.simulation.findRoute(
+        routing_origin,
+        candidate_edge,
+        vType=vehicle_type,
+    )
+
+    # Preserve the original exit destination.
+    inbound = traci.simulation.findRoute(
+        candidate_edge,
+        original_exit,
+        vType=vehicle_type,
+    )
+
+    if not outbound.edges or not inbound.edges:
+        return False
+
+    new_route = (
+        route_prefix
+        + list(outbound.edges)
+        + list(inbound.edges[1:])
+    )
+
+    # Update the parking stop.
+    traci.vehicle.rerouteParkingArea(
+        vehicle_id,
+        candidate_id,
+    )
+
+    # Check whether SUMO updated the route correctly.
+    route = traci.vehicle.getRoute(vehicle_id)
+    route_index = traci.vehicle.getRouteIndex(vehicle_id)
+
+    if candidate_edge not in route[max(0, route_index):]:
+        print(
+            f"EXPLICIT ROUTE REPAIR: "
+            f"{vehicle_id} -> {candidate_id}"
+        )
+
+        traci.vehicle.setRoute(
+            vehicle_id,
+            new_route,
+        )
+
+    # Validate the final parking stop and route.
+    stops = traci.vehicle.getStops(vehicle_id, limit=1)
+    route = traci.vehicle.getRoute(vehicle_id)
+    route_index = traci.vehicle.getRouteIndex(vehicle_id)
+
+    stop_valid = (
+        bool(stops)
+        and stops[0].stoppingPlaceID == candidate_id
+    )
+
+    route_valid = (
+        candidate_edge in route[max(0, route_index):]
+    )
+
+    exit_valid = (
+        bool(route)
+        and route[-1] == original_exit
+    )
+
+    if not (stop_valid and route_valid and exit_valid):
+        raise RuntimeError(
+            f"Parking reassignment validation failed: "
+            f"{vehicle_id} -> {candidate_id} | "
+            f"stop_valid={stop_valid} | "
+            f"route_valid={route_valid} | "
+            f"exit_valid={exit_valid}"
+        )
+
+    return True
 
 def handle_baseline_local_search(
     vehicle_metrics,
     parking_file,
     search_state,
 ):
-    # Occupancy is used only when the driver reaches an area.
     inventory = {
         area["id"]: area
         for area in get_parking_area_inventory(parking_file)
@@ -616,7 +713,7 @@ def handle_baseline_local_search(
         if state["search_exhausted"]:
             continue
 
-        # Observe occupancy only near the assigned parking area.
+        # Observe occupancy only near the assigned area.
         lane_id = traci.parkingarea.getLaneID(current_area)
         edge_id = traci.lane.getEdgeID(lane_id)
         lane_pos = traci.parkingarea.getStartPos(current_area)
@@ -643,7 +740,10 @@ def handle_baseline_local_search(
 
         if state["reassignments"] >= BASELINE_MAX_ALTERNATIVES:
             state["search_exhausted"] = True
-            print(f"BASELINE SEARCH EXHAUSTED: {vehicle_id}")
+
+            print(
+                f"BASELINE SEARCH EXHAUSTED: {vehicle_id}"
+            )
             continue
 
         current_xy = get_parking_area_coordinates(current_area)
@@ -653,13 +753,19 @@ def handle_baseline_local_search(
             if candidate_id in state["visited_areas"]:
                 continue
 
-            candidate_xy = get_parking_area_coordinates(candidate_id)
-            local_distance = math.dist(current_xy, candidate_xy)
+            candidate_xy = get_parking_area_coordinates(
+                candidate_id
+            )
+
+            local_distance = math.dist(
+                current_xy,
+                candidate_xy,
+            )
 
             if local_distance > BASELINE_LOCAL_RADIUS:
                 continue
 
-            # Do not inspect candidate occupancy here.
+            # Baseline does not inspect alternative occupancy.
             candidates.append({
                 "id": candidate_id,
                 "local_distance": local_distance,
@@ -677,29 +783,31 @@ def handle_baseline_local_search(
         for candidate in candidates:
             candidate_id = candidate["id"]
 
-            try:
-                traci.vehicle.rerouteParkingArea(
-                    vehicle_id,
-                    candidate_id,
-                )
-            except traci.TraCIException:
+            if not reassign_parking_area(
+                vehicle_id,
+                candidate_id,
+            ):
                 continue
 
             metrics["assigned_parking_area"] = candidate_id
             metrics["parking_reassignments"] += 1
             state["reassignments"] += 1
+
             reassigned = True
 
             print(
                 f"BASELINE REASSIGNED: {vehicle_id} "
                 f"{current_area} -> {candidate_id}"
             )
+
             break
 
         if not reassigned:
             state["search_exhausted"] = True
-            print(f"BASELINE NO REACHABLE PARKING: {vehicle_id}")
 
+            print(
+                f"BASELINE NO REACHABLE PARKING: {vehicle_id}"
+            )
 
 def main():
     parser = argparse.ArgumentParser(
@@ -766,18 +874,52 @@ def main():
             "Start it before running this script."
         ) from error
 
+    run_dir = create_run_directory(scenario)
+
     traci.start([
         "sumo",
         "-c",
         str(SUMO_CONFIG),
+
         "--route-files",
         str(route_file),
+
         "--additional-files",
         str(parking_file),
+
         "--time-to-teleport",
         "-1",
-    ])
 
+        "--tripinfo-output",
+        str(run_dir / "tripinfo.xml"),
+
+        "--tripinfo-output.write-unfinished",
+        "true",
+
+        "--tripinfo-output.write-undeparted",
+        "true",
+
+        "--device.emissions.probability",
+        "1.0",
+
+        "--stop-output",
+        str(run_dir / "stops.xml"),
+
+        "--vehroute-output",
+        str(run_dir / "vehicle_routes.xml"),
+
+        "--vehroute-output.exit-times",
+        "true",
+
+        "--vehroute-output.write-unfinished",
+        "true",
+
+        "--statistic-output",
+        str(run_dir / "statistics.xml"),
+
+        "--summary-output",
+        str(run_dir / "summary.xml"),
+    ])
     try:
         parking_areas = traci.parkingarea.getIDList()
         parking_inventory = get_parking_area_inventory(parking_file)
@@ -996,17 +1138,14 @@ def main():
                                 parking_areas=candidates,
                                 occupancy=occupancy,
                             )
-
                             if (
                                 selected_area is not None
                                 and selected_area != preferred_area
                             ):
-                                try:
-                                    traci.vehicle.rerouteParkingArea(
-                                        vehicle_id,
-                                        selected_area,
-                                    )
-
+                                if reassign_parking_area(
+                                    vehicle_id,
+                                    selected_area,
+                                ):
                                     metrics["assigned_parking_area"] = selected_area
                                     metrics["parking_reassignments"] += 1
 
@@ -1014,12 +1153,6 @@ def main():
                                         f"REASSIGNED: {vehicle_id} "
                                         f"{preferred_area} -> {selected_area} "
                                         f"at time {current_time:.0f}s"
-                                    )
-
-                                except traci.TraCIException as error:
-                                    print(
-                                        f"REASSIGNMENT FAILED: "
-                                        f"{vehicle_id}: {error}"
                                     )
 
                             elif selected_area is None:
@@ -1222,7 +1355,6 @@ def main():
 
         print("\nSimulation completed.")
 
-        run_dir = create_run_directory(scenario)
         save_vehicle_metrics(vehicle_metrics, run_dir)
 
     finally:
