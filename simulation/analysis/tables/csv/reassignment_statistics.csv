@@ -1,0 +1,5 @@
+policy,trials,total_reassignments,mean_reassignments,sd_reassignments,min_reassignments,max_reassignments
+Baseline,30,120,4,4.068381021724862,0,8
+Availability,30,123,4.1,4.180001649892431,0,9
+Smart V1,30,1151,38.36666666666667,0.49013251785356093,38,39
+Smart V2,30,1140,38,0.8304547985373997,36,39

@@ -1,0 +1,9 @@
+metric_label,Baseline,Availability,Smart V1,Smart V2
+Background CO2 (g/veh),533.02,542.44,541.02,536.71
+Background driving distance (m/veh),2517.45,2517.45,2517.45,2517.45
+Background time loss (s/veh),42.54,45.74,45.4,44.03
+Background waiting time (s/veh),8.13,9.93,9.76,9.01
+Network driving distance (m/veh),3213.72,3155.5,3225.92,3196.16
+Network time loss (s/veh),78.51,76.71,74.78,73.57
+Network waiting time (s/veh),13.44,14.08,14.55,14.03
+Network CO2 (kg/trial),43.11,42.17,42.52,41.96

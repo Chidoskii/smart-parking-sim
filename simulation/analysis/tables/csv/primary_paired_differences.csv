@@ -1,0 +1,631 @@
+experiment,seed,demand,occupancy,metric,comparison_policy,baseline_value,policy_value,difference
+low_normal_occupancy,42,Low,Normal,avg_time_to_parking,Availability,266.75,266.75,0
+low_normal_occupancy,42,Low,Normal,avg_time_to_parking,Smart V1,266.75,307.8,41.05000000000001
+low_normal_occupancy,42,Low,Normal,avg_time_to_parking,Smart V2,266.75,274.15,7.399999999999977
+low_normal_occupancy,42,Low,Normal,avg_parking_search_time,Availability,62.05,62.05,0
+low_normal_occupancy,42,Low,Normal,avg_parking_search_time,Smart V1,62.05,102.875,40.825
+low_normal_occupancy,42,Low,Normal,avg_parking_search_time,Smart V2,62.05,66.225,4.174999999999997
+low_normal_occupancy,42,Low,Normal,avg_waiting_time,Availability,2.375,2.375,0
+low_normal_occupancy,42,Low,Normal,avg_waiting_time,Smart V1,2.375,4.075,1.7000000000000002
+low_normal_occupancy,42,Low,Normal,avg_waiting_time,Smart V2,2.375,3.8,1.4249999999999998
+low_normal_occupancy,42,Low,Normal,avg_time_loss,Availability,49.7857751976716,49.7857751976716,0
+low_normal_occupancy,42,Low,Normal,avg_time_loss,Smart V1,49.7857751976716,59.3359107610178,9.550135563346203
+low_normal_occupancy,42,Low,Normal,avg_time_loss,Smart V2,49.7857751976716,56.217804189832464,6.432028992160866
+low_normal_occupancy,42,Low,Normal,avg_distance_m,Availability,2115.891110281496,2115.891110281496,0
+low_normal_occupancy,42,Low,Normal,avg_distance_m,Smart V1,2115.891110281496,2448.54689312914,332.6557828476439
+low_normal_occupancy,42,Low,Normal,avg_distance_m,Smart V2,2115.891110281496,2184.5841508017684,68.69304052027246
+low_normal_occupancy,42,Low,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+low_normal_occupancy,42,Low,Normal,avg_walking_distance_m,Smart V1,672.3885,375.8465,-296.54200000000003
+low_normal_occupancy,42,Low,Normal,avg_walking_distance_m,Smart V2,672.3885,452.3045,-220.084
+low_normal_occupancy,42,Low,Normal,avg_co2_g,Availability,497.6013973366924,497.6013973366924,0
+low_normal_occupancy,42,Low,Normal,avg_co2_g,Smart V1,497.6013973366924,578.8010683733451,81.19967103665266
+low_normal_occupancy,42,Low,Normal,avg_co2_g,Smart V2,497.6013973366924,519.1895169525194,21.588119615826997
+low_normal_occupancy,43,Low,Normal,avg_time_to_parking,Availability,265.7,265.7,0
+low_normal_occupancy,43,Low,Normal,avg_time_to_parking,Smart V1,265.7,312.75,47.05000000000001
+low_normal_occupancy,43,Low,Normal,avg_time_to_parking,Smart V2,265.7,277.75,12.050000000000011
+low_normal_occupancy,43,Low,Normal,avg_parking_search_time,Availability,61.575,61.575,0
+low_normal_occupancy,43,Low,Normal,avg_parking_search_time,Smart V1,61.575,106.95,45.375
+low_normal_occupancy,43,Low,Normal,avg_parking_search_time,Smart V2,61.575,65.75,4.174999999999997
+low_normal_occupancy,43,Low,Normal,avg_waiting_time,Availability,2.9,2.9,0
+low_normal_occupancy,43,Low,Normal,avg_waiting_time,Smart V1,2.9,3.3,0.3999999999999999
+low_normal_occupancy,43,Low,Normal,avg_waiting_time,Smart V2,2.9,3.65,0.75
+low_normal_occupancy,43,Low,Normal,avg_time_loss,Availability,48.31930956075944,48.31930956075944,0
+low_normal_occupancy,43,Low,Normal,avg_time_loss,Smart V1,48.31930956075944,58.511875475434366,10.192565914674923
+low_normal_occupancy,43,Low,Normal,avg_time_loss,Smart V2,48.31930956075944,58.4024088639547,10.083099303195254
+low_normal_occupancy,43,Low,Normal,avg_distance_m,Availability,2115.526272947837,2115.526272947837,0
+low_normal_occupancy,43,Low,Normal,avg_distance_m,Smart V1,2115.526272947837,2492.696321047344,377.1700480995073
+low_normal_occupancy,43,Low,Normal,avg_distance_m,Smart V2,2115.526272947837,2184.904124379087,69.37785143125029
+low_normal_occupancy,43,Low,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+low_normal_occupancy,43,Low,Normal,avg_walking_distance_m,Smart V1,672.3885,367.45375,-304.93475
+low_normal_occupancy,43,Low,Normal,avg_walking_distance_m,Smart V2,672.3885,448.4045,-223.98400000000004
+low_normal_occupancy,43,Low,Normal,avg_co2_g,Availability,493.1189256065414,493.1189256065414,0
+low_normal_occupancy,43,Low,Normal,avg_co2_g,Smart V1,493.1189256065414,583.716331895311,90.5974062887696
+low_normal_occupancy,43,Low,Normal,avg_co2_g,Smart V2,493.1189256065414,523.8804069176849,30.76148131114354
+low_normal_occupancy,44,Low,Normal,avg_time_to_parking,Availability,272.775,272.775,0
+low_normal_occupancy,44,Low,Normal,avg_time_to_parking,Smart V1,272.775,324.475,51.700000000000045
+low_normal_occupancy,44,Low,Normal,avg_time_to_parking,Smart V2,272.775,277.175,4.400000000000034
+low_normal_occupancy,44,Low,Normal,avg_parking_search_time,Availability,62.3,62.3,0
+low_normal_occupancy,44,Low,Normal,avg_parking_search_time,Smart V1,62.3,114.65,52.35000000000001
+low_normal_occupancy,44,Low,Normal,avg_parking_search_time,Smart V2,62.3,66.5,4.200000000000003
+low_normal_occupancy,44,Low,Normal,avg_waiting_time,Availability,2.375,2.375,0
+low_normal_occupancy,44,Low,Normal,avg_waiting_time,Smart V1,2.375,3.475,1.1
+low_normal_occupancy,44,Low,Normal,avg_waiting_time,Smart V2,2.375,4.25,1.875
+low_normal_occupancy,44,Low,Normal,avg_time_loss,Availability,51.78183827181574,51.78183827181574,0
+low_normal_occupancy,44,Low,Normal,avg_time_loss,Smart V1,51.78183827181574,64.29005720981166,12.508218937995927
+low_normal_occupancy,44,Low,Normal,avg_time_loss,Smart V2,51.78183827181574,58.44254482848643,6.6607065566706964
+low_normal_occupancy,44,Low,Normal,avg_distance_m,Availability,2115.4016546681783,2115.4016546681783,0
+low_normal_occupancy,44,Low,Normal,avg_distance_m,Smart V1,2115.4016546681783,2545.503334141774,430.1016794735956
+low_normal_occupancy,44,Low,Normal,avg_distance_m,Smart V2,2115.4016546681783,2183.915792007268,68.51413733908976
+low_normal_occupancy,44,Low,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+low_normal_occupancy,44,Low,Normal,avg_walking_distance_m,Smart V1,672.3885,359.3085,-313.08000000000004
+low_normal_occupancy,44,Low,Normal,avg_walking_distance_m,Smart V2,672.3885,453.258,-219.13050000000004
+low_normal_occupancy,44,Low,Normal,avg_co2_g,Availability,503.5811886442695,503.5811886442695,0
+low_normal_occupancy,44,Low,Normal,avg_co2_g,Smart V1,503.5811886442695,605.8140140190789,102.23282537480935
+low_normal_occupancy,44,Low,Normal,avg_co2_g,Smart V2,503.5811886442695,523.9101673458063,20.328978701536755
+low_normal_occupancy,45,Low,Normal,avg_time_to_parking,Availability,271,271,0
+low_normal_occupancy,45,Low,Normal,avg_time_to_parking,Smart V1,271,324.7,53.69999999999999
+low_normal_occupancy,45,Low,Normal,avg_time_to_parking,Smart V2,271,267.625,-3.375
+low_normal_occupancy,45,Low,Normal,avg_parking_search_time,Availability,63.15,63.15,0
+low_normal_occupancy,45,Low,Normal,avg_parking_search_time,Smart V1,63.15,115.8,52.65
+low_normal_occupancy,45,Low,Normal,avg_parking_search_time,Smart V2,63.15,62.975,-0.17499999999999716
+low_normal_occupancy,45,Low,Normal,avg_waiting_time,Availability,2.825,2.825,0
+low_normal_occupancy,45,Low,Normal,avg_waiting_time,Smart V1,2.825,2.9,0.07499999999999973
+low_normal_occupancy,45,Low,Normal,avg_waiting_time,Smart V2,2.825,4.55,1.7249999999999996
+low_normal_occupancy,45,Low,Normal,avg_time_loss,Availability,50.80917091244095,50.80917091244095,0
+low_normal_occupancy,45,Low,Normal,avg_time_loss,Smart V1,50.80917091244095,61.76791413814972,10.958743225708773
+low_normal_occupancy,45,Low,Normal,avg_time_loss,Smart V2,50.80917091244095,54.16027943409476,3.3511085216538135
+low_normal_occupancy,45,Low,Normal,avg_distance_m,Availability,2115.622373541162,2115.622373541162,0
+low_normal_occupancy,45,Low,Normal,avg_distance_m,Smart V1,2115.622373541162,2540.5498631938603,424.92748965269857
+low_normal_occupancy,45,Low,Normal,avg_distance_m,Smart V2,2115.622373541162,2157.048963434391,41.42658989322945
+low_normal_occupancy,45,Low,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+low_normal_occupancy,45,Low,Normal,avg_walking_distance_m,Smart V1,672.3885,359.0565,-313.332
+low_normal_occupancy,45,Low,Normal,avg_walking_distance_m,Smart V2,672.3885,468.3995,-203.98900000000003
+low_normal_occupancy,45,Low,Normal,avg_co2_g,Availability,500.0639311343175,500.0639311343175,0
+low_normal_occupancy,45,Low,Normal,avg_co2_g,Smart V1,500.0639311343175,602.8644568487503,102.80052571443275
+low_normal_occupancy,45,Low,Normal,avg_co2_g,Smart V2,500.0639311343175,513.2187706047284,13.154839470410934
+low_normal_occupancy,46,Low,Normal,avg_time_to_parking,Availability,269.625,269.625,0
+low_normal_occupancy,46,Low,Normal,avg_time_to_parking,Smart V1,269.625,320.075,50.44999999999999
+low_normal_occupancy,46,Low,Normal,avg_time_to_parking,Smart V2,269.625,267.325,-2.3000000000000114
+low_normal_occupancy,46,Low,Normal,avg_parking_search_time,Availability,62.8,62.8,0
+low_normal_occupancy,46,Low,Normal,avg_parking_search_time,Smart V1,62.8,112.925,50.125
+low_normal_occupancy,46,Low,Normal,avg_parking_search_time,Smart V2,62.8,61.6,-1.1999999999999957
+low_normal_occupancy,46,Low,Normal,avg_waiting_time,Availability,2.85,2.85,0
+low_normal_occupancy,46,Low,Normal,avg_waiting_time,Smart V1,2.85,3.05,0.19999999999999973
+low_normal_occupancy,46,Low,Normal,avg_waiting_time,Smart V2,2.85,3.6,0.75
+low_normal_occupancy,46,Low,Normal,avg_time_loss,Availability,52.1785949372375,52.1785949372375,0
+low_normal_occupancy,46,Low,Normal,avg_time_loss,Smart V1,52.1785949372375,64.2405746977685,12.061979760530996
+low_normal_occupancy,46,Low,Normal,avg_time_loss,Smart V2,52.1785949372375,54.98032941504171,2.80173447780421
+low_normal_occupancy,46,Low,Normal,avg_distance_m,Availability,2115.5040527192864,2115.5040527192864,0
+low_normal_occupancy,46,Low,Normal,avg_distance_m,Smart V1,2115.5040527192864,2528.251395756011,412.7473430367245
+low_normal_occupancy,46,Low,Normal,avg_distance_m,Smart V2,2115.5040527192864,2152.9554402545177,37.45138753523133
+low_normal_occupancy,46,Low,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+low_normal_occupancy,46,Low,Normal,avg_walking_distance_m,Smart V1,672.3885,363.9095,-308.47900000000004
+low_normal_occupancy,46,Low,Normal,avg_walking_distance_m,Smart V2,672.3885,471.58725,-200.80125000000004
+low_normal_occupancy,46,Low,Normal,avg_co2_g,Availability,499.3020206535645,499.3020206535645,0
+low_normal_occupancy,46,Low,Normal,avg_co2_g,Smart V1,499.3020206535645,598.8563439015121,99.5543232479476
+low_normal_occupancy,46,Low,Normal,avg_co2_g,Smart V2,499.3020206535645,510.869652591005,11.567631937440467
+low_high_occupancy,42,Low,High,avg_time_to_parking,Availability,272.575,264.575,-8
+low_high_occupancy,42,Low,High,avg_time_to_parking,Smart V1,272.575,321.45,48.875
+low_high_occupancy,42,Low,High,avg_time_to_parking,Smart V2,272.575,275.875,3.3000000000000114
+low_high_occupancy,42,Low,High,avg_parking_search_time,Availability,67.525,60.925,-6.6000000000000085
+low_high_occupancy,42,Low,High,avg_parking_search_time,Smart V1,67.525,114.55,47.02499999999999
+low_high_occupancy,42,Low,High,avg_parking_search_time,Smart V2,67.525,71.875,4.349999999999994
+low_high_occupancy,42,Low,High,avg_waiting_time,Availability,2.4,2.9,0.5
+low_high_occupancy,42,Low,High,avg_waiting_time,Smart V1,2.4,2.65,0.25
+low_high_occupancy,42,Low,High,avg_waiting_time,Smart V2,2.4,4,1.6
+low_high_occupancy,42,Low,High,avg_time_loss,Availability,51.14386764355703,49.45882125550165,-1.6850463880553832
+low_high_occupancy,42,Low,High,avg_time_loss,Smart V1,51.14386764355703,61.64196264287319,10.498094999316159
+low_high_occupancy,42,Low,High,avg_time_loss,Smart V2,51.14386764355703,56.28053968034007,5.13667203678304
+low_high_occupancy,42,Low,High,avg_distance_m,Availability,2141.593055931754,2106.561964200468,-35.03109173128587
+low_high_occupancy,42,Low,High,avg_distance_m,Smart V1,2141.593055931754,2576.24762382692,434.6545678951661
+low_high_occupancy,42,Low,High,avg_distance_m,Smart V2,2141.593055931754,2224.0032259120594,82.41016998030545
+low_high_occupancy,42,Low,High,avg_walking_distance_m,Availability,672.30125,665.95125,-6.350000000000023
+low_high_occupancy,42,Low,High,avg_walking_distance_m,Smart V1,672.30125,369.76175,-302.5395
+low_high_occupancy,42,Low,High,avg_walking_distance_m,Smart V2,672.30125,455.575,-216.72625
+low_high_occupancy,42,Low,High,avg_co2_g,Availability,505.6951921738674,491.4873245462431,-14.207867627624296
+low_high_occupancy,42,Low,High,avg_co2_g,Smart V1,505.6951921738674,610.0058457202675,104.31065354640015
+low_high_occupancy,42,Low,High,avg_co2_g,Smart V2,505.6951921738674,530.8738749788147,25.1786828049473
+low_high_occupancy,43,Low,High,avg_time_to_parking,Availability,272,266.225,-5.774999999999977
+low_high_occupancy,43,Low,High,avg_time_to_parking,Smart V1,272,315.1,43.10000000000002
+low_high_occupancy,43,Low,High,avg_time_to_parking,Smart V2,272,270.75,-1.25
+low_high_occupancy,43,Low,High,avg_parking_search_time,Availability,67.075,60.875,-6.200000000000003
+low_high_occupancy,43,Low,High,avg_parking_search_time,Smart V1,67.075,113.625,46.55
+low_high_occupancy,43,Low,High,avg_parking_search_time,Smart V2,67.075,68.425,1.3499999999999943
+low_high_occupancy,43,Low,High,avg_waiting_time,Availability,2.875,2.8,-0.07500000000000018
+low_high_occupancy,43,Low,High,avg_waiting_time,Smart V1,2.875,2.4,-0.4750000000000001
+low_high_occupancy,43,Low,High,avg_waiting_time,Smart V2,2.875,3.225,0.3500000000000001
+low_high_occupancy,43,Low,High,avg_time_loss,Availability,50.263180103648246,48.84493577340604,-1.418244330242203
+low_high_occupancy,43,Low,High,avg_time_loss,Smart V1,50.263180103648246,58.568912761004384,8.305732657356138
+low_high_occupancy,43,Low,High,avg_time_loss,Smart V2,50.263180103648246,54.42627333582557,4.163093232177324
+low_high_occupancy,43,Low,High,avg_distance_m,Availability,2140.242267556142,2105.5394258831784,-34.70284167296359
+low_high_occupancy,43,Low,High,avg_distance_m,Smart V1,2140.242267556142,2596.652620379149,456.4103528230071
+low_high_occupancy,43,Low,High,avg_distance_m,Smart V2,2140.242267556142,2192.828944848249,52.5866772921072
+low_high_occupancy,43,Low,High,avg_walking_distance_m,Availability,672.30125,665.95125,-6.350000000000023
+low_high_occupancy,43,Low,High,avg_walking_distance_m,Smart V1,672.30125,365.901,-306.40024999999997
+low_high_occupancy,43,Low,High,avg_walking_distance_m,Smart V2,672.30125,474.7185,-197.58274999999998
+low_high_occupancy,43,Low,High,avg_co2_g,Availability,502.246456532236,493.2935145006887,-8.952942031547309
+low_high_occupancy,43,Low,High,avg_co2_g,Smart V1,502.246456532236,602.1609080577539,99.9144515255179
+low_high_occupancy,43,Low,High,avg_co2_g,Smart V2,502.246456532236,520.5591854796666,18.31272894743057
+low_high_occupancy,44,Low,High,avg_time_to_parking,Availability,277.15,271.275,-5.875
+low_high_occupancy,44,Low,High,avg_time_to_parking,Smart V1,277.15,317.9,40.75
+low_high_occupancy,44,Low,High,avg_time_to_parking,Smart V2,277.15,280.45,3.3000000000000114
+low_high_occupancy,44,Low,High,avg_parking_search_time,Availability,66.95,62.275,-4.675000000000004
+low_high_occupancy,44,Low,High,avg_parking_search_time,Smart V1,66.95,109.375,42.425
+low_high_occupancy,44,Low,High,avg_parking_search_time,Smart V2,66.95,72.275,5.325000000000003
+low_high_occupancy,44,Low,High,avg_waiting_time,Availability,2.275,3,0.7250000000000001
+low_high_occupancy,44,Low,High,avg_waiting_time,Smart V1,2.275,2.775,0.5
+low_high_occupancy,44,Low,High,avg_waiting_time,Smart V2,2.275,3.45,1.1750000000000003
+low_high_occupancy,44,Low,High,avg_time_loss,Availability,52.26133026394265,51.89661890601137,-0.3647113579312773
+low_high_occupancy,44,Low,High,avg_time_loss,Smart V1,52.26133026394265,62.2025769692946,9.94124670535195
+low_high_occupancy,44,Low,High,avg_time_loss,Smart V2,52.26133026394265,58.97956161436481,6.718231350422165
+low_high_occupancy,44,Low,High,avg_distance_m,Availability,2139.270467556303,2104.710655953314,-34.55981160298916
+low_high_occupancy,44,Low,High,avg_distance_m,Smart V1,2139.270467556303,2530.0742381290643,390.8037705727611
+low_high_occupancy,44,Low,High,avg_distance_m,Smart V2,2139.270467556303,2222.1683245209174,82.89785696461422
+low_high_occupancy,44,Low,High,avg_walking_distance_m,Availability,672.30125,665.37525,-6.925999999999931
+low_high_occupancy,44,Low,High,avg_walking_distance_m,Smart V1,672.30125,375.04725,-297.25399999999996
+low_high_occupancy,44,Low,High,avg_walking_distance_m,Smart V2,672.30125,455.9855,-216.31574999999998
+low_high_occupancy,44,Low,High,avg_co2_g,Availability,508.7792638003561,500.78049789093086,-7.998765909425231
+low_high_occupancy,44,Low,High,avg_co2_g,Smart V1,508.7792638003561,594.2556329495259,85.47636914916978
+low_high_occupancy,44,Low,High,avg_co2_g,Smart V2,508.7792638003561,532.5091874615498,23.72992366119371
+low_high_occupancy,45,Low,High,avg_time_to_parking,Availability,275.7,265.775,-9.925000000000011
+low_high_occupancy,45,Low,High,avg_time_to_parking,Smart V1,275.7,326.75,51.05000000000001
+low_high_occupancy,45,Low,High,avg_time_to_parking,Smart V2,275.7,273.775,-1.9250000000000114
+low_high_occupancy,45,Low,High,avg_parking_search_time,Availability,67.675,60.45,-7.224999999999994
+low_high_occupancy,45,Low,High,avg_parking_search_time,Smart V1,67.675,117.875,50.2
+low_high_occupancy,45,Low,High,avg_parking_search_time,Smart V2,67.675,70.5,2.825000000000003
+low_high_occupancy,45,Low,High,avg_waiting_time,Availability,2.55,3.175,0.625
+low_high_occupancy,45,Low,High,avg_waiting_time,Smart V1,2.55,3.25,0.7000000000000002
+low_high_occupancy,45,Low,High,avg_waiting_time,Smart V2,2.55,3.55,1
+low_high_occupancy,45,Low,High,avg_time_loss,Availability,51.2367898692751,50.01612304926438,-1.2206668200107202
+low_high_occupancy,45,Low,High,avg_time_loss,Smart V1,51.2367898692751,63.27106801756739,12.034278148292287
+low_high_occupancy,45,Low,High,avg_time_loss,Smart V2,51.2367898692751,54.71920092886056,3.482411059585459
+low_high_occupancy,45,Low,High,avg_distance_m,Availability,2140.560076773945,2100.030739120171,-40.52933765377429
+low_high_occupancy,45,Low,High,avg_distance_m,Smart V1,2140.560076773945,2560.511860085904,419.95178331195893
+low_high_occupancy,45,Low,High,avg_distance_m,Smart V2,2140.560076773945,2198.8418212072934,58.281744433348194
+low_high_occupancy,45,Low,High,avg_walking_distance_m,Availability,672.30125,661.7345,-10.566749999999956
+low_high_occupancy,45,Low,High,avg_walking_distance_m,Smart V1,672.30125,370.23475,-302.06649999999996
+low_high_occupancy,45,Low,High,avg_walking_distance_m,Smart V2,672.30125,475.289,-197.01225
+low_high_occupancy,45,Low,High,avg_co2_g,Availability,507.6298244592447,495.1604674203107,-12.469357038933992
+low_high_occupancy,45,Low,High,avg_co2_g,Smart V1,507.6298244592447,608.140908507956,100.51108404871138
+low_high_occupancy,45,Low,High,avg_co2_g,Smart V2,507.6298244592447,523.969638582126,16.339814122881307
+low_high_occupancy,46,Low,High,avg_time_to_parking,Availability,274.775,267.075,-7.699999999999989
+low_high_occupancy,46,Low,High,avg_time_to_parking,Smart V1,274.775,320.875,46.10000000000002
+low_high_occupancy,46,Low,High,avg_time_to_parking,Smart V2,274.775,277.725,2.9500000000000455
+low_high_occupancy,46,Low,High,avg_parking_search_time,Availability,68.3,61.525,-6.774999999999999
+low_high_occupancy,46,Low,High,avg_parking_search_time,Smart V1,68.3,110.925,42.625
+low_high_occupancy,46,Low,High,avg_parking_search_time,Smart V2,68.3,69.3,1
+low_high_occupancy,46,Low,High,avg_waiting_time,Availability,2.65,3.1,0.4500000000000002
+low_high_occupancy,46,Low,High,avg_waiting_time,Smart V1,2.65,3.275,0.625
+low_high_occupancy,46,Low,High,avg_waiting_time,Smart V2,2.65,3.35,0.7000000000000002
+low_high_occupancy,46,Low,High,avg_time_loss,Availability,52.70730367356517,52.151565380871695,-0.5557382926934764
+low_high_occupancy,46,Low,High,avg_time_loss,Smart V1,52.70730367356517,62.7223784649124,10.015074791347232
+low_high_occupancy,46,Low,High,avg_time_loss,Smart V2,52.70730367356517,58.08825364349039,5.380949969925219
+low_high_occupancy,46,Low,High,avg_distance_m,Availability,2140.976959777692,2106.406481869779,-34.5704779079133
+low_high_occupancy,46,Low,High,avg_distance_m,Smart V1,2140.976959777692,2522.5805249195528,381.6035651418606
+low_high_occupancy,46,Low,High,avg_distance_m,Smart V2,2140.976959777692,2199.228605090627,58.25164531293467
+low_high_occupancy,46,Low,High,avg_walking_distance_m,Availability,672.30125,665.95125,-6.350000000000023
+low_high_occupancy,46,Low,High,avg_walking_distance_m,Smart V1,672.30125,381.7345,-290.56674999999996
+low_high_occupancy,46,Low,High,avg_walking_distance_m,Smart V2,672.30125,469.57475,-202.7265
+low_high_occupancy,46,Low,High,avg_co2_g,Availability,505.3062569648528,498.0262921309694,-7.279964833883412
+low_high_occupancy,46,Low,High,avg_co2_g,Smart V1,505.3062569648528,597.2858142925329,91.97955732768008
+low_high_occupancy,46,Low,High,avg_co2_g,Smart V2,505.3062569648528,527.7681503600708,22.461893395217942
+normal_normal_occupancy,42,Normal,Normal,avg_time_to_parking,Availability,267.45,267.45,0
+normal_normal_occupancy,42,Normal,Normal,avg_time_to_parking,Smart V1,267.45,309.325,41.875
+normal_normal_occupancy,42,Normal,Normal,avg_time_to_parking,Smart V2,267.45,272.975,5.525000000000034
+normal_normal_occupancy,42,Normal,Normal,avg_parking_search_time,Availability,61.525,61.525,0
+normal_normal_occupancy,42,Normal,Normal,avg_parking_search_time,Smart V1,61.525,104.15,42.62500000000001
+normal_normal_occupancy,42,Normal,Normal,avg_parking_search_time,Smart V2,61.525,64.25,2.7250000000000014
+normal_normal_occupancy,42,Normal,Normal,avg_waiting_time,Availability,3.125,3.125,0
+normal_normal_occupancy,42,Normal,Normal,avg_waiting_time,Smart V1,3.125,2.75,-0.375
+normal_normal_occupancy,42,Normal,Normal,avg_waiting_time,Smart V2,3.125,5.075,1.9500000000000002
+normal_normal_occupancy,42,Normal,Normal,avg_time_loss,Availability,50.44391958068241,50.44391958068241,0
+normal_normal_occupancy,42,Normal,Normal,avg_time_loss,Smart V1,50.44391958068241,58.985876408845385,8.541956828162974
+normal_normal_occupancy,42,Normal,Normal,avg_time_loss,Smart V2,50.44391958068241,56.71418605181445,6.2702664711320395
+normal_normal_occupancy,42,Normal,Normal,avg_distance_m,Availability,2115.8909081667443,2115.8909081667443,0
+normal_normal_occupancy,42,Normal,Normal,avg_distance_m,Smart V1,2115.8909081667443,2479.877844489551,363.98693632280674
+normal_normal_occupancy,42,Normal,Normal,avg_distance_m,Smart V2,2115.8909081667443,2160.66267693832,44.77176877157581
+normal_normal_occupancy,42,Normal,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+normal_normal_occupancy,42,Normal,Normal,avg_walking_distance_m,Smart V1,672.3885,372.014,-300.3745
+normal_normal_occupancy,42,Normal,Normal,avg_walking_distance_m,Smart V2,672.3885,470.294,-202.09450000000004
+normal_normal_occupancy,42,Normal,Normal,avg_co2_g,Availability,496.6299253983093,496.6299253983093,0
+normal_normal_occupancy,42,Normal,Normal,avg_co2_g,Smart V1,496.6299253983093,581.8923488432939,85.26242344498462
+normal_normal_occupancy,42,Normal,Normal,avg_co2_g,Smart V2,496.6299253983093,519.2567594543023,22.62683405599296
+normal_normal_occupancy,43,Normal,Normal,avg_time_to_parking,Availability,268.95,268.95,0
+normal_normal_occupancy,43,Normal,Normal,avg_time_to_parking,Smart V1,268.95,314.175,45.22500000000002
+normal_normal_occupancy,43,Normal,Normal,avg_time_to_parking,Smart V2,268.95,268.525,-0.42500000000001137
+normal_normal_occupancy,43,Normal,Normal,avg_parking_search_time,Availability,61.45,61.45,0
+normal_normal_occupancy,43,Normal,Normal,avg_parking_search_time,Smart V1,61.45,106.75,45.3
+normal_normal_occupancy,43,Normal,Normal,avg_parking_search_time,Smart V2,61.45,61.875,0.42499999999999716
+normal_normal_occupancy,43,Normal,Normal,avg_waiting_time,Availability,3.075,3.075,0
+normal_normal_occupancy,43,Normal,Normal,avg_waiting_time,Smart V1,3.075,3.975,0.8999999999999999
+normal_normal_occupancy,43,Normal,Normal,avg_waiting_time,Smart V2,3.075,3.8,0.7249999999999996
+normal_normal_occupancy,43,Normal,Normal,avg_time_loss,Availability,53.4367977317544,53.4367977317544,0
+normal_normal_occupancy,43,Normal,Normal,avg_time_loss,Smart V1,53.4367977317544,62.369251540404285,8.932453808649882
+normal_normal_occupancy,43,Normal,Normal,avg_time_loss,Smart V2,53.4367977317544,55.70522618160298,2.268428449848578
+normal_normal_occupancy,43,Normal,Normal,avg_distance_m,Availability,2115.526867562099,2115.526867562099,0
+normal_normal_occupancy,43,Normal,Normal,avg_distance_m,Smart V1,2115.526867562099,2513.6133070458027,398.08643948370354
+normal_normal_occupancy,43,Normal,Normal,avg_distance_m,Smart V2,2115.526867562099,2159.444682221784,43.917814659685064
+normal_normal_occupancy,43,Normal,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+normal_normal_occupancy,43,Normal,Normal,avg_walking_distance_m,Smart V1,672.3885,364.7425,-307.646
+normal_normal_occupancy,43,Normal,Normal,avg_walking_distance_m,Smart V2,672.3885,468.38375,-204.00475
+normal_normal_occupancy,43,Normal,Normal,avg_co2_g,Availability,502.1442147650682,502.1442147650682,0
+normal_normal_occupancy,43,Normal,Normal,avg_co2_g,Smart V1,502.1442147650682,591.9614670247797,89.8172522597115
+normal_normal_occupancy,43,Normal,Normal,avg_co2_g,Smart V2,502.1442147650682,514.6029558595562,12.458741094488005
+normal_normal_occupancy,44,Normal,Normal,avg_time_to_parking,Availability,265.85,265.85,0
+normal_normal_occupancy,44,Normal,Normal,avg_time_to_parking,Smart V1,265.85,313.625,47.77499999999998
+normal_normal_occupancy,44,Normal,Normal,avg_time_to_parking,Smart V2,265.85,268.45,2.599999999999966
+normal_normal_occupancy,44,Normal,Normal,avg_parking_search_time,Availability,61.825,61.825,0
+normal_normal_occupancy,44,Normal,Normal,avg_parking_search_time,Smart V1,61.825,109.95,48.125
+normal_normal_occupancy,44,Normal,Normal,avg_parking_search_time,Smart V2,61.825,63.925,2.0999999999999943
+normal_normal_occupancy,44,Normal,Normal,avg_waiting_time,Availability,2.75,2.75,0
+normal_normal_occupancy,44,Normal,Normal,avg_waiting_time,Smart V1,2.75,3.2,0.4500000000000002
+normal_normal_occupancy,44,Normal,Normal,avg_waiting_time,Smart V2,2.75,4.75,2
+normal_normal_occupancy,44,Normal,Normal,avg_time_loss,Availability,51.278245531065885,51.278245531065885,0
+normal_normal_occupancy,44,Normal,Normal,avg_time_loss,Smart V1,51.278245531065885,63.41542117006385,12.137175638997967
+normal_normal_occupancy,44,Normal,Normal,avg_time_loss,Smart V2,51.278245531065885,57.699897017563714,6.421651486497829
+normal_normal_occupancy,44,Normal,Normal,avg_distance_m,Availability,2115.400222844949,2115.400222844949,0
+normal_normal_occupancy,44,Normal,Normal,avg_distance_m,Smart V1,2115.400222844949,2540.285146359504,424.8849235145549
+normal_normal_occupancy,44,Normal,Normal,avg_distance_m,Smart V2,2115.400222844949,2184.2365343421197,68.83631149717075
+normal_normal_occupancy,44,Normal,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+normal_normal_occupancy,44,Normal,Normal,avg_walking_distance_m,Smart V1,672.3885,358.884,-313.5045
+normal_normal_occupancy,44,Normal,Normal,avg_walking_distance_m,Smart V2,672.3885,450.54775,-221.84075
+normal_normal_occupancy,44,Normal,Normal,avg_co2_g,Availability,499.2475561856676,499.2475561856676,0
+normal_normal_occupancy,44,Normal,Normal,avg_co2_g,Smart V1,499.2475561856676,599.6100834385987,100.36252725293116
+normal_normal_occupancy,44,Normal,Normal,avg_co2_g,Smart V2,499.2475561856676,524.6716307456818,25.42407456001422
+normal_normal_occupancy,45,Normal,Normal,avg_time_to_parking,Availability,266.825,266.825,0
+normal_normal_occupancy,45,Normal,Normal,avg_time_to_parking,Smart V1,266.825,319.975,53.150000000000034
+normal_normal_occupancy,45,Normal,Normal,avg_time_to_parking,Smart V2,266.825,269.8,2.9750000000000227
+normal_normal_occupancy,45,Normal,Normal,avg_parking_search_time,Availability,61.325,61.325,0
+normal_normal_occupancy,45,Normal,Normal,avg_parking_search_time,Smart V1,61.325,112.45,51.125
+normal_normal_occupancy,45,Normal,Normal,avg_parking_search_time,Smart V2,61.325,63.175,1.8499999999999943
+normal_normal_occupancy,45,Normal,Normal,avg_waiting_time,Availability,2.925,2.925,0
+normal_normal_occupancy,45,Normal,Normal,avg_waiting_time,Smart V1,2.925,2.6,-0.32499999999999973
+normal_normal_occupancy,45,Normal,Normal,avg_waiting_time,Smart V2,2.925,5,2.075
+normal_normal_occupancy,45,Normal,Normal,avg_time_loss,Availability,53.05245841465823,53.05245841465823,0
+normal_normal_occupancy,45,Normal,Normal,avg_time_loss,Smart V1,53.05245841465823,61.44554185607173,8.393083441413495
+normal_normal_occupancy,45,Normal,Normal,avg_time_loss,Smart V2,53.05245841465823,57.25304865071384,4.200590236055611
+normal_normal_occupancy,45,Normal,Normal,avg_distance_m,Availability,2115.6173964350205,2115.6173964350205,0
+normal_normal_occupancy,45,Normal,Normal,avg_distance_m,Smart V1,2115.6173964350205,2544.2292738986944,428.61187746367386
+normal_normal_occupancy,45,Normal,Normal,avg_distance_m,Smart V2,2115.6173964350205,2164.402069088641,48.78467265362042
+normal_normal_occupancy,45,Normal,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+normal_normal_occupancy,45,Normal,Normal,avg_walking_distance_m,Smart V1,672.3885,359.36575,-313.02275000000003
+normal_normal_occupancy,45,Normal,Normal,avg_walking_distance_m,Smart V2,672.3885,465.556,-206.83250000000004
+normal_normal_occupancy,45,Normal,Normal,avg_co2_g,Availability,503.3496723343828,503.3496723343828,0
+normal_normal_occupancy,45,Normal,Normal,avg_co2_g,Smart V1,503.3496723343828,601.620678276758,98.27100594237521
+normal_normal_occupancy,45,Normal,Normal,avg_co2_g,Smart V2,503.3496723343828,519.4828863179645,16.133213983581697
+normal_normal_occupancy,46,Normal,Normal,avg_time_to_parking,Availability,268.05,268.05,0
+normal_normal_occupancy,46,Normal,Normal,avg_time_to_parking,Smart V1,268.05,315.35,47.30000000000001
+normal_normal_occupancy,46,Normal,Normal,avg_time_to_parking,Smart V2,268.05,271.7,3.6499999999999773
+normal_normal_occupancy,46,Normal,Normal,avg_parking_search_time,Availability,61.55,61.55,0
+normal_normal_occupancy,46,Normal,Normal,avg_parking_search_time,Smart V1,61.55,108.475,46.925
+normal_normal_occupancy,46,Normal,Normal,avg_parking_search_time,Smart V2,61.55,66.025,4.4750000000000085
+normal_normal_occupancy,46,Normal,Normal,avg_waiting_time,Availability,3,3,0
+normal_normal_occupancy,46,Normal,Normal,avg_waiting_time,Smart V1,3,3.15,0.1499999999999999
+normal_normal_occupancy,46,Normal,Normal,avg_waiting_time,Smart V2,3,4.375,1.375
+normal_normal_occupancy,46,Normal,Normal,avg_time_loss,Availability,52.48870392419119,52.48870392419119,0
+normal_normal_occupancy,46,Normal,Normal,avg_time_loss,Smart V1,52.48870392419119,62.70558091749521,10.21687699330402
+normal_normal_occupancy,46,Normal,Normal,avg_time_loss,Smart V2,52.48870392419119,57.75478760248452,5.266083678293327
+normal_normal_occupancy,46,Normal,Normal,avg_distance_m,Availability,2115.508957876943,2115.508957876943,0
+normal_normal_occupancy,46,Normal,Normal,avg_distance_m,Smart V1,2115.508957876943,2521.2499224883263,405.74096461138333
+normal_normal_occupancy,46,Normal,Normal,avg_distance_m,Smart V2,2115.508957876943,2186.7303969931345,71.2214391161915
+normal_normal_occupancy,46,Normal,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+normal_normal_occupancy,46,Normal,Normal,avg_walking_distance_m,Smart V1,672.3885,364.03325,-308.35525
+normal_normal_occupancy,46,Normal,Normal,avg_walking_distance_m,Smart V2,672.3885,450.918,-221.47050000000002
+normal_normal_occupancy,46,Normal,Normal,avg_co2_g,Availability,501.3968772430164,501.3968772430164,0
+normal_normal_occupancy,46,Normal,Normal,avg_co2_g,Smart V1,501.3968772430164,593.469470858612,92.07259361559562
+normal_normal_occupancy,46,Normal,Normal,avg_co2_g,Smart V2,501.3968772430164,522.7930774341247,21.396200191108335
+normal_high_occupancy,42,Normal,High,avg_time_to_parking,Availability,272.35,268.65,-3.7000000000000455
+normal_high_occupancy,42,Normal,High,avg_time_to_parking,Smart V1,272.35,319.4,47.049999999999955
+normal_high_occupancy,42,Normal,High,avg_time_to_parking,Smart V2,272.35,279.95,7.599999999999966
+normal_high_occupancy,42,Normal,High,avg_parking_search_time,Availability,66.35,60.525,-5.824999999999996
+normal_high_occupancy,42,Normal,High,avg_parking_search_time,Smart V1,66.35,115.75,49.400000000000006
+normal_high_occupancy,42,Normal,High,avg_parking_search_time,Smart V2,66.35,71.9,5.550000000000011
+normal_high_occupancy,42,Normal,High,avg_waiting_time,Availability,2.75,3.25,0.5
+normal_high_occupancy,42,Normal,High,avg_waiting_time,Smart V1,2.75,3.425,0.6749999999999998
+normal_high_occupancy,42,Normal,High,avg_waiting_time,Smart V2,2.75,3.75,1
+normal_high_occupancy,42,Normal,High,avg_time_loss,Availability,51.02794793759328,52.88109150147844,1.8531435638851548
+normal_high_occupancy,42,Normal,High,avg_time_loss,Smart V1,51.02794793759328,61.32663407382806,10.298686136234778
+normal_high_occupancy,42,Normal,High,avg_time_loss,Smart V2,51.02794793759328,56.51584345183722,5.487895514243938
+normal_high_occupancy,42,Normal,High,avg_distance_m,Availability,2141.594698382029,2106.563920741929,-35.03077764010004
+normal_high_occupancy,42,Normal,High,avg_distance_m,Smart V1,2141.594698382029,2573.3728921604834,431.77819377845435
+normal_high_occupancy,42,Normal,High,avg_distance_m,Smart V2,2141.594698382029,2218.752994282051,77.15829590002204
+normal_high_occupancy,42,Normal,High,avg_walking_distance_m,Availability,672.30125,665.95125,-6.350000000000023
+normal_high_occupancy,42,Normal,High,avg_walking_distance_m,Smart V1,672.30125,369.76175,-302.5395
+normal_high_occupancy,42,Normal,High,avg_walking_distance_m,Smart V2,672.30125,454.58,-217.72125
+normal_high_occupancy,42,Normal,High,avg_co2_g,Availability,503.2022850630277,498.7697774708269,-4.432507592200807
+normal_high_occupancy,42,Normal,High,avg_co2_g,Smart V1,503.2022850630277,605.6492714804139,102.44698641738614
+normal_high_occupancy,42,Normal,High,avg_co2_g,Smart V2,503.2022850630277,529.5769266226449,26.374641559617203
+normal_high_occupancy,43,Normal,High,avg_time_to_parking,Availability,273.3,262.775,-10.525000000000034
+normal_high_occupancy,43,Normal,High,avg_time_to_parking,Smart V1,273.3,319.275,45.974999999999966
+normal_high_occupancy,43,Normal,High,avg_time_to_parking,Smart V2,273.3,277.375,4.074999999999989
+normal_high_occupancy,43,Normal,High,avg_parking_search_time,Availability,66.525,59.525,-7.000000000000007
+normal_high_occupancy,43,Normal,High,avg_parking_search_time,Smart V1,66.525,113.85,47.32499999999999
+normal_high_occupancy,43,Normal,High,avg_parking_search_time,Smart V2,66.525,71.25,4.724999999999994
+normal_high_occupancy,43,Normal,High,avg_waiting_time,Availability,2.625,2.9,0.2749999999999999
+normal_high_occupancy,43,Normal,High,avg_waiting_time,Smart V1,2.625,2.675,0.04999999999999982
+normal_high_occupancy,43,Normal,High,avg_waiting_time,Smart V2,2.625,3.575,0.9500000000000002
+normal_high_occupancy,43,Normal,High,avg_time_loss,Availability,53.31896377648961,52.38853185386505,-0.9304319226245639
+normal_high_occupancy,43,Normal,High,avg_time_loss,Smart V1,53.31896377648961,62.10279076992515,8.78382699343554
+normal_high_occupancy,43,Normal,High,avg_time_loss,Smart V2,53.31896377648961,57.020964656860286,3.702000880370676
+normal_high_occupancy,43,Normal,High,avg_distance_m,Availability,2140.2430683496623,2105.5408798755584,-34.70218847410388
+normal_high_occupancy,43,Normal,High,avg_distance_m,Smart V1,2140.2430683496623,2602.2490557804126,462.00598743075034
+normal_high_occupancy,43,Normal,High,avg_distance_m,Smart V2,2140.2430683496623,2219.066463052119,78.82339470245688
+normal_high_occupancy,43,Normal,High,avg_walking_distance_m,Availability,672.30125,665.95125,-6.350000000000023
+normal_high_occupancy,43,Normal,High,avg_walking_distance_m,Smart V1,672.30125,367.242,-305.05924999999996
+normal_high_occupancy,43,Normal,High,avg_walking_distance_m,Smart V2,672.30125,456.748,-215.55325
+normal_high_occupancy,43,Normal,High,avg_co2_g,Availability,509.7223695951285,497.65060576987446,-12.071763825254038
+normal_high_occupancy,43,Normal,High,avg_co2_g,Smart V1,509.7223695951285,607.8503098817799,98.12794028665144
+normal_high_occupancy,43,Normal,High,avg_co2_g,Smart V2,509.7223695951285,528.9742325474674,19.25186295233891
+normal_high_occupancy,44,Normal,High,avg_time_to_parking,Availability,270.85,260.6,-10.25
+normal_high_occupancy,44,Normal,High,avg_time_to_parking,Smart V1,270.85,317.15,46.299999999999955
+normal_high_occupancy,44,Normal,High,avg_time_to_parking,Smart V2,270.85,280.375,9.524999999999977
+normal_high_occupancy,44,Normal,High,avg_parking_search_time,Availability,66.25,59.3,-6.950000000000003
+normal_high_occupancy,44,Normal,High,avg_parking_search_time,Smart V1,66.25,108.375,42.125
+normal_high_occupancy,44,Normal,High,avg_parking_search_time,Smart V2,66.25,70.675,4.424999999999997
+normal_high_occupancy,44,Normal,High,avg_waiting_time,Availability,2.625,3.225,0.6000000000000001
+normal_high_occupancy,44,Normal,High,avg_waiting_time,Smart V1,2.625,4.05,1.4249999999999998
+normal_high_occupancy,44,Normal,High,avg_waiting_time,Smart V2,2.625,4.275,1.6500000000000004
+normal_high_occupancy,44,Normal,High,avg_time_loss,Availability,52.31520995143915,50.26844551911537,-2.0467644323237835
+normal_high_occupancy,44,Normal,High,avg_time_loss,Smart V1,52.31520995143915,64.23563433798984,11.920424386550685
+normal_high_occupancy,44,Normal,High,avg_time_loss,Smart V2,52.31520995143915,60.415733406858536,8.100523455419385
+normal_high_occupancy,44,Normal,High,avg_distance_m,Availability,2139.532772896649,2105.406741157282,-34.126031739367136
+normal_high_occupancy,44,Normal,High,avg_distance_m,Smart V1,2139.532772896649,2499.506481159437,359.973708262788
+normal_high_occupancy,44,Normal,High,avg_distance_m,Smart V2,2139.532772896649,2194.987026629674,55.45425373302487
+normal_high_occupancy,44,Normal,High,avg_walking_distance_m,Availability,672.30125,665.37525,-6.925999999999931
+normal_high_occupancy,44,Normal,High,avg_walking_distance_m,Smart V1,672.30125,378.34825,-293.953
+normal_high_occupancy,44,Normal,High,avg_walking_distance_m,Smart V2,672.30125,473.404,-198.89724999999999
+normal_high_occupancy,44,Normal,High,avg_co2_g,Availability,506.8586871835357,496.99328393588365,-9.865403247652068
+normal_high_occupancy,44,Normal,High,avg_co2_g,Smart V1,506.8586871835357,598.5037721436117,91.64508496007602
+normal_high_occupancy,44,Normal,High,avg_co2_g,Smart V2,506.8586871835357,533.387590482907,26.528903299371223
+normal_high_occupancy,45,Normal,High,avg_time_to_parking,Availability,270.75,268.15,-2.6000000000000227
+normal_high_occupancy,45,Normal,High,avg_time_to_parking,Smart V1,270.75,321.125,50.375
+normal_high_occupancy,45,Normal,High,avg_time_to_parking,Smart V2,270.75,280.35,9.600000000000023
+normal_high_occupancy,45,Normal,High,avg_parking_search_time,Availability,66.375,59.4,-6.975000000000001
+normal_high_occupancy,45,Normal,High,avg_parking_search_time,Smart V1,66.375,115.1,48.724999999999994
+normal_high_occupancy,45,Normal,High,avg_parking_search_time,Smart V2,66.375,72.4,6.025000000000006
+normal_high_occupancy,45,Normal,High,avg_waiting_time,Availability,2.725,3.225,0.5
+normal_high_occupancy,45,Normal,High,avg_waiting_time,Smart V1,2.725,2.5,-0.2250000000000001
+normal_high_occupancy,45,Normal,High,avg_waiting_time,Smart V2,2.725,3.85,1.125
+normal_high_occupancy,45,Normal,High,avg_time_loss,Availability,52.553588189193576,52.03635364159302,-0.5172345476005589
+normal_high_occupancy,45,Normal,High,avg_time_loss,Smart V1,52.553588189193576,62.38362453934421,9.830036350150635
+normal_high_occupancy,45,Normal,High,avg_time_loss,Smart V2,52.553588189193576,58.45135331481794,5.8977651256243675
+normal_high_occupancy,45,Normal,High,avg_distance_m,Availability,2140.5602699877427,2100.03308182411,-40.52718816363267
+normal_high_occupancy,45,Normal,High,avg_distance_m,Smart V1,2140.5602699877427,2569.920323913307,429.36005392556444
+normal_high_occupancy,45,Normal,High,avg_distance_m,Smart V2,2140.5602699877427,2216.514273327136,75.95400333939324
+normal_high_occupancy,45,Normal,High,avg_walking_distance_m,Availability,672.30125,661.7345,-10.566749999999956
+normal_high_occupancy,45,Normal,High,avg_walking_distance_m,Smart V1,672.30125,370.36175,-301.9395
+normal_high_occupancy,45,Normal,High,avg_walking_distance_m,Smart V2,672.30125,464.5315,-207.76975
+normal_high_occupancy,45,Normal,High,avg_co2_g,Availability,507.9940421376172,499.346449163393,-8.64759297422421
+normal_high_occupancy,45,Normal,High,avg_co2_g,Smart V1,507.9940421376172,605.5390065305328,97.54496439291557
+normal_high_occupancy,45,Normal,High,avg_co2_g,Smart V2,507.9940421376172,533.2449203384929,25.25087820087566
+normal_high_occupancy,46,Normal,High,avg_time_to_parking,Availability,272.275,264.275,-8
+normal_high_occupancy,46,Normal,High,avg_time_to_parking,Smart V1,272.275,318.125,45.85000000000002
+normal_high_occupancy,46,Normal,High,avg_time_to_parking,Smart V2,272.275,281.475,9.200000000000045
+normal_high_occupancy,46,Normal,High,avg_parking_search_time,Availability,66.15,59.875,-6.275000000000006
+normal_high_occupancy,46,Normal,High,avg_parking_search_time,Smart V1,66.15,109.825,43.675
+normal_high_occupancy,46,Normal,High,avg_parking_search_time,Smart V2,66.15,72.675,6.5249999999999915
+normal_high_occupancy,46,Normal,High,avg_waiting_time,Availability,2.675,3.075,0.40000000000000036
+normal_high_occupancy,46,Normal,High,avg_waiting_time,Smart V1,2.675,3.275,0.6000000000000001
+normal_high_occupancy,46,Normal,High,avg_waiting_time,Smart V2,2.675,4.025,1.3500000000000005
+normal_high_occupancy,46,Normal,High,avg_time_loss,Availability,52.66920842188856,51.12715585997064,-1.5420525619179202
+normal_high_occupancy,46,Normal,High,avg_time_loss,Smart V1,52.66920842188856,62.96656523208515,10.29735681019659
+normal_high_occupancy,46,Normal,High,avg_time_loss,Smart V2,52.66920842188856,58.7614759480184,6.092267526129838
+normal_high_occupancy,46,Normal,High,avg_distance_m,Availability,2140.976293491859,2106.4053067446102,-34.57098674724875
+normal_high_occupancy,46,Normal,High,avg_distance_m,Smart V1,2140.976293491859,2515.011728051603,374.03543455974386
+normal_high_occupancy,46,Normal,High,avg_distance_m,Smart V2,2140.976293491859,2215.477830109487,74.50153661762806
+normal_high_occupancy,46,Normal,High,avg_walking_distance_m,Availability,672.30125,665.95125,-6.350000000000023
+normal_high_occupancy,46,Normal,High,avg_walking_distance_m,Smart V1,672.30125,380.5855,-291.71574999999996
+normal_high_occupancy,46,Normal,High,avg_walking_distance_m,Smart V2,672.30125,460.61825,-211.683
+normal_high_occupancy,46,Normal,High,avg_co2_g,Availability,508.1151794924565,497.049294059317,-11.0658854331395
+normal_high_occupancy,46,Normal,High,avg_co2_g,Smart V1,508.1151794924565,597.6829482284613,89.56776873600484
+normal_high_occupancy,46,Normal,High,avg_co2_g,Smart V2,508.1151794924565,530.072092454152,21.95691296169548
+peak_normal_occupancy,42,Peak,Normal,avg_time_to_parking,Availability,267.325,267.325,0
+peak_normal_occupancy,42,Peak,Normal,avg_time_to_parking,Smart V1,267.325,317.575,50.25
+peak_normal_occupancy,42,Peak,Normal,avg_time_to_parking,Smart V2,267.325,270.325,3
+peak_normal_occupancy,42,Peak,Normal,avg_parking_search_time,Availability,61.1,61.1,0
+peak_normal_occupancy,42,Peak,Normal,avg_parking_search_time,Smart V1,61.1,107.15,46.050000000000004
+peak_normal_occupancy,42,Peak,Normal,avg_parking_search_time,Smart V2,61.1,62.575,1.4750000000000014
+peak_normal_occupancy,42,Peak,Normal,avg_waiting_time,Availability,2.725,2.725,0
+peak_normal_occupancy,42,Peak,Normal,avg_waiting_time,Smart V1,2.725,2.85,0.125
+peak_normal_occupancy,42,Peak,Normal,avg_waiting_time,Smart V2,2.725,5.1,2.3749999999999996
+peak_normal_occupancy,42,Peak,Normal,avg_time_loss,Availability,51.96864446378408,51.96864446378408,0
+peak_normal_occupancy,42,Peak,Normal,avg_time_loss,Smart V1,51.96864446378408,62.89353633269705,10.924891868912972
+peak_normal_occupancy,42,Peak,Normal,avg_time_loss,Smart V2,51.96864446378408,58.9442005063526,6.97555604256852
+peak_normal_occupancy,42,Peak,Normal,avg_distance_m,Availability,2115.890620714772,2115.890620714772,0
+peak_normal_occupancy,42,Peak,Normal,avg_distance_m,Smart V1,2115.890620714772,2517.212708237456,401.3220875226839
+peak_normal_occupancy,42,Peak,Normal,avg_distance_m,Smart V2,2115.890620714772,2160.660076734948,44.76945602017577
+peak_normal_occupancy,42,Peak,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+peak_normal_occupancy,42,Peak,Normal,avg_walking_distance_m,Smart V1,672.3885,363.95675,-308.43175
+peak_normal_occupancy,42,Peak,Normal,avg_walking_distance_m,Smart V2,672.3885,470.294,-202.09450000000004
+peak_normal_occupancy,42,Peak,Normal,avg_co2_g,Availability,501.6976908696464,501.6976908696464,0
+peak_normal_occupancy,42,Peak,Normal,avg_co2_g,Smart V1,501.6976908696464,596.6820336429646,94.98434277331819
+peak_normal_occupancy,42,Peak,Normal,avg_co2_g,Smart V2,501.6976908696464,521.5468047584311,19.8491138887847
+peak_normal_occupancy,43,Peak,Normal,avg_time_to_parking,Availability,265.725,265.725,0
+peak_normal_occupancy,43,Peak,Normal,avg_time_to_parking,Smart V1,265.725,318.1,52.375
+peak_normal_occupancy,43,Peak,Normal,avg_time_to_parking,Smart V2,265.725,279.75,14.024999999999977
+peak_normal_occupancy,43,Peak,Normal,avg_parking_search_time,Availability,61.15,61.15,0
+peak_normal_occupancy,43,Peak,Normal,avg_parking_search_time,Smart V1,61.15,108.8,47.65
+peak_normal_occupancy,43,Peak,Normal,avg_parking_search_time,Smart V2,61.15,66.15,5.000000000000007
+peak_normal_occupancy,43,Peak,Normal,avg_waiting_time,Availability,2.975,2.975,0
+peak_normal_occupancy,43,Peak,Normal,avg_waiting_time,Smart V1,2.975,3.35,0.375
+peak_normal_occupancy,43,Peak,Normal,avg_waiting_time,Smart V2,2.975,3.975,1
+peak_normal_occupancy,43,Peak,Normal,avg_time_loss,Availability,50.03351069861484,50.03351069861484,0
+peak_normal_occupancy,43,Peak,Normal,avg_time_loss,Smart V1,50.03351069861484,63.225863345226514,13.192352646611674
+peak_normal_occupancy,43,Peak,Normal,avg_time_loss,Smart V2,50.03351069861484,59.494154591488105,9.460643892873264
+peak_normal_occupancy,43,Peak,Normal,avg_distance_m,Availability,2115.633126137972,2115.633126137972,0
+peak_normal_occupancy,43,Peak,Normal,avg_distance_m,Smart V1,2115.633126137972,2509.8406378117475,394.20751167377557
+peak_normal_occupancy,43,Peak,Normal,avg_distance_m,Smart V2,2115.633126137972,2181.688545721209,66.05541958323693
+peak_normal_occupancy,43,Peak,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+peak_normal_occupancy,43,Peak,Normal,avg_walking_distance_m,Smart V1,672.3885,363.5305,-308.858
+peak_normal_occupancy,43,Peak,Normal,avg_walking_distance_m,Smart V2,672.3885,452.25,-220.13850000000002
+peak_normal_occupancy,43,Peak,Normal,avg_co2_g,Availability,497.00086581633695,497.00086581633695,0
+peak_normal_occupancy,43,Peak,Normal,avg_co2_g,Smart V1,497.00086581633695,597.3054379040202,100.30457208768325
+peak_normal_occupancy,43,Peak,Normal,avg_co2_g,Smart V2,497.00086581633695,525.3618093647224,28.36094354838542
+peak_normal_occupancy,44,Peak,Normal,avg_time_to_parking,Availability,271.15,271.15,0
+peak_normal_occupancy,44,Peak,Normal,avg_time_to_parking,Smart V1,271.15,319.65,48.5
+peak_normal_occupancy,44,Peak,Normal,avg_time_to_parking,Smart V2,271.15,279.425,8.275000000000034
+peak_normal_occupancy,44,Peak,Normal,avg_parking_search_time,Availability,63.5,63.5,0
+peak_normal_occupancy,44,Peak,Normal,avg_parking_search_time,Smart V1,63.5,112.425,48.925
+peak_normal_occupancy,44,Peak,Normal,avg_parking_search_time,Smart V2,63.5,69.325,5.825000000000003
+peak_normal_occupancy,44,Peak,Normal,avg_waiting_time,Availability,3.3,3.3,0
+peak_normal_occupancy,44,Peak,Normal,avg_waiting_time,Smart V1,3.3,3.175,-0.125
+peak_normal_occupancy,44,Peak,Normal,avg_waiting_time,Smart V2,3.3,4.275,0.9750000000000005
+peak_normal_occupancy,44,Peak,Normal,avg_time_loss,Availability,56.677896712738615,56.677896712738615,0
+peak_normal_occupancy,44,Peak,Normal,avg_time_loss,Smart V1,56.677896712738615,65.93814152000184,9.26024480726322
+peak_normal_occupancy,44,Peak,Normal,avg_time_loss,Smart V2,56.677896712738615,61.46148296243032,4.783586249691702
+peak_normal_occupancy,44,Peak,Normal,avg_distance_m,Availability,2115.4024039179794,2115.4024039179794,0
+peak_normal_occupancy,44,Peak,Normal,avg_distance_m,Smart V1,2115.4024039179794,2540.043339935168,424.6409360171888
+peak_normal_occupancy,44,Peak,Normal,avg_distance_m,Smart V2,2115.4024039179794,2195.2526776176646,79.8502736996852
+peak_normal_occupancy,44,Peak,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+peak_normal_occupancy,44,Peak,Normal,avg_walking_distance_m,Smart V1,672.3885,359.096,-313.2925
+peak_normal_occupancy,44,Peak,Normal,avg_walking_distance_m,Smart V2,672.3885,446.753,-225.63550000000004
+peak_normal_occupancy,44,Peak,Normal,avg_co2_g,Availability,508.5890583066542,508.5890583066542,0
+peak_normal_occupancy,44,Peak,Normal,avg_co2_g,Smart V1,508.5890583066542,606.3244704324957,97.73541212584149
+peak_normal_occupancy,44,Peak,Normal,avg_co2_g,Smart V2,508.5890583066542,535.9563420179641,27.36728371130988
+peak_normal_occupancy,45,Peak,Normal,avg_time_to_parking,Availability,267.9,267.9,0
+peak_normal_occupancy,45,Peak,Normal,avg_time_to_parking,Smart V1,267.9,326.025,58.125
+peak_normal_occupancy,45,Peak,Normal,avg_time_to_parking,Smart V2,267.9,276.975,9.075000000000045
+peak_normal_occupancy,45,Peak,Normal,avg_parking_search_time,Availability,61.35,61.35,0
+peak_normal_occupancy,45,Peak,Normal,avg_parking_search_time,Smart V1,61.35,115.975,54.62499999999999
+peak_normal_occupancy,45,Peak,Normal,avg_parking_search_time,Smart V2,61.35,67.675,6.324999999999996
+peak_normal_occupancy,45,Peak,Normal,avg_waiting_time,Availability,2.875,2.875,0
+peak_normal_occupancy,45,Peak,Normal,avg_waiting_time,Smart V1,2.875,4.55,1.6749999999999998
+peak_normal_occupancy,45,Peak,Normal,avg_waiting_time,Smart V2,2.875,4.425,1.5499999999999998
+peak_normal_occupancy,45,Peak,Normal,avg_time_loss,Availability,53.13358114548205,53.13358114548205,0
+peak_normal_occupancy,45,Peak,Normal,avg_time_loss,Smart V1,53.13358114548205,69.36863944910368,16.235058303621635
+peak_normal_occupancy,45,Peak,Normal,avg_time_loss,Smart V2,53.13358114548205,62.0591625682836,8.92558142280155
+peak_normal_occupancy,45,Peak,Normal,avg_distance_m,Availability,2115.620925740467,2115.620925740467,0
+peak_normal_occupancy,45,Peak,Normal,avg_distance_m,Smart V1,2115.620925740467,2539.150853552282,423.529927811815
+peak_normal_occupancy,45,Peak,Normal,avg_distance_m,Smart V2,2115.620925740467,2192.6435299333552,77.02260419288814
+peak_normal_occupancy,45,Peak,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+peak_normal_occupancy,45,Peak,Normal,avg_walking_distance_m,Smart V1,672.3885,359.4115,-312.97700000000003
+peak_normal_occupancy,45,Peak,Normal,avg_walking_distance_m,Smart V2,672.3885,447.40125,-224.98725000000002
+peak_normal_occupancy,45,Peak,Normal,avg_co2_g,Availability,502.8237882303494,502.8237882303494,0
+peak_normal_occupancy,45,Peak,Normal,avg_co2_g,Smart V1,502.8237882303494,615.6598512503008,112.83606301995138
+peak_normal_occupancy,45,Peak,Normal,avg_co2_g,Smart V2,502.8237882303494,530.5051041074795,27.68131587713009
+peak_normal_occupancy,46,Peak,Normal,avg_time_to_parking,Availability,269.35,269.35,0
+peak_normal_occupancy,46,Peak,Normal,avg_time_to_parking,Smart V1,269.35,321.45,52.099999999999966
+peak_normal_occupancy,46,Peak,Normal,avg_time_to_parking,Smart V2,269.35,272.425,3.0749999999999886
+peak_normal_occupancy,46,Peak,Normal,avg_parking_search_time,Availability,62.7,62.7,0
+peak_normal_occupancy,46,Peak,Normal,avg_parking_search_time,Smart V1,62.7,111.45,48.75
+peak_normal_occupancy,46,Peak,Normal,avg_parking_search_time,Smart V2,62.7,63.25,0.5499999999999972
+peak_normal_occupancy,46,Peak,Normal,avg_waiting_time,Availability,2.875,2.875,0
+peak_normal_occupancy,46,Peak,Normal,avg_waiting_time,Smart V1,2.875,3.075,0.20000000000000018
+peak_normal_occupancy,46,Peak,Normal,avg_waiting_time,Smart V2,2.875,4.5,1.625
+peak_normal_occupancy,46,Peak,Normal,avg_time_loss,Availability,53.546168706090185,53.546168706090185,0
+peak_normal_occupancy,46,Peak,Normal,avg_time_loss,Smart V1,53.546168706090185,65.89981316510273,12.353644459012543
+peak_normal_occupancy,46,Peak,Normal,avg_time_loss,Smart V2,53.546168706090185,61.45912963288427,7.912960926794085
+peak_normal_occupancy,46,Peak,Normal,avg_distance_m,Availability,2115.505427059668,2115.505427059668,0
+peak_normal_occupancy,46,Peak,Normal,avg_distance_m,Smart V1,2115.505427059668,2521.096135902047,405.5907088423792
+peak_normal_occupancy,46,Peak,Normal,avg_distance_m,Smart V2,2115.505427059668,2177.9401262821134,62.43469922244549
+peak_normal_occupancy,46,Peak,Normal,avg_walking_distance_m,Availability,672.3885,672.3885,0
+peak_normal_occupancy,46,Peak,Normal,avg_walking_distance_m,Smart V1,672.3885,363.9095,-308.47900000000004
+peak_normal_occupancy,46,Peak,Normal,avg_walking_distance_m,Smart V2,672.3885,455.37075,-217.01775000000004
+peak_normal_occupancy,46,Peak,Normal,avg_co2_g,Availability,503.2487321997663,503.2487321997663,0
+peak_normal_occupancy,46,Peak,Normal,avg_co2_g,Smart V1,503.2487321997663,605.8026014031532,102.55386920338685
+peak_normal_occupancy,46,Peak,Normal,avg_co2_g,Smart V2,503.2487321997663,529.5980949142369,26.349362714470544
+peak_high_occupancy,42,Peak,High,avg_time_to_parking,Availability,272.7,272.675,-0.024999999999977263
+peak_high_occupancy,42,Peak,High,avg_time_to_parking,Smart V1,272.7,328.025,55.32499999999999
+peak_high_occupancy,42,Peak,High,avg_time_to_parking,Smart V2,272.7,283.725,11.025000000000034
+peak_high_occupancy,42,Peak,High,avg_parking_search_time,Availability,66.5,61.8,-4.700000000000003
+peak_high_occupancy,42,Peak,High,avg_parking_search_time,Smart V1,66.5,115.175,48.675
+peak_high_occupancy,42,Peak,High,avg_parking_search_time,Smart V2,66.5,71.65,5.150000000000006
+peak_high_occupancy,42,Peak,High,avg_waiting_time,Availability,2.725,2.8,0.07499999999999973
+peak_high_occupancy,42,Peak,High,avg_waiting_time,Smart V1,2.725,3.05,0.32499999999999973
+peak_high_occupancy,42,Peak,High,avg_waiting_time,Smart V2,2.725,3.95,1.225
+peak_high_occupancy,42,Peak,High,avg_time_loss,Availability,52.9764085723209,53.41658946909845,0.440180896777548
+peak_high_occupancy,42,Peak,High,avg_time_loss,Smart V1,52.9764085723209,64.78206504673118,11.805656474410277
+peak_high_occupancy,42,Peak,High,avg_time_loss,Smart V2,52.9764085723209,58.22680385158328,5.250395279262378
+peak_high_occupancy,42,Peak,High,avg_distance_m,Availability,2141.594838003368,2106.562903843233,-35.031934160134824
+peak_high_occupancy,42,Peak,High,avg_distance_m,Smart V1,2141.594838003368,2542.852292211888,401.25745420852036
+peak_high_occupancy,42,Peak,High,avg_distance_m,Smart V2,2141.594838003368,2212.701926433614,71.10708843024622
+peak_high_occupancy,42,Peak,High,avg_walking_distance_m,Availability,672.30125,665.95125,-6.350000000000023
+peak_high_occupancy,42,Peak,High,avg_walking_distance_m,Smart V1,672.30125,373.4125,-298.88874999999996
+peak_high_occupancy,42,Peak,High,avg_walking_distance_m,Smart V2,672.30125,458.58775,-213.71349999999995
+peak_high_occupancy,42,Peak,High,avg_co2_g,Availability,510.2239117688388,503.9609128523369,-6.262998916501886
+peak_high_occupancy,42,Peak,High,avg_co2_g,Smart V1,510.2239117688388,608.1824225260083,97.9585107571695
+peak_high_occupancy,42,Peak,High,avg_co2_g,Smart V2,510.2239117688388,531.4345292948329,21.210617525994166
+peak_high_occupancy,43,Peak,High,avg_time_to_parking,Availability,272.6,273.825,1.224999999999966
+peak_high_occupancy,43,Peak,High,avg_time_to_parking,Smart V1,272.6,322.325,49.724999999999966
+peak_high_occupancy,43,Peak,High,avg_time_to_parking,Smart V2,272.6,281.475,8.875
+peak_high_occupancy,43,Peak,High,avg_parking_search_time,Availability,66.25,62.125,-4.125
+peak_high_occupancy,43,Peak,High,avg_parking_search_time,Smart V1,66.25,111.35,45.099999999999994
+peak_high_occupancy,43,Peak,High,avg_parking_search_time,Smart V2,66.25,72.8,6.549999999999997
+peak_high_occupancy,43,Peak,High,avg_waiting_time,Availability,2.6,2.8,0.19999999999999973
+peak_high_occupancy,43,Peak,High,avg_waiting_time,Smart V1,2.6,2.875,0.2749999999999999
+peak_high_occupancy,43,Peak,High,avg_waiting_time,Smart V2,2.6,3.65,1.0499999999999998
+peak_high_occupancy,43,Peak,High,avg_time_loss,Availability,52.900745339394746,54.11696230460483,1.2162169652100872
+peak_high_occupancy,43,Peak,High,avg_time_loss,Smart V1,52.900745339394746,62.682886789490446,9.7821414500957
+peak_high_occupancy,43,Peak,High,avg_time_loss,Smart V2,52.900745339394746,58.59985925092837,5.6991139115336225
+peak_high_occupancy,43,Peak,High,avg_distance_m,Availability,2140.24031037256,2105.5416924425444,-34.698617930015644
+peak_high_occupancy,43,Peak,High,avg_distance_m,Smart V1,2140.24031037256,2525.69280083145,385.45249045888977
+peak_high_occupancy,43,Peak,High,avg_distance_m,Smart V2,2140.24031037256,2223.462559635384,83.22224926282388
+peak_high_occupancy,43,Peak,High,avg_walking_distance_m,Availability,672.30125,665.95125,-6.350000000000023
+peak_high_occupancy,43,Peak,High,avg_walking_distance_m,Smart V1,672.30125,376.69875,-295.60249999999996
+peak_high_occupancy,43,Peak,High,avg_walking_distance_m,Smart V2,672.30125,456.68175,-215.61949999999996
+peak_high_occupancy,43,Peak,High,avg_co2_g,Availability,508.44671528343,503.31492996151883,-5.131785321911195
+peak_high_occupancy,43,Peak,High,avg_co2_g,Smart V1,508.44671528343,601.3010120684543,92.85429678502425
+peak_high_occupancy,43,Peak,High,avg_co2_g,Smart V2,508.44671528343,534.7420927241109,26.295377440680852
+peak_high_occupancy,44,Peak,High,avg_time_to_parking,Availability,275.25,278.8,3.5500000000000114
+peak_high_occupancy,44,Peak,High,avg_time_to_parking,Smart V1,275.25,316.75,41.5
+peak_high_occupancy,44,Peak,High,avg_time_to_parking,Smart V2,275.25,280.65,5.399999999999977
+peak_high_occupancy,44,Peak,High,avg_parking_search_time,Availability,66.7,62.075,-4.625
+peak_high_occupancy,44,Peak,High,avg_parking_search_time,Smart V1,66.7,107.75,41.05
+peak_high_occupancy,44,Peak,High,avg_parking_search_time,Smart V2,66.7,72.775,6.075000000000003
+peak_high_occupancy,44,Peak,High,avg_waiting_time,Availability,3.075,3.475,0.3999999999999999
+peak_high_occupancy,44,Peak,High,avg_waiting_time,Smart V1,3.075,4.1,1.0249999999999995
+peak_high_occupancy,44,Peak,High,avg_waiting_time,Smart V2,3.075,4.35,1.2749999999999995
+peak_high_occupancy,44,Peak,High,avg_time_loss,Availability,56.53163048053448,61.55585332539068,5.024222844856197
+peak_high_occupancy,44,Peak,High,avg_time_loss,Smart V1,56.53163048053448,67.43294576293057,10.90131528239609
+peak_high_occupancy,44,Peak,High,avg_time_loss,Smart V2,56.53163048053448,60.85749310059614,4.325862620061656
+peak_high_occupancy,44,Peak,High,avg_distance_m,Availability,2139.531300581757,2105.129828917328,-34.40147166442921
+peak_high_occupancy,44,Peak,High,avg_distance_m,Smart V1,2139.531300581757,2501.491949075351,361.9606484935939
+peak_high_occupancy,44,Peak,High,avg_distance_m,Smart V2,2139.531300581757,2225.23578417335,85.70448359159309
+peak_high_occupancy,44,Peak,High,avg_walking_distance_m,Availability,672.30125,665.37525,-6.925999999999931
+peak_high_occupancy,44,Peak,High,avg_walking_distance_m,Smart V1,672.30125,379.3785,-292.92275
+peak_high_occupancy,44,Peak,High,avg_walking_distance_m,Smart V2,672.30125,453.76325,-218.53799999999995
+peak_high_occupancy,44,Peak,High,avg_co2_g,Availability,515.3496420491668,516.78399046440245,1.434348415235604
+peak_high_occupancy,44,Peak,High,avg_co2_g,Smart V1,515.3496420491668,601.2483136623106,85.89867161314373
+peak_high_occupancy,44,Peak,High,avg_co2_g,Smart V2,515.3496420491668,540.367108047148,25.017465997981162
+peak_high_occupancy,45,Peak,High,avg_time_to_parking,Availability,272.85,265.675,-7.175000000000011
+peak_high_occupancy,45,Peak,High,avg_time_to_parking,Smart V1,272.85,327.525,54.674999999999955
+peak_high_occupancy,45,Peak,High,avg_time_to_parking,Smart V2,272.85,286.15,13.299999999999955
+peak_high_occupancy,45,Peak,High,avg_parking_search_time,Availability,67,59.875,-7.125
+peak_high_occupancy,45,Peak,High,avg_parking_search_time,Smart V1,67,114.75,47.75
+peak_high_occupancy,45,Peak,High,avg_parking_search_time,Smart V2,67,71.725,4.724999999999994
+peak_high_occupancy,45,Peak,High,avg_waiting_time,Availability,2.825,3.025,0.19999999999999973
+peak_high_occupancy,45,Peak,High,avg_waiting_time,Smart V1,2.825,3.5,0.6749999999999998
+peak_high_occupancy,45,Peak,High,avg_waiting_time,Smart V2,2.825,4.375,1.5499999999999998
+peak_high_occupancy,45,Peak,High,avg_time_loss,Availability,53.95358115749835,51.91621773462712,-2.0373634228712305
+peak_high_occupancy,45,Peak,High,avg_time_loss,Smart V1,53.95358115749835,66.60482485098343,12.651243693485085
+peak_high_occupancy,45,Peak,High,avg_time_loss,Smart V2,53.95358115749835,61.41756848419671,7.4639873266983585
+peak_high_occupancy,45,Peak,High,avg_distance_m,Availability,2140.557965466628,2100.029814246345,-40.528151220283235
+peak_high_occupancy,45,Peak,High,avg_distance_m,Smart V1,2140.557965466628,2519.8747224316694,379.31675696504135
+peak_high_occupancy,45,Peak,High,avg_distance_m,Smart V2,2140.557965466628,2183.910864345657,43.352898879029
+peak_high_occupancy,45,Peak,High,avg_walking_distance_m,Availability,672.30125,661.7345,-10.566749999999956
+peak_high_occupancy,45,Peak,High,avg_walking_distance_m,Smart V1,672.30125,380.4855,-291.81575
+peak_high_occupancy,45,Peak,High,avg_walking_distance_m,Smart V2,672.30125,481.975,-190.32624999999996
+peak_high_occupancy,45,Peak,High,avg_co2_g,Availability,510.1790138692363,497.9103374954579,-12.268676373778419
+peak_high_occupancy,45,Peak,High,avg_co2_g,Smart V1,510.1790138692363,608.2015391951372,98.02252532590092
+peak_high_occupancy,45,Peak,High,avg_co2_g,Smart V2,510.1790138692363,534.8549156453107,24.675901776074397
+peak_high_occupancy,46,Peak,High,avg_time_to_parking,Availability,274.625,268.15,-6.475000000000023
+peak_high_occupancy,46,Peak,High,avg_time_to_parking,Smart V1,274.625,330.825,56.19999999999999
+peak_high_occupancy,46,Peak,High,avg_time_to_parking,Smart V2,274.625,289.375,14.75
+peak_high_occupancy,46,Peak,High,avg_parking_search_time,Availability,67.175,61.875,-5.299999999999997
+peak_high_occupancy,46,Peak,High,avg_parking_search_time,Smart V1,67.175,116.05,48.875
+peak_high_occupancy,46,Peak,High,avg_parking_search_time,Smart V2,67.175,74.95,7.775000000000006
+peak_high_occupancy,46,Peak,High,avg_waiting_time,Availability,2.625,3.3,0.6749999999999998
+peak_high_occupancy,46,Peak,High,avg_waiting_time,Smart V1,2.625,3,0.375
+peak_high_occupancy,46,Peak,High,avg_waiting_time,Smart V2,2.625,3.625,1
+peak_high_occupancy,46,Peak,High,avg_time_loss,Availability,54.455488134568334,53.09548351554045,-1.3600046190278832
+peak_high_occupancy,46,Peak,High,avg_time_loss,Smart V1,54.455488134568334,68.35934967192753,13.903861537359198
+peak_high_occupancy,46,Peak,High,avg_time_loss,Smart V2,54.455488134568334,63.20848246920821,8.752994334639872
+peak_high_occupancy,46,Peak,High,avg_distance_m,Availability,2140.9745483702504,2106.405906017795,-34.5686423524553
+peak_high_occupancy,46,Peak,High,avg_distance_m,Smart V1,2140.9745483702504,2553.803191580299,412.82864321004854
+peak_high_occupancy,46,Peak,High,avg_distance_m,Smart V2,2140.9745483702504,2209.687108460917,68.71256009066656
+peak_high_occupancy,46,Peak,High,avg_walking_distance_m,Availability,672.30125,665.95125,-6.350000000000023
+peak_high_occupancy,46,Peak,High,avg_walking_distance_m,Smart V1,672.30125,374.993,-297.30825
+peak_high_occupancy,46,Peak,High,avg_walking_distance_m,Smart V2,672.30125,463.7035,-208.59774999999996
+peak_high_occupancy,46,Peak,High,avg_co2_g,Availability,510.9812551938585,500.9102178042365,-10.071037389622006
+peak_high_occupancy,46,Peak,High,avg_co2_g,Smart V1,510.9812551938585,611.6250867321356,100.64383153827714
+peak_high_occupancy,46,Peak,High,avg_co2_g,Smart V2,510.9812551938585,538.4852977954105,27.504042601551987

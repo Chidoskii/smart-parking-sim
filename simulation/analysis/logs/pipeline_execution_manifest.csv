@@ -1,0 +1,7 @@
+"Stage","Description","Script","Status","Duration_Seconds"
+1,"Data loading and validation","R/01_load_validate.R","Completed",3
+2,"Descriptive statistics","R/02_descriptive_statistics.R","Completed",3.75
+3,"Inferential statistical analysis","R/03_statistical_tests.R","Completed",6.1
+4,"Primary research visualizations","R/04_primary_visualizations.R","Completed",7.77
+5,"Supplementary and network analysis","R/05_supplementary_visualizations.R","Completed",8.31
+6,"Publication LaTeX tables","R/06_export_tables.R","Completed",2.73

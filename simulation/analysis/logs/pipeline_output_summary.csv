@@ -1,0 +1,6 @@
+"Output","Expected","Actual","Valid"
+"Statistical CSV tables",46,46,TRUE
+"PDF figures",25,25,TRUE
+"PNG figures",25,25,TRUE
+"LaTeX tables",12,12,TRUE
+"LaTeX table manifest",1,1,TRUE

@@ -1,0 +1,13 @@
+# Research datasets and reproducible analytical outputs
+simulation/analysis/**/*.csv text eol=lf
+simulation/analysis/**/*.tex text eol=lf
+
+# R analysis source code
+simulation/analysis/**/*.R text eol=lf
+
+# Binary research figures
+simulation/analysis/**/*.pdf binary
+simulation/analysis/**/*.png binary
+
+# Automatically generated renv bootstrap script
+simulation/analysis/renv/activate.R -whitespace

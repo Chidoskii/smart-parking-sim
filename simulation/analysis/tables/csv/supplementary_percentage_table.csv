@@ -1,0 +1,9 @@
+metric_label,Availability,Smart V1,Smart V2
+CO2 Emissions (g),-5.14,-6.19,-7.73
+Driving Distance (m),-4.06,-4.45,-5.84
+Parking Search Time (s),-20.38,-27.42,-34.86
+Time Loss (s),-6.39,-8.91,-10.95
+Time to Parking (s),-5.61,-8.38,-10.57
+Waiting Time (s),10.6,37.35,30.6
+Walking Distance (m),7.95,0.55,3.93
+Parking Reassignments,28.57,478.57,528.57

@@ -1,0 +1,29 @@
+\begin{table*}[t]
+\centering
+\caption{Mean Primary Performance Under High Parking Occupancy}
+\label{tab:high_occupancy_performance}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\textwidth}
+
+\begin{tabular}{lrrrr}
+\toprule
+Metric & Baseline & Availability & Smart V1 & Smart V2\\
+\midrule
+Time to parking (s) & 273.32 & 267.90 & 321.51 & 279.97\\
+Parking search time (s) & 66.85 & 60.83 & 112.95 & 71.68\\
+Waiting time (s) & 2.67 & 3.07 & 3.12 & 3.80\\
+Time loss (s) & 52.69 & 52.34 & 63.42 & 58.40\\
+Driving distance (m) & 2,140.56 & 2,104.72 & 2,545.99 & 2,210.46\\
+\addlinespace
+Walking distance (m) & 672.30 & 664.99 & 374.26 & 463.72\\
+CO2 emissions (g) & 508.05 & 499.43 & 603.84 & 531.39\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\smallskip
+\begin{minipage}{\textwidth}
+\footnotesize
+Results represent 15 trials per policy across three traffic demand levels.
+\end{minipage}
+\end{table*}

@@ -1,0 +1,35 @@
+\begin{table*}[t]
+\centering
+\caption{Paired Policy Comparisons for Primary Performance Metrics}
+\label{tab:primary_statistical_tests}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\textwidth}
+
+\begin{tabular}{lrrrr}
+\toprule
+Metric & Policy & Difference & 95\% CI & Adjusted p\\
+\midrule
+Parking search time (s) & Availability & -3.01 & {}[-3.42, -2.61] & 3.05e-04\\
+Parking search time (s) & Smart V1 & 47.10 & {}[44.44, 49.75] & 1.62e-05\\
+Parking search time (s) & Smart V2 & 3.81 & {}[3.14, 4.48] & 7.63e-04\\
+Driving distance (m) & Availability & -17.92 & {}[-19.55, -16.28] & 8.33e-05\\
+Driving distance (m) & Smart V1 & 404.32 & {}[391.87, 416.77] & 1.72e-06\\
+\addlinespace
+Driving distance (m) & Smart V2 & 64.72 & {}[57.42, 72.02] & 1.78e-04\\
+Walking distance (m) & Availability & -3.65 & {}[-4.80, -2.51] & 0.0053\\
+Walking distance (m) & Smart V1 & -303.40 & {}[-306.05, -300.74] & 1.25e-08\\
+Walking distance (m) & Smart V2 & -211.43 & {}[-216.66, -206.20] & 7.54e-07\\
+CO2 emissions (g) & Availability & -4.31 & {}[-5.59, -3.03] & 0.0051\\
+\addlinespace
+CO2 emissions (g) & Smart V1 & 96.25 & {}[92.35, 100.15] & 4.89e-06\\
+CO2 emissions (g) & Smart V2 & 22.50 & {}[20.61, 24.40] & 7.07e-05\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\smallskip
+\begin{minipage}{\textwidth}
+\footnotesize
+Differences are calculated as policy minus baseline. Each comparison uses five matched seed blocks. Confidence intervals are unadjusted. P-values use Holm correction within the primary overall comparison family.
+\end{minipage}
+\end{table*}

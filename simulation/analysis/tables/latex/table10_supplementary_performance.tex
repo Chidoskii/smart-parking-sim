@@ -1,0 +1,29 @@
+\begin{table*}[t]
+\centering
+\caption{Mean Performance in the Balanced Supplementary Experiments}
+\label{tab:supplementary_performance}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\textwidth}
+
+\begin{tabular}{lrrrr}
+\toprule
+Metric & Baseline & Availability & Smart V1 & Smart V2\\
+\midrule
+Time to parking (s) & 246.73 & 232.89 & 226.05 & 220.66\\
+Parking search time (s) & 68.46 & 54.51 & 49.69 & 44.59\\
+Waiting time (s) & 2.08 & 2.29 & 2.85 & 2.71\\
+Time loss (s) & 46.58 & 43.61 & 42.43 & 41.48\\
+Driving distance (m) & 1,897.29 & 1,820.26 & 1,812.78 & 1,786.52\\
+\addlinespace
+Walking distance (m) & 315.79 & 340.89 & 317.52 & 328.21\\
+CO2 emissions (g) & 451.41 & 428.21 & 423.46 & 416.51\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\smallskip
+\begin{minipage}{\textwidth}
+\footnotesize
+Destination-informed experiments under low traffic demand and normal parking occupancy. Five trials per policy. The four exploratory high-occupancy trials are excluded.
+\end{minipage}
+\end{table*}

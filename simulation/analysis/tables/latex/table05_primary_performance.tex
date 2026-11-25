@@ -1,0 +1,29 @@
+\begin{table*}[t]
+\centering
+\caption{Mean Performance in the Primary Experiments}
+\label{tab:primary_performance}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\textwidth}
+
+\begin{tabular}{lrrrr}
+\toprule
+Metric & Baseline & Availability & Smart V1 & Smart V2\\
+\midrule
+Time to parking (s) & 270.81 & 268.10 & 319.59 & 276.46\\
+Parking search time (s) & 64.41 & 61.39 & 111.50 & 68.22\\
+Waiting time (s) & 2.77 & 2.97 & 3.21 & 4.07\\
+Time loss (s) & 52.31 & 52.14 & 63.19 & 58.22\\
+Driving distance (m) & 2,128.08 & 2,110.16 & 2,532.40 & 2,192.80\\
+\addlinespace
+Walking distance (m) & 672.34 & 668.69 & 368.95 & 460.92\\
+CO2 emissions (g) & 504.35 & 500.04 & 600.60 & 526.86\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\smallskip
+\begin{minipage}{\textwidth}
+\footnotesize
+Values represent mean per-parking-vehicle performance across 30 trials per policy.
+\end{minipage}
+\end{table*}

@@ -1,0 +1,4 @@
+Dataset,Trials,Vehicles,Successful_Parking,Completed_Returns,Teleports,Completed_Trials,Parking_Success_Pct,Return_Success_Pct
+Preliminary,20,800,800,800,0,20,100,100
+Primary,120,4800,4800,4800,0,120,100,100
+Supplementary,24,960,960,960,0,24,100,100

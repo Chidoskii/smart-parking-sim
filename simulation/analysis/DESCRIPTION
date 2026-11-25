@@ -1,0 +1,16 @@
+Package: smartparkinganalysis
+Type: Project
+Title: Autonomous Parking Research Analysis
+Version: 1.0.0
+Description: Reproducible statistical analysis and visualization
+    of autonomous vehicle parking assignment experiments
+    conducted using SUMO.
+Encoding: UTF-8
+Imports:
+    tidyverse,
+    patchwork,
+    broom,
+    scales,
+    knitr,
+    rmarkdown,
+    renv

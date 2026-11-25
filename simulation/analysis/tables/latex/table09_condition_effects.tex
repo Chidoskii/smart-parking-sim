@@ -1,0 +1,29 @@
+\begin{table*}[t]
+\centering
+\caption{Selected Occupancy and Traffic Demand Effect Contrasts}
+\label{tab:condition_effects}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\textwidth}
+
+\begin{tabular}{lrrrrr}
+\toprule
+Factor & Policy & Metric & Contrast & Difference & Adjusted p\\
+\midrule
+Occupancy & Availability & CO2 emissions (g) & High - Normal & -8.62 & 0.0139\\
+Occupancy & Availability & Driving distance (m) & High - Normal & -35.84 & 1.46e-04\\
+Occupancy & Availability & Parking search time (s) & High - Normal & -6.03 & 6.59e-04\\
+Occupancy & Availability & Walking distance (m) & High - Normal & -7.31 & 0.0159\\
+Demand & Availability & Parking search time (s) & Peak - Low & 0.56 & 1.0000\\
+\addlinespace
+Demand & Smart V1 & Parking search time (s) & Peak - Low & 0.73 & 1.0000\\
+Demand & Smart V2 & Parking search time (s) & Peak - Low & 2.34 & 1.0000\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\smallskip
+\begin{minipage}{\textwidth}
+\footnotesize
+Contrasts represent changes in policy effects relative to baseline between experimental conditions. Holm correction was applied separately to the occupancy and demand comparison families. Selected contrasts are presented for brevity.
+\end{minipage}
+\end{table*}

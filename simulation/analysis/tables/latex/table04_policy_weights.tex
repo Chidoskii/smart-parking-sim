@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Weighted Parking Assignment Parameters}
+\label{tab:policy_weights}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\columnwidth}
+
+\begin{tabular}{lrrr}
+\toprule
+Policy & Driving & Walking & Occupancy\\
+\midrule
+Smart V1 & 0.25 & 0.60 & 0.15\\
+Smart V2 & 0.45 & 0.40 & 0.15\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\smallskip
+\begin{minipage}{\columnwidth}
+\footnotesize
+The weights sum to one for each policy. They represent selected experimental configurations rather than globally optimized parameters.
+\end{minipage}
+\end{table}

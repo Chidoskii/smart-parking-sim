@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\centering
+\caption{Network-Level Comparisons Significant After Holm Correction}
+\label{tab:network_statistical_tests}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\textwidth}
+
+\begin{tabular}{lrrrrr}
+\toprule
+Metric & Policy & Difference & Change (\%) & 95\% CI & Adjusted p\\
+\midrule
+Network driving distance (m/veh) & Availability & -58.22 & -1.81 & {}[-69.67, -46.77] & 0.0031\\
+Network driving distance (m/veh) & Smart V1 & 12.20 & +0.38 & {}[9.47, 14.93] & 0.0049\\
+Network CO2 (kg/trial) & Availability & -0.93 & -2.17 & {}[-1.32, -0.54] & 0.0480\\
+Network CO2 (kg/trial) & Smart V2 & -1.14 & -2.65 & {}[-1.44, -0.84] & 0.0087\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\par\smallskip
+\begin{minipage}{\textwidth}
+\footnotesize
+Each comparison uses five matched seed blocks. Confidence intervals are unadjusted. Holm correction was applied to the network-level comparison family. These supplementary findings are exploratory.
+\end{minipage}
+\end{table*}

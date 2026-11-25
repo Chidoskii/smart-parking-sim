@@ -41,3 +41,14 @@ Thumbs.db
 .idea/
 
 *.xml.bak
+
+# R local environment and workspace
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+.Renviron
+
+# R analysis temporary files
+simulation/analysis/renv/cache/
+simulation/analysis/renv/tmp/
