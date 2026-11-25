@@ -2,39 +2,27 @@
 
 ## Overview
 
-This directory contains the statistical analysis, visualization,
-and publication-output generation pipeline for the Master's
-research project:
+This directory contains the statistical analysis, visualization, and publication-output generation pipeline for the Master's research project:
 
-**Evaluating Autonomous Vehicle Parking Assignment Strategies
-and Their Impact on Campus Traffic Efficiency Using SUMO**
+**Evaluating Autonomous Vehicle Parking Assignment Strategies and Their Impact on Campus Traffic Efficiency Using SUMO**
 
 California State Polytechnic University, Pomona
 Department of Computer Science
 
-The research investigates how autonomous vehicle parking
-assignment strategies influence parking efficiency, passenger
-walking distance, vehicle travel distance, emissions, and
-traffic network performance within a university campus.
+The research investigates how autonomous vehicle parking assignment strategies influence parking efficiency, passenger walking distance, vehicle travel distance, emissions, and traffic network performance within a university campus.
 
-The analysis is implemented in R and uses an automated,
-reproducible computational pipeline.
+The analysis is implemented in R and uses an automated, reproducible computational pipeline.
 
 ## Research Objectives
 
 The primary objectives of this analysis are to:
 
-1. Evaluate the effectiveness of availability-based parking
-   assignment relative to conventional parking behavior.
-2. Investigate the trade-off between passenger walking
-   convenience and vehicle traffic efficiency.
-3. Determine how parking occupancy and traffic demand
-   influence parking policy effectiveness.
+1. Evaluate the effectiveness of availability-based parking assignment relative to conventional parking behavior.
+2. Investigate the trade-off between passenger walking convenience and vehicle traffic efficiency.
+3. Determine how parking occupancy and traffic demand influence parking policy effectiveness.
 4. Evaluate destination-informed parking assignment.
-5. Examine the network-level effects of coordinated parking
-   strategies.
-6. Produce reproducible statistical results and
-   publication-ready research outputs.
+5. Examine the network-level effects of coordinated parking strategies.
+6. Produce reproducible statistical results and publication-ready research outputs.
 
 ## Parking Policies
 
@@ -56,8 +44,7 @@ Four parking assignment policies are evaluated.
 | Parking occupancy |     0.15 |     0.15 |
 | Total             |     1.00 |     1.00 |
 
-The weights represent experimentally selected policy
-configurations rather than globally optimal solutions.
+The weights represent experimentally selected policy configurations rather than globally optimal solutions.
 
 ## Experimental Datasets
 
@@ -71,22 +58,15 @@ The analysis uses three separate experimental datasets.
 | Supplementary — Exploratory |      4 |                          160 |
 | Total                       |    164 |                        6,560 |
 
-Each completed simulation trial contains 40 experimental
-parking vehicles.
+Each completed simulation trial contains 40 experimental parking vehicles.
 
-The datasets are analyzed separately because changes in
-parking initialization, routing, and experimental configuration
-prevent direct pooling of the experimental batches.
+The datasets are analyzed separately because changes in parking initialization, routing, and experimental configuration prevent direct pooling of the experimental batches.
 
 ### Preliminary Experiments
 
-The preliminary experiments evaluate the four parking
-policies under high parking occupancy using five randomized
-departure-order seeds.
+The preliminary experiments evaluate the four parking policies under high parking occupancy using five randomized departure-order seeds.
 
-These experiments provide an initial evaluation of parking
-policy behavior and informed the subsequent experimental
-design.
+These experiments provide an initial evaluation of parking policy behavior and informed the subsequent experimental design.
 
 ### Primary Experiments
 
@@ -99,23 +79,17 @@ The primary experimental dataset evaluates:
 
 The resulting factorial design contains:
 
-4 policies × 3 demand levels × 2 occupancy levels × 5 seeds
-= 120 simulation trials.
+4 policies × 3 demand levels × 2 occupancy levels × 5 seeds = 120 simulation trials.
 
 ### Supplementary Experiments
 
-The supplementary experiments evaluate destination-informed
-initial parking assignments and include network-level
-performance metrics.
+The supplementary experiments evaluate destination-informed initial parking assignments and include network-level performance metrics.
 
-The balanced supplementary dataset contains 20 trials under
-low traffic demand and normal parking occupancy.
+The balanced supplementary dataset contains 20 trials under low traffic demand and normal parking occupancy.
 
-Four additional high-occupancy trials are retained for
-exploratory descriptive analysis.
+Four additional high-occupancy trials are retained for exploratory descriptive analysis.
 
-The exploratory trials are excluded from inferential
-comparisons because only one matched seed is available.
+The exploratory trials are excluded from inferential comparisons because only one matched seed is available.
 
 ## Experimental Configuration
 
@@ -177,11 +151,9 @@ data/supplementary/
     final_experiment_reports_completed.csv
 ```
 
-These files contain trial-level results collected from
-completed SUMO simulation experiments.
+These files contain trial-level results collected from completed SUMO simulation experiments.
 
-The original experimental datasets should remain unchanged
-during statistical analysis.
+The original experimental datasets should remain unchanged during statistical analysis.
 
 ## Software Requirements
 
@@ -196,18 +168,15 @@ The analysis was developed and verified using:
 - scales
 - knitr
 
-The rmarkdown package is also included for optional
-research reporting.
+The rmarkdown package is also included for optional research reporting.
 
-Package dependencies are managed using renv and recorded
-in the renv.lock file.
+Package dependencies are managed using renv and recorded in the renv.lock file.
 
 ## Environment Setup
 
 Install R before executing the analysis.
 
-From the analysis directory, restore the recorded package
-environment:
+From the analysis directory, restore the recorded package environment:
 
 ```bash
 Rscript -e "renv::restore(prompt = FALSE)"
@@ -225,9 +194,7 @@ The expected result is:
 No issues found -- the project is in a consistent state.
 ```
 
-The recorded R version should be used whenever possible.
-The renv lockfile manages package dependencies but does
-not install the R runtime itself.
+The recorded R version should be used whenever possible. The renv lockfile manages package dependencies but does not install the R runtime itself.
 
 ## Running the Analysis
 
@@ -237,13 +204,9 @@ Execute the complete analysis pipeline:
 Rscript run_analysis.R
 ```
 
-The master script executes all six analytical stages in
-sequence, creates the required output directories, validates
-output counts, and records execution information.
+The master script executes all six analytical stages in sequence, creates the required output directories, validates output counts, and records execution information.
 
-Individual stages can also be executed separately from
-the analysis directory. Stages that depend on previously
-generated results should be executed in pipeline order.
+Individual stages can also be executed separately from the analysis directory. Stages that depend on previously generated results should be executed in pipeline order.
 
 ## Analysis Pipeline
 
@@ -293,39 +256,29 @@ Responsibilities:
 
 Script: R/04_primary_visualizations.R
 
-Generates 13 research figures covering primary experimental
-performance, parking policy trade-offs, occupancy effects,
-traffic demand effects, and matched statistical comparisons.
+Generates 13 research figures covering primary experimental performance, parking policy trade-offs, occupancy effects, traffic demand effects, and matched statistical comparisons.
 
 ### Stage 5 — Supplementary and Network Analysis
 
 Script: R/05_supplementary_visualizations.R
 
-Evaluates destination-informed parking assignment and
-network-level performance.
+Evaluates destination-informed parking assignment and network-level performance.
 
-Generates eight statistical CSV tables and 12 research
-figures.
+Generates eight statistical CSV tables and 12 research figures.
 
 ### Stage 6 — Publication Tables
 
 Script: R/06_export_tables.R
 
-Generates 12 LaTeX tables suitable for integration into
-the IEEE research manuscript.
+Generates 12 LaTeX tables suitable for integration into the IEEE research manuscript.
 
 ## Statistical Methodology
 
-The inferential analysis uses matched comparisons based
-on randomized departure-order seeds.
+The inferential analysis uses matched comparisons based on randomized departure-order seeds.
 
-Where multiple experimental conditions contribute to an
-overall comparison, policy differences are aggregated
-within each seed before inferential testing.
+Where multiple experimental conditions contribute to an overall comparison, policy differences are aggregated within each seed before inferential testing.
 
-The seed serves as the matched analytical block. Individual
-parking vehicle observations are not treated as independent
-statistical replicates.
+The seed serves as the matched analytical block. Individual parking vehicle observations are not treated as independent statistical replicates.
 
 Statistical methods include:
 
@@ -336,12 +289,9 @@ Statistical methods include:
 - Exact two-sided sign tests.
 - Occupancy and demand effect contrasts.
 
-Because inferential comparisons contain five matched
-seed blocks, statistical conclusions should be interpreted
-with appropriate caution.
+Because inferential comparisons contain five matched seed blocks, statistical conclusions should be interpreted with appropriate caution.
 
-The exact two-sided sign test has a minimum attainable
-p-value of 0.0625 with five nonzero matched differences.
+The exact two-sided sign test has a minimum attainable p-value of 0.0625 with five nonzero matched differences.
 
 ## Performance Metrics
 
@@ -367,8 +317,7 @@ p-value of 0.0625 with five nonzero matched differences.
 - Background vehicle driving distance.
 - Background vehicle carbon dioxide emissions.
 
-Network-level metrics are available for the supplementary
-experimental dataset.
+Network-level metrics are available for the supplementary experimental dataset.
 
 ## Generated Research Outputs
 
@@ -386,9 +335,7 @@ A successful execution produces:
 
 Each research figure is exported in PDF and PNG format.
 
-PDF figures support vector-based publication graphics,
-while PNG figures support presentations and general
-documentation.
+PDF figures support vector-based publication graphics, while PNG figures support presentations and general documentation.
 
 ## Figure Index
 
@@ -441,30 +388,19 @@ documentation.
 
 ### Primary Experiments
 
-Availability-based parking assignment reduced parking
-search time, driving distance, and carbon dioxide
-emissions relative to baseline.
+Availability-based parking assignment reduced parking search time, driving distance, and carbon dioxide emissions relative to baseline.
 
-Under high parking occupancy, the Availability policy
-reduced average parking search time by approximately
-9.01%.
+Under high parking occupancy, the Availability policy reduced average parking search time by approximately 9.01%.
 
-Smart V1 reduced passenger walking distance by
-approximately 45.1%, but increased driving distance
-by approximately 19.0%.
+Smart V1 reduced passenger walking distance by approximately 45.1%, but increased driving distance by approximately 19.0%.
 
-Smart V2 reduced walking distance by approximately
-31.4%, with a smaller driving distance increase of
-approximately 3.04%.
+Smart V2 reduced walking distance by approximately 31.4%, with a smaller driving distance increase of approximately 3.04%.
 
-These findings demonstrate a trade-off between passenger
-walking convenience and vehicle traffic efficiency.
+These findings demonstrate a trade-off between passenger walking convenience and vehicle traffic efficiency.
 
 ### Supplementary Experiments
 
-Under the balanced destination-informed experimental
-configuration, Smart V2 achieved the following changes
-relative to baseline:
+Under the balanced destination-informed experimental configuration, Smart V2 achieved the following changes relative to baseline:
 
 | Metric                        | Percentage Change |
 | ----------------------------- | ----------------: |
@@ -474,40 +410,25 @@ relative to baseline:
 | Time to parking               |            -10.6% |
 | Walking distance              |            +3.93% |
 
-These results suggest that parking initialization and
-assignment configuration can influence the effectiveness
-of weighted parking optimization.
+These results suggest that parking initialization and assignment configuration can influence the effectiveness of weighted parking optimization.
 
-Differences between experimental batches should not be
-interpreted as isolated causal effects of destination-informed
-initialization because routing and implementation changes
-were also introduced.
+Differences between experimental batches should not be interpreted as isolated causal effects of destination-informed initialization because routing and implementation changes were also introduced.
 
 ### Network-Level Findings
 
-Within the balanced supplementary experiments, Smart V2
-reduced total network carbon dioxide emissions by
-approximately 2.65%.
+Within the balanced supplementary experiments, Smart V2 reduced total network carbon dioxide emissions by approximately 2.65%.
 
-The reduction was statistically significant under the
-paired t-test methodology after Holm correction.
+The reduction was statistically significant under the paired t-test methodology after Holm correction.
 
-Network time loss decreased descriptively by approximately
-6.29%, although this result was not statistically significant
-after multiple-comparison correction.
+Network time loss decreased descriptively by approximately 6.29%, although this result was not statistically significant after multiple-comparison correction.
 
-Background vehicle performance did not demonstrate
-statistically significant differences after correction.
+Background vehicle performance did not demonstrate statistically significant differences after correction.
 
 ## Computational Reproducibility
 
-The analysis pipeline was executed successfully within an
-isolated R package environment managed using renv.
+The analysis pipeline was executed successfully within an isolated R package environment managed using renv.
 
-A clean-output reproducibility test was performed by
-moving previously generated figures and statistical
-tables outside the project directory and re-executing
-the complete analysis pipeline.
+A clean-output reproducibility test was performed by moving previously generated figures and statistical tables outside the project directory and re-executing the complete analysis pipeline.
 
 The verification results were:
 
@@ -521,19 +442,13 @@ The verification results were:
 | Empty figure files               | 0        |
 | Dependency consistency           | Passed   |
 
-SHA-256 checksum comparisons confirmed byte-for-byte
-reproducibility of all 46 statistical CSV files and all
-12 LaTeX publication tables.
+SHA-256 checksum comparisons confirmed byte-for-byte reproducibility of all 46 statistical CSV files and all 12 LaTeX publication tables.
 
-Figure regeneration was verified through file counts
-and nonempty file validation.
+Figure regeneration was verified through file counts and nonempty file validation.
 
-These results establish local computational
-reproducibility within the tested environment.
+These results establish local computational reproducibility within the tested environment.
 
-They do not establish cross-platform reproducibility,
-independent simulation-model validity, or exact visual
-equivalence of regenerated figures.
+They do not establish cross-platform reproducibility, independent simulation-model validity, or exact visual equivalence of regenerated figures.
 
 ## Execution Records
 
@@ -545,31 +460,23 @@ The logs directory contains:
 - Package version information.
 - Input dataset checksums.
 
-These records support auditing and verification of the
-computational analysis.
+These records support auditing and verification of the computational analysis.
 
 ## Research Limitations
 
-The analysis should be interpreted in consideration of
-the following limitations:
+The analysis should be interpreted in consideration of the following limitations:
 
 - Five randomized departure-order seeds.
 - A fixed parking occupancy distribution.
-- Simulation-based rather than empirically calibrated
-  traffic behavior.
+- Simulation-based rather than empirically calibrated traffic behavior.
 - Approximate campus destination coordinates.
 - Approximate walking distance measurements.
 - Fixed weighted optimization parameters.
 - Incomplete supplementary high-occupancy experiments.
-- Differences in implementation between experimental
-  batches.
-- Network-level metrics available only for supplementary
-  experiments.
+- Differences in implementation between experimental batches.
+- Network-level metrics available only for supplementary experiments.
 
-All 164 completed simulation trials achieved successful
-parking and return-trip completion without vehicle
-teleports. This does not imply that every attempted
-simulation completed successfully.
+All 164 completed simulation trials achieved successful parking and return-trip completion without vehicle teleports. This does not imply that every attempted simulation completed successfully.
 
 ## Research Status
 
